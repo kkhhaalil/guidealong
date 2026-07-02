@@ -1,11 +1,13 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import { toursPlugin } from './vite-plugin-tours.js';
 
 export default defineConfig({
   base: './',
   plugins: [
     react(),
+    toursPlugin(),
     VitePWA({
       strategies: 'injectManifest',
       srcDir: 'src',

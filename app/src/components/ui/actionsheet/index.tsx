@@ -1,5 +1,6 @@
 import { type ReactNode, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { t } from '../../../i18n';
 import { cn } from '../utils/cn';
 
 export interface ActionsheetProps {
@@ -26,7 +27,7 @@ export function Actionsheet({ isOpen, onClose, children, className }: Actionshee
       <button
         type="button"
         className="absolute inset-0 bg-ink/40"
-        aria-label="关闭"
+        aria-label={t('ariaClose')}
         onClick={onClose}
       />
       <div

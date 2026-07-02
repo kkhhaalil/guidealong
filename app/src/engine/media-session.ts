@@ -103,6 +103,20 @@ export function bindMediaSessionHandlers(
   });
 }
 
+export function setPlaybackStateSafe(
+  ms: MediaSessionPort | null,
+  state: 'playing' | 'paused' | 'none',
+): void {
+  if (!ms) return;
+  try {
+    if (typeof ms.setPlaybackState === 'function') {
+      ms.setPlaybackState(state);
+    }
+  } catch {
+    // partial MediaSession support in some browsers
+  }
+}
+
 export function updateMediaSessionPosition(
   ms: MediaSessionPort | null,
   duration: number,

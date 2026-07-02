@@ -10,8 +10,8 @@ export default function App() {
   return (
     <GluestackUIProvider mode="system">
       {route.name === 'shelf' && <TourShelf />}
-      {route.name === 'tour-detail' && <TourDetail tourId={route.tourId} />}
-      {route.name === 'map' && <MapScreen tourId={route.tourId} />}
+      {route.name === 'tour-detail' && <TourDetail key={route.tourId} tourId={route.tourId} />}
+      {route.name === 'map' && <MapScreen key={route.tourId} tourId={route.tourId} />}
     </GluestackUIProvider>
   );
 }

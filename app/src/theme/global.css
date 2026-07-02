@@ -159,6 +159,44 @@
     color: rgb(var(--color-ink));
   }
 
+  .leaflet-host,
+  .leaflet-container {
+    touch-action: none;
+  }
+
+  .ga-stop-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgb(var(--color-surface));
+    border: 2px solid rgb(var(--color-primary));
+    font-size: 16px;
+    line-height: 1;
+    box-shadow: var(--shadow-card);
+  }
+
+  .ga-stop-marker--visited {
+    opacity: 0.55;
+    border-color: rgb(var(--color-success));
+  }
+
+  .ga-puck {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgb(var(--color-primary));
+    color: rgb(var(--color-primary-foreground));
+    font-size: 18px;
+    line-height: 1;
+    box-shadow: var(--shadow-card);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,

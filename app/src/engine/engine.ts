@@ -15,6 +15,7 @@ import type { SimSource } from './position.ts';
 import {
   bindMediaSessionHandlers,
   createMediaSessionAdapter,
+  setPlaybackStateSafe,
   setStopMetadata,
   updateMediaSessionPosition,
 } from './media-session.ts';
@@ -100,11 +101,11 @@ export function createTourEngine(deps: TourEngineDeps): TourEngine {
     }
     if (ev.type === 'play') {
       if (manifest && ev.stop) setStopMetadata(mediaSession, ev.stop);
-      mediaSession?.setPlaybackState('playing');
+      setPlaybackStateSafe(mediaSession, 'playing');
       emit('play', ev.stop.id, ev.triggered, ev.more);
     }
     if (ev.type === 'ended') {
-      mediaSession?.setPlaybackState('none');
+      setPlaybackStateSafe(mediaSession, 'none');
       emit('ended', ev.stop.id);
     }
     if (ev.type === 'queue') {
@@ -244,13 +245,13 @@ export function createTourEngine(deps: TourEngineDeps): TourEngine {
 
     pause(): void {
       playback.pause();
-      mediaSession?.setPlaybackState('paused');
+      setPlaybackStateSafe(mediaSession, 'paused');
       notifyState();
     },
 
     resume(): void {
       playback.resume();
-      mediaSession?.setPlaybackState('playing');
+      setPlaybackStateSafe(mediaSession, 'playing');
       notifyState();
     },
 
