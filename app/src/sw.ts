@@ -151,18 +151,25 @@ const TRANSPARENT_PNG = Uint8Array.from(
   (c) => c.charCodeAt(0),
 );
 
+function placeholderImage(): Response {
+  return new Response(TRANSPARENT_PNG, {
+    status: 200,
+    headers: { 'Content-Type': 'image/png' },
+  });
+}
+
 async function serveTourAsset(tourId: string, request: Request): Promise<Response> {
   const cached = await matchTourCache(tourId, request);
   if (cached) return cached;
+  const isImage = request.destination === 'image';
   try {
-    return await fetch(request);
+    const response = await fetch(request);
+    // Tour packages only cover their corridor/bbox; tiles outside it 404 on
+    // static hosting. Swallow those for images so the map degrades silently.
+    if (!response.ok && isImage) return placeholderImage();
+    return response;
   } catch {
-    if (request.destination === 'image') {
-      return new Response(TRANSPARENT_PNG, {
-        status: 200,
-        headers: { 'Content-Type': 'image/png' },
-      });
-    }
+    if (isImage) return placeholderImage();
     return new Response('Tour asset unavailable offline', { status: 503 });
   }
 }

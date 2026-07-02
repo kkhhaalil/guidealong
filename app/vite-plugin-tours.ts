@@ -28,7 +28,10 @@ function toursMiddleware(toursRoot: string): Connect.NextHandleFunction {
 
     fs.stat(filePath, (err, stat) => {
       if (err || !stat.isFile()) {
-        next();
+        // Match static hosting (GitHub Pages): absent tour files are 404s,
+        // not SPA fallbacks — the SW is expected to handle them.
+        res.statusCode = 404;
+        res.end('Not found');
         return;
       }
 
