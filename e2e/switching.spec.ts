@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import {
-  gotoDemoMap,
+  gotoDemoMapWithSw,
   primaryColor,
   setMaxSimSpeed,
   startSimTour,
@@ -11,7 +11,7 @@ import {
 test.describe('switching', () => {
   test('demo progress survives tour switch; palettes differ', async ({ page }) => {
     const errors = trackConsoleErrors(page);
-    await gotoDemoMap(page);
+    await gotoDemoMapWithSw(page);
     await startSimTour(page);
     await setMaxSimSpeed(page);
     await waitForVisited(page, 'demo-welcome');

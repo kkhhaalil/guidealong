@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import {
-  gotoDemoMap,
+  gotoDemoMapWithSw,
   setMaxSimSpeed,
   startSimTour,
   trackConsoleErrors,
@@ -12,7 +12,7 @@ test.describe('drive', () => {
   test('sim x32 visits stops in order with chime, audio, and queue', async ({ page }) => {
     test.setTimeout(90_000);
     const errors = trackConsoleErrors(page);
-    await gotoDemoMap(page);
+    await gotoDemoMapWithSw(page);
     await startSimTour(page);
     await setMaxSimSpeed(page);
 
@@ -47,7 +47,7 @@ test.describe('drive', () => {
   test('manual preview does not mark visited until auto arrival', async ({ page }) => {
     test.setTimeout(120_000);
     const errors = trackConsoleErrors(page);
-    await gotoDemoMap(page);
+    await gotoDemoMapWithSw(page);
     await startSimTour(page);
     await page.waitForTimeout(500);
     await page.getByTestId('btn-sim-pause').click();
