@@ -1,10 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
 
+// Empty strings must fall through (CI may export an empty var).
 const chromePath =
-  process.env.PLAYWRIGHT_CHROME_PATH ??
-  process.env.CHROME_PATH ??
-  process.env.PLAYWRIGHT_CHROME_EXECUTABLE_PATH ??
-  '/usr/bin/google-chrome-stable';
+  [
+    process.env.PLAYWRIGHT_CHROME_PATH,
+    process.env.CHROME_PATH,
+    process.env.PLAYWRIGHT_CHROME_EXECUTABLE_PATH,
+  ].find((p) => p && p.length > 0) ?? '/usr/bin/google-chrome-stable';
 
 export default defineConfig({
   testDir: '../e2e',
