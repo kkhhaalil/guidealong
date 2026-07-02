@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="-apple-system,'PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c1440e"/>
+      <stop offset="0.55" stop-color="#e8743d"/>
+      <stop offset="1" stop-color="#f4c675"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="70" r="34" fill="#fff" opacity="0.16"/>
+  <path d="M0,300 L0,240 L0,230 L35,231 L70,244 L105,253 L140,242 L175,227 L210,224 L245,249 L280,254 L315,255 L350,236 L385,245 L420,234 L420,300 Z" fill="#000" opacity="0.10"/>
+  <path d="M0,300 L0,205 L0,217 L35,198 L70,191 L105,212 L140,209 L175,210 L210,203 L245,188 L280,217 L315,210 L350,207 L385,208 L420,197 L420,300 Z" fill="#000" opacity="0.16"/>
+  <text x="28" y="120" font-size="86" opacity="0.92">♨️</text>
+  <rect width="400" height="300" fill="url(#shade)"/>
+  <text x="28" y="250" fill="#fff" font-size="30" font-weight="700">艺术家颜料锅</text>
+  <text x="28" y="278" fill="#fff" font-size="15" opacity="0.85">Artists Paintpots</text>
+</svg>

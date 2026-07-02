@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="-apple-system,'PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b2d42"/>
+      <stop offset="0.55" stop-color="#4a5578"/>
+      <stop offset="1" stop-color="#9aa4c4"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="70" r="34" fill="#fff" opacity="0.16"/>
+  <path d="M0,300 L0,240 L0,255 L35,236 L70,245 L105,234 L140,251 L175,248 L210,241 L245,246 L280,247 L315,228 L350,237 L385,226 L420,243 L420,300 Z" fill="#000" opacity="0.10"/>
+  <path d="M0,300 L0,205 L0,207 L35,204 L70,221 L105,222 L140,211 L175,196 L210,209 L245,214 L280,191 L315,212 L350,197 L385,226 L420,211 L420,300 Z" fill="#000" opacity="0.16"/>
+  <text x="28" y="120" font-size="86" opacity="0.92">ℹ️</text>
+  <rect width="400" height="300" fill="url(#shade)"/>
+  <text x="28" y="250" fill="#fff" font-size="30" font-weight="700">欢迎来到黄石国家公园</text>
+  <text x="28" y="278" fill="#fff" font-size="15" opacity="0.85">Welcome to Yellowstone</text>
+</svg>

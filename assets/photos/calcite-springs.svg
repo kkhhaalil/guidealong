@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="-apple-system,'PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14342b"/>
+      <stop offset="0.55" stop-color="#2c6e57"/>
+      <stop offset="1" stop-color="#6fae86"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="70" r="34" fill="#fff" opacity="0.16"/>
+  <path d="M0,300 L0,240 L0,254 L35,255 L70,236 L105,245 L140,234 L175,251 L210,248 L245,241 L280,246 L315,247 L350,228 L385,237 L420,226 L420,300 Z" fill="#000" opacity="0.10"/>
+  <path d="M0,300 L0,205 L0,187 L35,224 L70,193 L105,190 L140,211 L175,224 L210,217 L245,194 L280,203 L315,192 L350,201 L385,218 L420,187 L420,300 Z" fill="#000" opacity="0.16"/>
+  <text x="28" y="120" font-size="86" opacity="0.92">🏞️</text>
+  <rect width="400" height="300" fill="url(#shade)"/>
+  <text x="28" y="250" fill="#fff" font-size="30" font-weight="700">方解石泉观景台</text>
+  <text x="28" y="278" fill="#fff" font-size="15" opacity="0.85">Calcite Springs Overlook</text>
+</svg>

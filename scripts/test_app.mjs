@@ -58,11 +58,32 @@ await page.screenshot({ path: `${SHOTS}/5-list.png` });
 console.log("progress:", await page.locator("#progress-count").textContent());
 console.log("list items:", await page.locator("#stops-list li").count());
 
-// manual play from list
-await page.locator("#stops-list li").nth(5).click();
+// manual play from list — pick a stop with a deep-dive (grand-prismatic)
+await page.locator("#stops-list li", { hasText: "大棱镜温泉" }).click();
 await page.waitForTimeout(1200);
 console.log("manual play:", await page.locator("#np-name").textContent());
+
+// bundled photo applied to now-playing card
+const photoBg = await page.evaluate(() => getComputedStyle(document.getElementById("np-photo")).backgroundImage);
+console.log("photo on card:", /assets\/photos\/.+\.svg/.test(photoBg) ? "YES ✓" : "NO ✗ (" + photoBg + ")");
+
+// detail panel: chips (season/wildlife) + layered "了解更多"
+await page.click("#btn-detail");
+await page.waitForTimeout(300);
+console.log("detail chips:", await page.locator("#np-chips .chip").count());
+console.log("deep-dive available:", !(await page.locator("#np-more-block").isHidden()));
 await page.screenshot({ path: `${SHOTS}/6-manual.png` });
+
+// play the deep-dive clip and confirm the -more source loads
+await page.click("#btn-more-audio");
+await page.waitForTimeout(1000);
+console.log("deep-dive src:", await page.evaluate(() => document.getElementById("narrator").currentSrc.includes("-more.mp3") ? "loaded ✓" : "NOT loaded ✗"));
+
+// MediaSession metadata populated
+console.log("mediaSession:", await page.evaluate(() => {
+  const m = navigator.mediaSession && navigator.mediaSession.metadata;
+  return m ? (m.title + " | " + m.artist) : "unavailable";
+}));
 
 console.log("external requests:", externalRequests.length ? externalRequests : "NONE ✓");
 console.log("page errors:", errors.length ? errors : "NONE ✓");

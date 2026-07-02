@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="-apple-system,'PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b4f6c"/>
+      <stop offset="0.55" stop-color="#1b8a9e"/>
+      <stop offset="1" stop-color="#7fd1d8"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="70" r="34" fill="#fff" opacity="0.16"/>
+  <path d="M0,300 L0,240 L0,251 L35,248 L70,241 L105,246 L140,247 L175,228 L210,237 L245,226 L280,243 L315,240 L350,233 L385,238 L420,239 L420,300 Z" fill="#000" opacity="0.10"/>
+  <path d="M0,300 L0,205 L0,213 L35,222 L70,223 L105,212 L140,201 L175,202 L210,211 L245,196 L280,185 L315,226 L350,207 L385,216 L420,185 L420,300 Z" fill="#000" opacity="0.16"/>
+  <text x="28" y="120" font-size="86" opacity="0.92">🌊</text>
+  <rect width="400" height="300" fill="url(#shade)"/>
+  <text x="28" y="250" fill="#fff" font-size="30" font-weight="700">北缘·瞭望点</text>
+  <text x="28" y="278" fill="#fff" font-size="15" opacity="0.85">North Rim, Lookout Point</text>
+</svg>

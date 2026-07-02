@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="-apple-system,'PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b2d42"/>
+      <stop offset="0.55" stop-color="#4a5578"/>
+      <stop offset="1" stop-color="#9aa4c4"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="70" r="34" fill="#fff" opacity="0.16"/>
+  <path d="M0,300 L0,240 L0,226 L35,243 L70,240 L105,233 L140,238 L175,239 L210,252 L245,229 L280,250 L315,235 L350,232 L385,225 L420,230 L420,300 Z" fill="#000" opacity="0.10"/>
+  <path d="M0,300 L0,205 L0,204 L35,197 L70,198 L105,187 L140,200 L175,209 L210,202 L245,199 L280,220 L315,217 L350,186 L385,191 L420,200 L420,300 Z" fill="#000" opacity="0.16"/>
+  <text x="28" y="120" font-size="86" opacity="0.92">ℹ️</text>
+  <rect width="400" height="300" fill="url(#shade)"/>
+  <text x="28" y="250" fill="#fff" font-size="30" font-weight="700">峡谷村</text>
+  <text x="28" y="278" fill="#fff" font-size="15" opacity="0.85">Canyon Village</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="-apple-system,'PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c1440e"/>
+      <stop offset="0.55" stop-color="#e8743d"/>
+      <stop offset="1" stop-color="#f4c675"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="70" r="34" fill="#fff" opacity="0.16"/>
+  <path d="M0,300 L0,240 L0,246 L35,247 L70,228 L105,237 L140,226 L175,243 L210,240 L245,233 L280,238 L315,239 L350,252 L385,229 L420,250 L420,300 Z" fill="#000" opacity="0.10"/>
+  <path d="M0,300 L0,205 L0,207 L35,216 L70,225 L105,214 L140,195 L175,208 L210,217 L245,202 L280,211 L315,184 L350,225 L385,206 L420,211 L420,300 Z" fill="#000" opacity="0.16"/>
+  <text x="28" y="120" font-size="86" opacity="0.92">♨️</text>
+  <rect width="400" height="300" fill="url(#shade)"/>
+  <text x="28" y="250" fill="#fff" font-size="30" font-weight="700">泥火山</text>
+  <text x="28" y="278" fill="#fff" font-size="15" opacity="0.85">Mud Volcano</text>
+</svg>

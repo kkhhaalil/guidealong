@@ -431,3 +431,112 @@ const TOUR_STOPS = [
     text: "前方右侧是吉本瀑布，吉本河在这里从二十六米高的岩壁上滑落，水流贴着岩面铺开，像一匹展开的白绸。很少有人知道，您脚下的这道岩壁正是黄石超级火山口的边缘，瀑布恰好跌落在六十四万年前那场大爆发留下的疤痕上。宽阔的观景步道沿公路修建，从停车场走过去非常轻松。从这里继续向北不远就回到麦迪逊枢纽，我们的环线之旅也将画上句号。感谢您的同行，祝您旅途愉快，后会有期！"
   }
 ];
+
+/* ============================================================
+ * 可选增强元数据，按 id 合并进 TOUR_STOPS：
+ *   more     — 分层讲解「了解更多」的延伸文本；对应 assets/audio/<id>-more.mp3
+ *   season   — 季节 / 开放时间提示
+ *   wildlife — 常见野生动物提示
+ * 缺省字段的站点会自动隐藏相应的界面元素。
+ * ============================================================ */
+const STOP_EXTRAS = {
+  "intro": {
+    season: "全年开放；冬季仅雪地车进入", wildlife: "麋鹿、野牛",
+    more: "小知识：黄石横跨怀俄明、蒙大拿和爱达荷三个州，面积约八千九百平方公里，比美国最小的两个州加起来还大。全园设有五个出入口，我们今天沿着形如横放数字八的大环线巡游，连同支线全程约三百公里。"
+  },
+  "madison": { season: "全年；清晨黄昏最佳", wildlife: "麋鹿、白头海雕" },
+  "firehole-canyon": { season: "景观支路夏季开放", wildlife: "河鸭" },
+  "fountain-paint-pot": { season: "全年；泥浆锅春季最活跃", wildlife: "野牛" },
+  "great-fountain": { season: "火洞湖支路夏秋开放；黄昏最美" },
+  "grand-prismatic": {
+    season: "全年；冬季蒸汽最盛，正午色彩最艳", wildlife: "野牛",
+    more: "冷知识：中心那抹深蓝并不是矿物的颜色。那里水温接近九十摄氏度，太烫，几乎没有微生物能存活；纯净的热水本身就会把蓝光散射出来，和天空、深海是同一个道理。越往外水温降低，五彩的嗜热微生物才渐次登场，晕出一圈圈暖色。"
+  },
+  "biscuit-basin": { season: "全年（栈道偶因热活动临时关闭）" },
+  "black-sand-basin": { season: "全年" },
+  "old-faithful": {
+    season: "全年；出发前查看喷发预测时间", wildlife: "野牛偶尔走进盆地",
+    more: "趣闻：老忠实既不是园内最大也不是最高的间歇泉，却是最'守信'的一个，因此最出名。它的喷发间隔与上一次喷发的时长有关——上一次喷得久，下一次就得多等一会儿。工作人员正是靠这个规律，把预测误差控制在十分钟以内。"
+  },
+  "kepler-cascades": { season: "全年" },
+  "isa-lake": { season: "盛夏睡莲铺满湖面" },
+  "west-thumb": {
+    season: "全年；冬季湖面冰洞奇观", wildlife: "水鸟、麋鹿",
+    more: "冷知识：西拇指这片湖湾本身就是一个直径约六公里的火山口，形成于约十七万年前的一次喷发，相当于黄石大火山口里后来又'开的一朵小花'。湖底至今仍有活跃热泉，冬天湖面封冻时，这些热点上方会留下一个个不冻的圆洞。"
+  },
+  "natural-bridge": { season: "步道夏季开放（春季常因熊关闭）", wildlife: "灰熊活动区" },
+  "lake-village": { season: "旅馆夏季营业", wildlife: "水獭、鹈鹕" },
+  "fishing-bridge": { season: "全面禁渔；六七月看鳟鱼洄游", wildlife: "刺喉鳟、灰熊" },
+  "lehardys-rapids": { season: "六月前后鳟鱼跳滩", wildlife: "鳟鱼、水鸟、灰熊" },
+  "mud-volcano": { season: "全年", wildlife: "野牛" },
+  "sulphur-caldron": { season: "全年", wildlife: "野牛" },
+  "hayden-valley": {
+    season: "全年通车；日出日落观兽最佳", wildlife: "野牛、灰熊、狼、郊狼",
+    more: "趣闻：海登山谷几乎不长大树，是因为这里曾是古黄石湖的湖底。湖水退去后留下厚厚的细腻沉积和黏土，排水差、根系难扎，乔木长不起来，却成就了一片一望无际、最适合野牛和狼群的开阔草甸。"
+  },
+  "upper-falls": { season: "全年" },
+  "artist-point": {
+    season: "全年；上午顺光",
+    more: "趣闻：一八七一年，摄影师威廉·杰克逊和画家托马斯·莫兰随海登考察队记录下这里的景色。正是这些照片和画作，让远在华盛顿的国会相信了西部'仙境'真实存在，并在次年促成黄石建园。"
+  },
+  "north-rim-lookout": { season: "全年；部分步道冬季关闭" },
+  "canyon-village": { season: "游客中心夏季开放" },
+  "dunraven-pass": { season: "仅夏秋开放（雪季封路）", wildlife: "灰熊、大角羊" },
+  "tower-fall": { season: "全年", wildlife: "黑熊" },
+  "calcite-springs": { season: "全年", wildlife: "大角羊" },
+  "tower-roosevelt": { season: "罗斯福小屋夏季营业", wildlife: "黑熊、野牛" },
+  "slough-creek": { season: "夏秋；黎明观狼", wildlife: "狼、野牛、灰熊" },
+  "lamar-valley": {
+    season: "全年通车；日出观兽最佳", wildlife: "野牛、狼、叉角羚、灰熊",
+    more: "冷知识：一九九五到九六年，共有三十一头加拿大灰狼被放归黄石。狼归来后，麋鹿不再敢长时间停留在河谷啃食，柳树和白杨得以长高，河岸随之稳固，连河狸也回来了——这种由顶级捕食者引发的连锁反应，被生态学家称为'营养级联'。"
+  },
+  "petrified-tree": { season: "支路夏季开放", wildlife: "黑熊" },
+  "blacktail-plateau": { season: "土路夏秋单向开放", wildlife: "叉角羚、野牛、熊" },
+  "undine-falls": { season: "全年" },
+  "mammoth": {
+    season: "全年；台地形态常年变化", wildlife: "麋鹿常驻草坪",
+    more: "冷知识：猛犸的热量可能并非来自正下方的岩浆，而是沿断层从东边诺里斯方向的地下热源流动过来，所以它的水温比其他热泉区更低。这里每天沉淀的碳酸钙可达两吨以上，梯田的形状往往几个月就会变个样。"
+  },
+  "golden-gate": { season: "全年（雪季偶有临时关闭）" },
+  "swan-lake-flat": { season: "全年；日出日落绝佳", wildlife: "野牛、麋鹿、灰熊、天鹅" },
+  "sheepeater-cliff": { season: "野餐地夏季开放", wildlife: "黄腹旱獭" },
+  "willow-park": { season: "全年；清晨黄昏看驼鹿", wildlife: "驼鹿、河狸" },
+  "obsidian-cliff": { season: "全年；禁止停留与采集" },
+  "roaring-mountain": { season: "全年；寒冷清晨蒸汽最盛" },
+  "norris": {
+    season: "全年（冬季步道有限）",
+    more: "冷知识：诺里斯的地下并不安分。这里几乎每年都会经历一次'热扰动'，泉水的温度和酸碱度骤变，一些泉眼变浑、变干，另一些则突然活跃起来。也正因如此，木栈道的走向常常要跟着地热的脾气改道。"
+  },
+  "artists-paintpots": { season: "全年；需步行一小段上坡" },
+  "beryl-spring": { season: "全年" },
+  "gibbon-falls": { season: "全年" },
+  "fires-of-88": {
+    season: "全年沿途可见年轻黑松林",
+    more: "冷知识：一九八八年的大火整整烧了几个月，动用了超过两万五千名消防人员，直到九月的初雪才真正被扑灭。事后研究发现，大火并没有'烧毁'黑松林，反而重启了它——这场火灾彻底改变了人们对森林火灾的看法。"
+  },
+  "excelsior-geyser": { season: "全年；冬季河面蒸汽壮观" },
+  "morning-glory": {
+    season: "需从老忠实步行前往",
+    more: "冷知识：一九五零年，为了清理牵牛花池，管理员曾人为降低水位，结果诱发了它罕见的一次喷发。从池底喷出的除了泥沙，还有大量硬币、袜子和手帕。这场意外的'考古'让人们第一次直观看到，几十年来游客到底往池里扔了多少东西。"
+  },
+  "craig-pass-winter": { season: "克雷格山口雪季封路" },
+  "cutthroat-battle": { season: "夏季常见清网渔船作业", wildlife: "鹈鹕、鱼鹰" },
+  "otter-creek-bears": { season: "全年", wildlife: "灰熊、野牛" },
+  "washburn-moths": { season: "邓雷文山口仅夏秋开放", wildlife: "灰熊、大角羊" },
+  "buffalo-ranch": { season: "全年通车", wildlife: "野牛、狼" },
+  "yellowstone-name": {
+    season: "全年",
+    more: "冷知识：把'黄石'写进历史的是刘易斯与克拉克探险队。一八零五年，他们按明尼塔里人的叫法，把这条河记作 Yellow Stone。至于中文的'黄石'，则是后来对英文名的直译，如今已成为这座公园最广为人知的名字。"
+  },
+  "stagecoach-days": { season: "全年" }
+};
+
+(function () {
+  TOUR_STOPS.forEach(function (s) {
+    var e = STOP_EXTRAS[s.id];
+    if (!e) return;
+    if (e.more) s.more = e.more;
+    if (e.season) s.season = e.season;
+    if (e.wildlife) s.wildlife = e.wildlife;
+  });
+})();

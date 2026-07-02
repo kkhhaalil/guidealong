@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="-apple-system,'PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d2c14"/>
+      <stop offset="0.55" stop-color="#7a5a2e"/>
+      <stop offset="1" stop-color="#c9a15a"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="70" r="34" fill="#fff" opacity="0.16"/>
+  <path d="M0,300 L0,240 L0,244 L35,253 L70,242 L105,227 L140,224 L175,249 L210,254 L245,255 L280,236 L315,245 L350,234 L385,251 L420,248 L420,300 Z" fill="#000" opacity="0.10"/>
+  <path d="M0,300 L0,205 L0,222 L35,199 L70,196 L105,221 L140,186 L175,207 L210,192 L245,197 L280,198 L315,187 L350,224 L385,217 L420,186 L420,300 Z" fill="#000" opacity="0.16"/>
+  <text x="28" y="120" font-size="86" opacity="0.92">🦬</text>
+  <rect width="400" height="300" fill="url(#shade)"/>
+  <text x="28" y="250" fill="#fff" font-size="30" font-weight="700">柳树公园</text>
+  <text x="28" y="278" fill="#fff" font-size="15" opacity="0.85">Willow Park</text>
+</svg>

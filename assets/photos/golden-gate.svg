@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="-apple-system,'PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14342b"/>
+      <stop offset="0.55" stop-color="#2c6e57"/>
+      <stop offset="1" stop-color="#6fae86"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="70" r="34" fill="#fff" opacity="0.16"/>
+  <path d="M0,300 L0,240 L0,253 L35,242 L70,227 L105,224 L140,249 L175,254 L210,255 L245,236 L280,245 L315,234 L350,251 L385,248 L420,241 L420,300 Z" fill="#000" opacity="0.10"/>
+  <path d="M0,300 L0,205 L0,183 L35,184 L70,209 L105,226 L140,219 L175,188 L210,189 L245,186 L280,191 L315,208 L350,197 L385,202 L420,203 L420,300 Z" fill="#000" opacity="0.16"/>
+  <text x="28" y="120" font-size="86" opacity="0.92">🏞️</text>
+  <rect width="400" height="300" fill="url(#shade)"/>
+  <text x="28" y="250" fill="#fff" font-size="30" font-weight="700">金门峡谷</text>
+  <text x="28" y="278" fill="#fff" font-size="15" opacity="0.85">Golden Gate Canyon</text>
+</svg>

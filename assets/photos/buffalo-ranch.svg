@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="-apple-system,'PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a2c5a"/>
+      <stop offset="0.55" stop-color="#7d4a8c"/>
+      <stop offset="1" stop-color="#c79bd6"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="70" r="34" fill="#fff" opacity="0.16"/>
+  <path d="M0,300 L0,240 L0,238 L35,239 L70,252 L105,229 L140,250 L175,235 L210,232 L245,225 L280,230 L315,231 L350,244 L385,253 L420,242 L420,300 Z" fill="#000" opacity="0.10"/>
+  <path d="M0,300 L0,205 L0,189 L35,194 L70,223 L105,208 L140,201 L175,190 L210,211 L245,204 L280,201 L315,198 L350,223 L385,196 L420,197 L420,300 Z" fill="#000" opacity="0.16"/>
+  <text x="28" y="120" font-size="86" opacity="0.92">📖</text>
+  <rect width="400" height="300" fill="url(#shade)"/>
+  <text x="28" y="250" fill="#fff" font-size="30" font-weight="700">野牛重生之地</text>
+  <text x="28" y="278" fill="#fff" font-size="15" opacity="0.85">Lamar Buffalo Ranch</text>
+</svg>

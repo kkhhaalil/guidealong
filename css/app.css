@@ -12,7 +12,7 @@
   --radius: 16px;
   --safe-b: env(safe-area-inset-bottom, 0px);
 }
-* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 html, body { height: 100%; overscroll-behavior: none; }
 body {
   font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
@@ -59,6 +59,8 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 .btn.primary { background: var(--green); color: #fff; box-shadow: var(--shadow); }
 .btn.primary:active { background: var(--green-2); }
 .btn.secondary { background: #fff; color: var(--green); border: 1.5px solid var(--green); }
+.btn.resume { background: var(--amber); color: #3b2a06; box-shadow: var(--shadow); }
+.btn.resume:active { background: var(--amber-2); }
 
 /* ---------- 地图 ---------- */
 #app { position: fixed; inset: 0; }
@@ -132,17 +134,43 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 .idle-sub { font-size: 12px; color: var(--ink-2); margin-top: 2px; }
 
 #player-active .np-head { display: flex; align-items: center; gap: 12px; padding: 12px 14px 10px; }
-.np-icon {
-  width: 44px; height: 44px; border-radius: 12px; flex: none;
+.np-photo {
+  width: 48px; height: 48px; border-radius: 12px; flex: none;
   background: linear-gradient(150deg, var(--green), #3b7a5e);
+  background-size: cover; background-position: center;
   display: flex; align-items: center; justify-content: center; font-size: 22px;
+  overflow: hidden;
 }
+.np-photo.has-photo #np-icon { display: none; }
 .np-meta { flex: 1; min-width: 0; }
 .np-name { font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .np-sub { font-size: 12px; color: var(--amber); font-weight: 600; margin-top: 2px; }
 .np-btn { font-size: 20px; width: 40px; height: 40px; border-radius: 50%; background: var(--bg); color: var(--green); flex: none; }
+.np-btn.active { background: var(--green); color: #fff; }
 .np-progress { height: 4px; background: var(--line); }
 #np-bar { height: 100%; width: 0%; background: var(--amber); transition: width .3s linear; }
+
+/* 分层讲解 + 季节/野生动物详情面板 */
+#np-extra {
+  border-top: 1px solid var(--line); padding: 12px 14px 14px;
+  max-height: 42vh; overflow-y: auto;
+}
+#np-extra[hidden] { display: none; }
+#np-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px;
+  background: var(--bg); color: var(--ink-2); border: 1px solid var(--line);
+}
+.chip.season { color: #2c6e57; }
+.chip.wildlife { color: #8a5a1e; }
+.np-text { font-size: 13.5px; line-height: 1.75; color: var(--ink); }
+.np-text.more { margin-top: 10px; color: var(--ink-2); }
+.more-audio-btn {
+  margin-top: 10px; font-size: 13px; font-weight: 600;
+  padding: 8px 14px; border-radius: 10px; background: var(--green); color: #fff;
+}
+.more-audio-btn.playing { background: var(--amber); color: #3b2a06; }
 
 /* ---------- 站点列表 ---------- */
 #stops-panel {
