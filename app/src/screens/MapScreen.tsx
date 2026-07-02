@@ -222,7 +222,9 @@ export function MapScreen({ tourId }: MapScreenProps) {
 
   return (
     <div className="relative h-[100dvh] w-full overflow-hidden bg-surface" data-testid="map-screen">
-      <ThemeToggle className="absolute right-3 top-[4.5rem] z-chrome" />
+      {/* Right edge, top-down: Leaflet zoom control (~10-118px, inside the map's
+          isolated context), follow toggle (120px), theme toggle (180px). */}
+      <ThemeToggle className="absolute right-3 top-[11.25rem] z-chrome" />
       <div className={started ? 'h-full w-full' : 'pointer-events-none h-full w-full'}>
         <MapView
         tourId={tourId}
