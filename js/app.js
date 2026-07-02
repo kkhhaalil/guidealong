@@ -58,7 +58,11 @@
   var markers = {};
   TOUR_STOPS.forEach(function (s, i) {
     var m = L.marker([s.lat, s.lng], { icon: poiIcon(s, i) }).addTo(map);
-    m.on("click", function () { focusStop(s, true); });
+    m.on("click", function () {
+      focusStop(s, false);
+      queue = [];
+      playStop(s, false);
+    });
     markers[s.id] = m;
   });
   function poiIcon(s, i) {
