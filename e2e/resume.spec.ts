@@ -1,11 +1,11 @@
 import { expect, test } from '@playwright/test';
-import { gotoDemoMap, setMaxSimSpeed, startSimTour, trackConsoleErrors, waitForVisited } from './helpers';
+import { gotoDemoMapWithSw, setMaxSimSpeed, startSimTour, trackConsoleErrors, waitForVisited } from './helpers';
 
 test.describe('resume', () => {
   test('reload offers resume and restores position + speed', async ({ page }) => {
     test.setTimeout(90_000);
     const errors = trackConsoleErrors(page);
-    await gotoDemoMap(page);
+    await gotoDemoMapWithSw(page);
     await startSimTour(page);
     await setMaxSimSpeed(page);
     await waitForVisited(page, 'demo-welcome');
