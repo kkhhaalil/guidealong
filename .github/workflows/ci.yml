@@ -48,6 +48,15 @@ jobs:
       - name: Verify system Chrome
         run: google-chrome-stable --version
 
+      # Visual-regression baselines are rendered with these fonts. Bare
+      # runners have no CJK font (Chinese renders as tofu) and resolve the
+      # playback glyphs to color emoji, which blows the screenshot diffs.
+      - name: Install fonts matching the baseline environment
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-core fonts-noto-color-emoji fonts-wqy-microhei fonts-droid-fallback
+          sudo fc-cache -f
+
       - name: E2E (functional, a11y, visual, PWA)
         run: npm run e2e
 
