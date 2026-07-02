@@ -1,0 +1,5 @@
+node_modules/
+package.json
+package-lock.json
+# test screenshots from scripts/test_*.mjs
+/[0-9]-*.png

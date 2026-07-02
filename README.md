@@ -2,7 +2,7 @@
 
 A fully offline, mobile-friendly HTML clone of the GuideAlong GPS audio tour
 experience, covering the **Yellowstone National Park Grand Loop** with
-**25 stops narrated in natural-sounding Mandarin Chinese**.
+**53 stops narrated in natural-sounding Mandarin Chinese**.
 
 Everything is bundled — map tiles, audio, code. After the folder is on your
 device, **no internet connection is needed at all**.
@@ -15,7 +15,7 @@ device, **no internet connection is needed at all**.
 - 🔊 **自然中文语音** — 25 段原创解说词，使用微软 Edge 神经网络语音（晓晓）预生成，非机器人腔
 - 📋 **站点列表** — 收听进度持久保存（localStorage），可手动点播任意站点，可重置
 - 📴 **零网络请求** — 已验证运行时不发出任何外部请求
-- 📲 **PWA 可安装** — Service Worker 预缓存全部 677 个文件；通过 HTTPS 访问一次后即可完全离线使用，并可「添加到主屏幕」
+- 📲 **PWA 可安装** — Service Worker 预缓存全部 705 个文件；通过 HTTPS 访问一次后即可完全离线使用，并可「添加到主屏幕」
 
 ## 站点 Stops (25)
 
@@ -52,7 +52,7 @@ css/app.css           样式（移动优先）
 js/app.js             地图 / 触发 / 播放器 / 模拟器逻辑
 js/tour-data.js       25 个站点（坐标、触发半径、原创中文解说词）
 js/route-data.js      沿真实道路的大环线路线（OSRM 生成，约 8500 点）
-assets/audio/*.mp3    预生成的中文讲解（edge-tts, zh-CN-XiaoxiaoNeural）
+assets/audio/*.mp3    预生成的中文讲解（edge-tts, zh-CN-YunjianNeural）
 assets/icons/         PWA 图标（scripts/gen_icons.mjs 生成）
 tiles/{z}/{x}/{y}.png 离线地图瓦片（USGS The National Map，公有领域）
 vendor/leaflet/       Leaflet 1.9.4（本地副本）
