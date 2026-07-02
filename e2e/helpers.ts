@@ -35,6 +35,11 @@ export async function downloadDemoTour(page: Page): Promise<void> {
 }
 
 export async function gotoDemoMap(page: Page): Promise<void> {
+  // Establish SW control first: the product flow is download-then-drive, so
+  // the map is always visited with an active SW. Without it, a cold first
+  // load races tile requests against SW activation and out-of-corridor tiles
+  // 404 straight from the host (observed against GitHub Pages).
+  await ensureSwControlling(page);
   await page.goto('./#/tour/demo/map');
   await page.getByTestId('start-overlay').waitFor({ state: 'visible' });
 }
