@@ -1,0 +1,17 @@
+{
+  "name": "黄石国家公园 GPS 语音导览",
+  "short_name": "黄石导览",
+  "description": "离线 GPS 自动触发中文语音导览 · 黄石大环线 25 站",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f7f5f0",
+  "theme_color": "#14342b",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
