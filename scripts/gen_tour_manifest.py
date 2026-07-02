@@ -121,7 +121,7 @@ def main():
 
     for tid in tour_ids:
         update_tour(tid)
-    write_index(tour_ids if not args.all else discover_tours())
+    write_index(discover_tours())
 
 
 if __name__ == "__main__":

@@ -13,8 +13,18 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '..');
 const distDir = path.join(repoRoot, 'app', 'dist');
 
-const PRECACHE_LIMIT = 2.5 * 1024 * 1024;
+const DEFAULT_PRECACHE_LIMIT = 2.5 * 1024 * 1024;
 const MAIN_GZIP_LIMIT = 900 * 1024;
+
+function precacheLimit() {
+  const kb = process.env.LIMIT_PRECACHE_KB ?? process.argv.find((a) => a.startsWith('--limit-precache-kb='))?.split('=')[1];
+  if (kb != null && kb !== '') {
+    const n = Number(kb);
+    if (!Number.isFinite(n) || n <= 0) throw new Error(`invalid precache limit: ${kb}`);
+    return n * 1024;
+  }
+  return DEFAULT_PRECACHE_LIMIT;
+}
 
 function gzipSize(buf) {
   return new Promise((resolve, reject) => {
@@ -66,6 +76,7 @@ async function findMainJs() {
 }
 
 async function main() {
+  const PRECACHE_LIMIT = precacheLimit();
   const swPath = path.join(distDir, 'sw.js');
   const swText = await readFile(swPath, 'utf8');
   const list = parsePrecacheEntries(swText);
