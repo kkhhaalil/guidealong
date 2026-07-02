@@ -3,7 +3,7 @@
   "use strict";
 
   var CAT_ICON = { geyser: "⛲", spring: "♨️", falls: "🌊", wildlife: "🦬", landmark: "🏞️", info: "ℹ️" };
-  var SIM_SPEEDS = [1, 2, 4, 8, 16];      // 倍速档位（基准 60 km/h）
+  var SIM_SPEEDS = [1, 2, 4, 8, 16, 32];  // 倍速档位（基准 60 km/h）
   var BASE_KMH = 60;
   var STORE_KEY = "ynp-tour-visited";
 
