@@ -3,7 +3,10 @@ import { setIdleAudioSession, setNarrationAudioSession } from './audioSession.ts
 import { pushGaEvent } from '../test/gaSurface.ts';
 
 /** HTMLAudioElement-backed AudioPort for tour narration. */
-export function createHtmlAudio(): AudioPort & { element: HTMLAudioElement } {
+export function createHtmlAudio(): AudioPort & {
+  element: HTMLAudioElement;
+  destroy: () => void;
+} {
   const audio = new Audio();
   audio.preload = 'auto';
 
@@ -40,8 +43,23 @@ export function createHtmlAudio(): AudioPort & { element: HTMLAudioElement } {
     for (const cb of timeCbs) cb(t, Number.isFinite(d) ? d : 0);
   });
 
+  // Locking the screen mid-narration: the session was claimed for the
+  // foreground (transient-solo, silenced on lock) — re-claim so it upgrades
+  // to 'playback' and stays audible. Returning to foreground downgrades
+  // back, restoring music auto-resume behavior for the current clip.
+  const onVisibilityChange = () => {
+    if (!audio.paused) setNarrationAudioSession();
+  };
+  document.addEventListener('visibilitychange', onVisibilityChange);
+
   return {
     element: audio,
+
+    destroy() {
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+      if (releaseTimer) clearTimeout(releaseTimer);
+      audio.pause();
+    },
 
     play(url: string) {
       if (audio.src !== url) audio.src = url;

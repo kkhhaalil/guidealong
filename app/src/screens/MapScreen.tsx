@@ -130,6 +130,7 @@ export function MapScreen({ tourId }: MapScreenProps) {
 
     return () => {
       unbindVolume();
+      audio.destroy();
       if (window.__ga) delete window.__ga.getAudioVolume;
     };
   }, [manifest, route, stops, tourId, initEngine, loadTour]);
