@@ -1,0 +1,248 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Layer 2 — semantic color tokens as CSS variables (§5.1) */
+
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+
+  --font-display: 'Alfa Slab One', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  --font-body: 'Source Sans 3', 'PingFang SC', 'Noto Sans SC', sans-serif;
+
+  --text-display-xl: 3rem;
+  --text-display-lg: 2.25rem;
+  --text-display-md: 1.75rem;
+  --text-title-lg: 1.5rem;
+  --text-title-md: 1.25rem;
+  --text-body-lg: 1.125rem;
+  --text-body-md: 1rem;
+  --text-body-sm: 0.875rem;
+  --text-label-md: 0.8125rem;
+
+  --radius-poster: 24px;
+  --radius-card: 16px;
+  --radius-chip: 999px;
+
+  --shadow-poster: 0 8px 24px rgb(0 0 0 / 0.18);
+  --shadow-card: 0 4px 12px rgb(0 0 0 / 0.12);
+
+  --motion-fast: 120ms;
+  --motion-normal: 200ms;
+  --motion-slow: 320ms;
+
+  --z-base: 0;
+  --z-chrome: 10;
+  --z-sheet: 40;
+  --z-toast: 50;
+
+  /* Default shell palette — light (Yellowstone-inspired poster tones) */
+  --color-surface: 245 240 230;
+  --color-ink: 26 32 28;
+  --color-ink-muted: 90 98 92;
+  --color-primary: 26 107 92;
+  --color-primary-foreground: 255 252 245;
+  --color-primary-50: 232 248 244;
+  --color-primary-100: 200 236 228;
+  --color-primary-200: 150 214 200;
+  --color-primary-300: 96 186 168;
+  --color-primary-400: 52 148 130;
+  --color-primary-600: 20 86 74;
+  --color-primary-700: 14 64 56;
+  --color-primary-800: 10 46 40;
+  --color-primary-900: 6 30 26;
+  --color-accent: 212 148 42;
+  --color-poster-sky: 120 176 196;
+  --color-poster-land: 72 128 88;
+  --color-secondary: 218 208 188;
+  --color-secondary-foreground: 40 36 28;
+  --color-border: 200 192 176;
+  --color-success: 52 131 82;
+  --color-warn: 212 148 42;
+  --color-danger: 185 48 48;
+  --gradient-hero: linear-gradient(
+    165deg,
+    rgb(var(--color-poster-sky)) 0%,
+    rgb(var(--color-primary)) 45%,
+    rgb(var(--color-poster-land)) 100%
+  );
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+
+    --color-surface: 18 22 20;
+    --color-ink: 240 236 228;
+    --color-ink-muted: 168 172 166;
+    --color-primary: 88 192 170;
+    --color-primary-foreground: 12 20 18;
+    --color-primary-50: 20 40 36;
+    --color-primary-100: 28 56 50;
+    --color-primary-200: 36 76 68;
+    --color-primary-300: 48 100 90;
+    --color-primary-400: 58 130 116;
+    --color-primary-600: 96 200 180;
+    --color-primary-700: 130 220 200;
+    --color-primary-800: 170 235 220;
+    --color-primary-900: 210 248 240;
+    --color-accent: 232 176 72;
+    --color-poster-sky: 56 88 104;
+    --color-poster-land: 40 72 52;
+    --color-secondary: 48 52 50;
+    --color-secondary-foreground: 220 216 208;
+    --color-border: 56 64 60;
+    --color-success: 102 181 132;
+    --color-warn: 232 176 72;
+    --color-danger: 232 96 96;
+    --gradient-hero: linear-gradient(
+      165deg,
+      rgb(var(--color-poster-sky)) 0%,
+      rgb(var(--color-primary)) 45%,
+      rgb(var(--color-poster-land)) 100%
+    );
+  }
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-surface: 18 22 20;
+  --color-ink: 240 236 228;
+  --color-ink-muted: 168 172 166;
+  --color-primary: 88 192 170;
+  --color-primary-foreground: 12 20 18;
+  --color-primary-50: 20 40 36;
+  --color-primary-100: 28 56 50;
+  --color-primary-200: 36 76 68;
+  --color-primary-300: 48 100 90;
+  --color-primary-400: 58 130 116;
+  --color-primary-600: 96 200 180;
+  --color-primary-700: 130 220 200;
+  --color-primary-800: 170 235 220;
+  --color-primary-900: 210 248 240;
+  --color-accent: 232 176 72;
+  --color-poster-sky: 56 88 104;
+  --color-poster-land: 40 72 52;
+  --color-secondary: 48 52 50;
+  --color-secondary-foreground: 220 216 208;
+  --color-border: 56 64 60;
+  --color-success: 102 181 132;
+  --color-warn: 232 176 72;
+  --color-danger: 232 96 96;
+  --gradient-hero: linear-gradient(
+    165deg,
+    rgb(var(--color-poster-sky)) 0%,
+    rgb(var(--color-primary)) 45%,
+    rgb(var(--color-poster-land)) 100%
+  );
+}
+
+@layer base {
+  * {
+    touch-action: manipulation;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+    margin: 0;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: rgb(var(--color-surface));
+    color: rgb(var(--color-ink));
+  }
+
+  .leaflet-host,
+  .leaflet-container {
+    touch-action: none;
+  }
+
+  .leaflet-control-attribution {
+    font-size: 10px;
+    max-width: 50%;
+    pointer-events: auto;
+  }
+
+  .ga-stop-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgb(var(--color-surface));
+    border: 2px solid rgb(var(--color-primary));
+    font-size: 18px;
+    line-height: 1;
+    box-shadow: var(--shadow-card);
+  }
+
+  .ga-stop-marker--visited {
+    opacity: 0.55;
+    border-color: rgb(var(--color-success));
+  }
+
+  .ga-puck {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgb(var(--color-primary));
+    color: rgb(var(--color-primary-foreground));
+    font-size: 20px;
+    line-height: 1;
+    box-shadow: var(--shadow-card);
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--color-primary));
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .ga-sheet-enter {
+    animation: ga-sheet-slide-up var(--motion-slow) ease-out;
+  }
+
+  @keyframes ga-sheet-slide-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ga-sheet-enter {
+      animation: none;
+    }
+  }
+}
+
+/* Outside @layer so these beat Leaflet's unlayered CSS (§5.3 touch targets). */
+.leaflet-container .leaflet-bar a {
+  width: 48px !important;
+  height: 48px !important;
+  line-height: 48px !important;
+  font-size: 22px !important;
+}

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "demo",
+  "title": "演示公园",
+  "titleEn": "Demo Park",
+  "language": "zh-CN",
+  "version": "ddec62f9b0c9",
+  "bytes": 144070,
+  "fileCount": 211,
+  "map": {
+    "center": [
+      35.065,
+      -109.78
+    ],
+    "minZoom": 13,
+    "maxZoom": 15,
+    "bounds": [
+      [
+        34.98,
+        -109.92
+      ],
+      [
+        35.15,
+        -109.64
+      ]
+    ],
+    "attribution": "Demo fixture — not real map data"
+  },
+  "theme": {
+    "light": {
+      "surface": "#f5e8e0",
+      "ink": "#2a1820",
+      "primary": "#8b3a62",
+      "accent": "#c44d2a",
+      "posterSky": "#c98a9e",
+      "posterLand": "#a87088",
+      "gradientHero": "linear-gradient(165deg, #c98a9e 0%, #8b3a62 45%, #a87088 100%)",
+      "success": "#4a8b5c",
+      "warn": "#d4762a",
+      "danger": "#b83248"
+    },
+    "dark": {
+      "surface": "#1a1218",
+      "ink": "#f0e4e8",
+      "primary": "#c878a8",
+      "accent": "#e87850",
+      "posterSky": "#4a2838",
+      "posterLand": "#3a2030",
+      "gradientHero": "linear-gradient(165deg, #4a2838 0%, #c878a8 45%, #3a2030 100%)",
+      "success": "#6ab080",
+      "warn": "#e8a050",
+      "danger": "#e86070"
+    }
+  },
+  "posterArt": "poster.svg"
+}

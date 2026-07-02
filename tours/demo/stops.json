@@ -1,0 +1,45 @@
+[
+  {
+    "id": "demo-welcome",
+    "name": "欢迎来到演示公园",
+    "nameEn": "Welcome to Demo Park",
+    "lat": 35.07204,
+    "lng": -109.72568,
+    "radius": 400,
+    "category": "info",
+    "text": "欢迎体验离线导览演示！这是一条虚构的沙漠环线，用于测试多公园切换。"
+  },
+  {
+    "id": "demo-ridge",
+    "name": "彩绘山脊",
+    "nameEn": "Painted Ridge",
+    "lat": 35.1051,
+    "lng": -109.75503,
+    "radius": 600,
+    "category": "landmark",
+    "text": "眼前这道赭红色山脊是沉积岩层层叠染色的结果，夕阳下尤其艳丽。",
+    "more": "延伸讲解：数百万年的风化与氧化铁沉积，让岩层呈现出从紫红到锈橙的渐变。"
+  },
+  {
+    "id": "demo-spring",
+    "name": "紫泉洼地",
+    "nameEn": "Violet Spring Basin",
+    "lat": 35.1051,
+    "lng": -109.75503,
+    "radius": 600,
+    "category": "spring",
+    "text": "这处浅洼地因矿物质富集而呈现淡紫色，是干旱区难得的水源痕迹。",
+    "season": "春季",
+    "wildlife": "沙漠蜥蜴"
+  },
+  {
+    "id": "demo-finish",
+    "name": "环线终点",
+    "nameEn": "Loop Finish",
+    "lat": 35.02,
+    "lng": -109.78,
+    "radius": 400,
+    "category": "info",
+    "text": "演示环线即将闭合。您可以切换回黄石公园，体验不同的海报配色。"
+  }
+]

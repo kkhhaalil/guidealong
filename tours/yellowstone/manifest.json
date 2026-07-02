@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "yellowstone",
+  "title": "黄石国家公园",
+  "titleEn": "Yellowstone National Park",
+  "language": "zh-CN",
+  "version": "85e082ae092d",
+  "bytes": 27762231,
+  "fileCount": 763,
+  "map": {
+    "center": [
+      44.625,
+      -110.5
+    ],
+    "minZoom": 9,
+    "maxZoom": 13,
+    "bounds": [
+      [
+        44.1,
+        -111.2
+      ],
+      [
+        45.15,
+        -109.8
+      ]
+    ],
+    "attribution": "USGS The National Map"
+  },
+  "theme": {
+    "light": {
+      "surface": "#f5f0e6",
+      "ink": "#1a201c",
+      "primary": "#1a6b5c",
+      "accent": "#d4942a",
+      "posterSky": "#78b0c4",
+      "posterLand": "#488058",
+      "gradientHero": "linear-gradient(165deg, #78b0c4 0%, #1a6b5c 45%, #488058 100%)",
+      "success": "#348352",
+      "warn": "#d4942a",
+      "danger": "#b93030"
+    },
+    "dark": {
+      "surface": "#121614",
+      "ink": "#f0ece4",
+      "primary": "#58c0aa",
+      "accent": "#e8b048",
+      "posterSky": "#385868",
+      "posterLand": "#284834",
+      "gradientHero": "linear-gradient(165deg, #385868 0%, #58c0aa 45%, #284834 100%)",
+      "success": "#66b584",
+      "warn": "#e8b048",
+      "danger": "#e86060"
+    }
+  },
+  "posterArt": "poster.svg"
+}

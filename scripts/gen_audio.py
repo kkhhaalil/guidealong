@@ -1,14 +1,8 @@
 #!/usr/bin/env python3
 """Generate Chinese narration MP3s for each tour stop using edge-tts.
 
-Voice: zh-CN-YunjianNeural (male, warm/energetic).
-
-For every stop this writes assets/audio/<id>.mp3 from `text`. Stops that also
-carry a `more` field (layered "了解更多" deep-dive) additionally get
-assets/audio/<id>-more.mp3.
-
-Stops are read by evaluating js/tour-data.js with Node (after the STOP_EXTRAS
-merge runs), so the data stays the single source of truth — no brittle regex.
+Reads tours/<id>/stops.json; voice/rate from tours/<id>/tour.config.json.
+Writes tours/<id>/audio/<id>.mp3 and <id>-more.mp3 for stops with `more`.
 
 Setup:
   pip install edge-tts    # and Node.js on PATH
@@ -16,50 +10,54 @@ Setup:
   #   cat /root/.ccr/ca-bundle.crt >> $(python3 -c "import certifi; print(certifi.where())")
 
 Usage:
-  python3 scripts/gen_audio.py                 # regenerate everything
-  python3 scripts/gen_audio.py intro madison   # only these stop ids
-  python3 scripts/gen_audio.py grand-prismatic-more   # a specific -more clip
+  python3 scripts/gen_audio.py --tour yellowstone
+  python3 scripts/gen_audio.py --tour yellowstone intro madison
+  python3 scripts/gen_audio.py --tour yellowstone grand-prismatic-more
 """
+import argparse
 import asyncio
 import json
 import os
-import subprocess
 import sys
 
 import edge_tts
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, "js", "tour-data.js")
-OUT = os.path.join(ROOT, "assets", "audio")
-
-VOICE = os.environ.get("TTS_VOICE", "zh-CN-YunjianNeural")
-RATE = os.environ.get("TTS_RATE", "-4%")
-CONCURRENCY = 4
 
 
-def parse_stops():
-    """Return list of (audio_id, text). Deep-dives get an id of '<id>-more'."""
-    node = (
-        "const fs=require('fs');"
-        "eval(fs.readFileSync(%r,'utf8')+';globalThis.__S=TOUR_STOPS');"
-        "process.stdout.write(JSON.stringify(globalThis.__S.map("
-        "s=>({id:s.id,text:s.text,more:s.more||null}))));" % SRC
+def tour_paths(tour_id):
+    tour_dir = os.path.join(ROOT, "tours", tour_id)
+    return (
+        tour_dir,
+        os.path.join(tour_dir, "stops.json"),
+        os.path.join(tour_dir, "tour.config.json"),
+        os.path.join(tour_dir, "audio"),
     )
-    raw = subprocess.check_output(["node", "-e", node]).decode("utf-8")
+
+
+def load_config(config_path):
+    with open(config_path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def parse_stops(stops_path):
+    """Return list of (audio_id, text). Deep-dives get an id of '<id>-more'."""
+    with open(stops_path, encoding="utf-8") as f:
+        stops = json.load(f)
     items = []
-    for s in json.loads(raw):
+    for s in stops:
         items.append((s["id"], s["text"]))
         if s.get("more"):
             items.append((s["id"] + "-more", s["more"]))
     return items
 
 
-async def gen(sem, audio_id, text):
-    out = os.path.join(OUT, f"{audio_id}.mp3")
+async def gen(sem, out_dir, voice, rate, audio_id, text):
+    out = os.path.join(out_dir, f"{audio_id}.mp3")
     async with sem:
         for attempt in range(4):
             try:
-                tts = edge_tts.Communicate(text, VOICE, rate=RATE)
+                tts = edge_tts.Communicate(text, voice, rate=rate)
                 await tts.save(out)
                 if os.path.getsize(out) > 5000:
                     print(f"OK  {audio_id}  {os.path.getsize(out)//1024} KB  ({len(text)} chars)")
@@ -73,17 +71,27 @@ async def gen(sem, audio_id, text):
 
 
 async def main():
-    os.makedirs(OUT, exist_ok=True)
-    stops = parse_stops()
-    only = set(sys.argv[1:])
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--tour", required=True, help="tour id")
+    ap.add_argument("ids", nargs="*", help="optional stop/audio ids to regenerate")
+    args = ap.parse_args()
+
+    _tour_dir, stops_path, config_path, out_dir = tour_paths(args.tour)
+    config = load_config(config_path)
+    voice = os.environ.get("TTS_VOICE", config.get("voice", "zh-CN-YunjianNeural"))
+    rate = os.environ.get("TTS_RATE", config.get("rate", "-4%"))
+
+    os.makedirs(out_dir, exist_ok=True)
+    stops = parse_stops(stops_path)
+    only = set(args.ids)
     if only:
         stops = [s for s in stops if s[0] in only]
         missing = only - {s for s, _ in stops}
         if missing:
             sys.exit(f"unknown audio ids: {', '.join(sorted(missing))}")
-    print(f"{len(stops)} clips, voice={VOICE}, rate={RATE}")
-    sem = asyncio.Semaphore(CONCURRENCY)
-    await asyncio.gather(*(gen(sem, aid, text) for aid, text in stops))
+    print(f"{len(stops)} clips, tour={args.tour}, voice={voice}, rate={rate}")
+    sem = asyncio.Semaphore(4)
+    await asyncio.gather(*(gen(sem, out_dir, voice, rate, aid, text) for aid, text in stops))
     print("done")
 
 
