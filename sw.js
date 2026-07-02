@@ -1,5 +1,5 @@
 /* 自动生成：完整预缓存清单（705 个文件） */
-const CACHE = "ynp-tour-1d7c8006be";
+const CACHE = "ynp-tour-ad0076a503";
 const ASSETS = [
 "assets/audio/artist-point.mp3",
 "assets/audio/artists-paintpots.mp3",
