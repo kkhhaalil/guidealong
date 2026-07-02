@@ -3,7 +3,7 @@
   "use strict";
 
   var CAT_ICON = { geyser: "⛲", spring: "♨️", falls: "🌊", wildlife: "🦬", landmark: "🏞️", info: "ℹ️" };
-  var SIM_SPEEDS = [1, 2, 4, 8, 16];      // 倍速档位（基准 60 km/h）
+  var SIM_SPEEDS = [1, 2, 4, 8, 16, 32];  // 倍速档位（基准 60 km/h）
   var BASE_KMH = 60;
   var STORE_KEY = "ynp-tour-visited";
 
@@ -58,7 +58,11 @@
   var markers = {};
   TOUR_STOPS.forEach(function (s, i) {
     var m = L.marker([s.lat, s.lng], { icon: poiIcon(s, i) }).addTo(map);
-    m.on("click", function () { focusStop(s, true); });
+    m.on("click", function () {
+      focusStop(s, false);
+      queue = [];
+      playStop(s, false);
+    });
     markers[s.id] = m;
   });
   function poiIcon(s, i) {
