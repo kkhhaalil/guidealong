@@ -141,12 +141,28 @@ async function serveShellAsset(request: Request): Promise<Response> {
   }
 }
 
+// 1x1 transparent PNG. Served for image requests that miss both cache and
+// network (e.g. map tiles outside a tour package's coverage, or optional
+// per-stop photos a tour doesn't ship). A 200 keeps the console clean and
+// lets <img> onerror/decode handling degrade gracefully; a 503 would log
+// "Failed to load resource" for every legitimately-absent tile while offline.
+const TRANSPARENT_PNG = Uint8Array.from(
+  atob('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=='),
+  (c) => c.charCodeAt(0),
+);
+
 async function serveTourAsset(tourId: string, request: Request): Promise<Response> {
   const cached = await matchTourCache(tourId, request);
   if (cached) return cached;
   try {
     return await fetch(request);
   } catch {
+    if (request.destination === 'image') {
+      return new Response(TRANSPARENT_PNG, {
+        status: 200,
+        headers: { 'Content-Type': 'image/png' },
+      });
+    }
     return new Response('Tour asset unavailable offline', { status: 503 });
   }
 }
