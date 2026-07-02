@@ -2,6 +2,13 @@
 (function () {
   "use strict";
 
+  // 禁止页面缩放：双击缩放由 CSS touch-action: manipulation 处理；
+  // iOS Safari 会忽略 user-scalable=no，故额外拦截双指缩放手势。
+  // 地图本身的缩放仍由 Leaflet 通过自身的触摸处理，不受影响。
+  ["gesturestart", "gesturechange", "gestureend"].forEach(function (ev) {
+    document.addEventListener(ev, function (e) { e.preventDefault(); }, { passive: false });
+  });
+
   var CAT_ICON = { geyser: "⛲", spring: "♨️", falls: "🌊", wildlife: "🦬", landmark: "🏞️", info: "ℹ️", story: "📖" };
   var CAT_LABEL = { geyser: "间歇泉", spring: "热泉", falls: "瀑布", wildlife: "野生动物", landmark: "地标", info: "信息", story: "趣闻故事" };
   var SIM_SPEEDS = [1, 2, 4, 8, 16, 32];  // 倍速档位（基准 60 km/h）

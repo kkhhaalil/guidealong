@@ -32,6 +32,10 @@ the app makes **zero network requests at runtime** (verified in tests).
   - **layered narration**: stops with a `more` field get a 「了解更多」 detail
     panel (transcript + season/wildlife chips + a 「播放延伸讲解」 button that
     plays `assets/audio/<id>-more.mp3`).
+  - **no page rescaling**: `touch-action: manipulation` (on `*`) kills
+    double-tap zoom, and `gesturestart/change/end` are `preventDefault`ed to
+    block iOS pinch-zoom (iOS ignores viewport `user-scalable=no`). The map
+    keeps its own zoom because `.leaflet-container` sets `touch-action: none`.
   - **No `fetch()`/XHR anywhere** — deliberate, so the app also works from
     `file://` (Android Chrome). Keep it that way: new data goes into JS files
     loaded via `<script>`, not JSON.
