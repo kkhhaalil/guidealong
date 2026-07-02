@@ -15,8 +15,16 @@ function installFakeSession(): { type: string } {
   return session;
 }
 
+function setPageHidden(hidden: boolean): void {
+  Object.defineProperty(document, 'hidden', {
+    configurable: true,
+    get: () => hidden,
+  });
+}
+
 afterEach(() => {
   delete (navigator as NavWithSession).audioSession;
+  setPageHidden(false);
 });
 
 describe('audioSession adapter', () => {
@@ -34,6 +42,15 @@ describe('audioSession adapter', () => {
     expect(session.type).toBe('ambient');
     setNarrationAudioSession();
     expect(session.type).toBe('transient-solo');
+  });
+
+  it('uses playback for narration while the page is hidden', () => {
+    const session = installFakeSession();
+    setPageHidden(true);
+    setNarrationAudioSession();
+    // transient-solo is silenced when the screen locks; only 'playback'
+    // stays audible in the background on iOS.
+    expect(session.type).toBe('playback');
   });
 });
 
@@ -105,5 +122,53 @@ describe('narration session lifecycle', () => {
     vi.advanceTimersByTime(2000);
     expect(session.type).toBe('transient-solo');
     playStub.mockRestore();
+    port.destroy();
+  });
+
+  it('locking the screen mid-narration upgrades the session to playback', () => {
+    const session = installFakeSession();
+    const port = createHtmlAudio();
+    const playStub = vi.spyOn(port.element, 'play').mockReturnValue(Promise.resolve());
+    const pausedStub = vi.spyOn(port.element, 'paused', 'get').mockReturnValue(false);
+
+    port.play('clip.mp3');
+    expect(session.type).toBe('transient-solo');
+
+    setPageHidden(true);
+    document.dispatchEvent(new Event('visibilitychange'));
+    expect(session.type).toBe('playback');
+
+    // back to foreground mid-clip → music-friendly exclusive mode again
+    setPageHidden(false);
+    document.dispatchEvent(new Event('visibilitychange'));
+    expect(session.type).toBe('transient-solo');
+
+    pausedStub.mockRestore();
+    playStub.mockRestore();
+    port.destroy();
+  });
+
+  it('visibility changes while idle do not claim the session', () => {
+    const session = installFakeSession();
+    const port = createHtmlAudio();
+    session.type = 'ambient';
+
+    setPageHidden(true);
+    document.dispatchEvent(new Event('visibilitychange'));
+    expect(session.type).toBe('ambient');
+    port.destroy();
+  });
+
+  it('destroy removes the visibility listener', () => {
+    const session = installFakeSession();
+    const port = createHtmlAudio();
+    const pausedStub = vi.spyOn(port.element, 'paused', 'get').mockReturnValue(false);
+    port.destroy();
+
+    session.type = 'ambient';
+    setPageHidden(true);
+    document.dispatchEvent(new Event('visibilitychange'));
+    expect(session.type).toBe('ambient');
+    pausedStub.mockRestore();
   });
 });

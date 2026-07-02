@@ -8,9 +8,13 @@
  *
  * - idle (no narration): `ambient` — page audio machinery mixes with and
  *   never interrupts other apps' audio;
- * - narration/chime: `transient-solo` — other audio pauses, narration plays
- *   exclusively, and the OS resumes the music when narration ends (the same
- *   pattern native turn-by-turn directions use).
+ * - narration/chime, page visible: `transient-solo` — other audio pauses,
+ *   narration plays exclusively, and the OS resumes the music when narration
+ *   ends (the same pattern native turn-by-turn directions use);
+ * - narration, page hidden (screen locked / other app foreground):
+ *   `playback` — the only category iOS keeps AUDIBLE in the background.
+ *   `transient-solo`/`ambient` map to categories that are silenced on lock,
+ *   which manifests as "progress bar moves but no sound".
  *
  * No-ops (feature-detected) on browsers without `navigator.audioSession`.
  */
@@ -52,7 +56,15 @@ export function setIdleAudioSession(): void {
   setType('ambient');
 }
 
-/** Narration/chime: play exclusively; other audio auto-resumes afterwards. */
+function pageHidden(): boolean {
+  return typeof document !== 'undefined' && document.hidden;
+}
+
+/**
+ * Narration/chime: play exclusively. Visible → `transient-solo` (other audio
+ * auto-resumes afterwards); hidden → `playback` (audible with screen locked,
+ * at the cost of the OS not auto-resuming the music).
+ */
 export function setNarrationAudioSession(): void {
-  setType('transient-solo');
+  setType(pageHidden() ? 'playback' : 'transient-solo');
 }
