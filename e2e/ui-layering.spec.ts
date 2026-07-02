@@ -51,6 +51,16 @@ test.describe('ui layering', () => {
     }, ids);
     expect(results).toEqual([]);
 
+    // Hit-testing can't catch occlusion by Leaflet panes (pointer-events:
+    // none — they paint over content without intercepting clicks). Controls
+    // rendered INSIDE the map's isolated stacking context must therefore sit
+    // above Leaflet's highest layer (control corners, z-index 1000).
+    const followZ = await page.evaluate(() => {
+      const el = document.querySelector('[data-testid="follow-toggle"]');
+      return el ? Number(getComputedStyle(el).zIndex) : NaN;
+    });
+    expect(followZ).toBeGreaterThan(1000);
+
     // Leaflet's own zoom control must also remain clickable (it lives inside
     // the isolated map stacking context; nothing should overlap it).
     const zoomHit = await page.evaluate(() => {

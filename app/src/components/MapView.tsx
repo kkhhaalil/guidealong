@@ -138,7 +138,11 @@ export function MapView({
         data-testid="follow-toggle"
         aria-label={t('ariaFollowMap')}
         aria-pressed={follow}
-        className={`absolute right-3 top-[7.5rem] z-chrome flex min-h-12 min-w-12 items-center justify-center rounded-card bg-surface text-xl shadow-card transition-opacity duration-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface ${
+        // z-[1100]: this button lives INSIDE the map's isolated stacking
+        // context, where Leaflet's panes are z 200-700 and control corners
+        // are z 1000 — z-chrome (10) would paint beneath the tiles (while
+        // still hit-testing, since tiles are pointer-events:none).
+        className={`absolute right-3 top-[7.5rem] z-[1100] flex min-h-12 min-w-12 items-center justify-center rounded-card bg-surface text-xl shadow-card transition-opacity duration-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface ${
           follow ? 'ring-2 ring-primary' : ''
         }`}
         onClick={() => onFollowChange(true)}
