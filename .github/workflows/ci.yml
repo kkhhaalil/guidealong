@@ -60,12 +60,14 @@ jobs:
       - name: Recipe eval
         run: npm run check:recipe
 
-      - name: Upload Playwright report on failure
+      - name: Upload Playwright results on failure
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
-          path: app/playwright-report/
+          name: playwright-results
+          # Default reporter is 'list' (no HTML report dir); traces and
+          # expected/actual/diff screenshots live in test-results/.
+          path: app/test-results/
           if-no-files-found: ignore
 
       - name: Upload Lighthouse JSON on failure
