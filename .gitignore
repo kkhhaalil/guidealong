@@ -1,6 +1,6 @@
 node_modules/
-package.json
-package-lock.json
+/package.json
+/package-lock.json
 app/node_modules/
 app/dist/
 test-results/
@@ -9,3 +9,4 @@ blob-report/
 playwright/.cache/
 # test screenshots from scripts/test_*.mjs
 /[0-9]-*.png
+.lighthouse/
