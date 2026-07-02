@@ -147,7 +147,9 @@ async function serveShellAsset(request: Request): Promise<Response> {
 // lets <img> onerror/decode handling degrade gracefully; a 503 would log
 // "Failed to load resource" for every legitimately-absent tile while offline.
 const TRANSPARENT_PNG = Uint8Array.from(
-  atob('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=='),
+  // Verified fully-transparent RGBA(0,0,0,0) pixel. (A previous revision's
+  // base64 decoded to semi-transparent blue and tinted missing photos.)
+  atob('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8AAAAASUVORK5CYII='),
   (c) => c.charCodeAt(0),
 );
 
