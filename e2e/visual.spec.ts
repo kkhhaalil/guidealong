@@ -21,6 +21,11 @@ const DYNAMIC_MASKS = [
   '[role="progressbar"]',
   '.leaflet-control-attribution',
   '[data-testid="mode-badge"]',
+  // The sim advances a machine-speed-dependent number of ticks before the
+  // pause click lands, panning the map a few pixels; a pan shifts every tile
+  // and blows the diff budget. Mask the map pane — the floating chrome and
+  // Leaflet's own controls (outside the pane) stay verified.
+  '.leaflet-map-pane',
 ];
 
 test.use({
