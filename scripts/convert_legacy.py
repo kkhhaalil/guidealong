@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
-"""One-shot: evaluate legacy js/tour-data.js + js/route-data.js → tours/yellowstone JSON."""
+"""One-shot: evaluate legacy js/tour-data.js + js/route-data.js → tours/yellowstone JSON.
+
+Historical only — the legacy root app (js/, index.html, …) was removed in WP7.
+To run this script, restore those files from git history, e.g.:
+
+  git show 2178111:js/tour-data.js > js/tour-data.js
+  git show 2178111:js/route-data.js > js/route-data.js
+  mkdir -p js
+  # … then run: python3 scripts/convert_legacy.py
+"""
 import json
 import os
 import subprocess
