@@ -32,6 +32,7 @@ export default defineConfig({
       },
       injectManifest: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        additionalManifestEntries: [{ url: 'tours/index.json', revision: null }],
       },
       devOptions: {
         enabled: false,

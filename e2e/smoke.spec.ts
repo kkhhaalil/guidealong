@@ -10,16 +10,20 @@ test.describe('WP0 smoke', () => {
 
     const swReady = await page.evaluate(async () => {
       if (!('serviceWorker' in navigator)) return false;
+      await navigator.serviceWorker.register('./sw.js', { scope: './' });
       await navigator.serviceWorker.ready;
       return true;
     });
     expect(swReady).toBe(true);
 
-    await page.reload();
+    await page.reload({ waitUntil: 'load' });
+
+    const controlled = await page.evaluate(() => !!navigator.serviceWorker.controller);
+    expect(controlled).toBe(true);
 
     const hasShellCache = await page.evaluate(async () => {
       const keys = await caches.keys();
-      return keys.some((k) => k.includes('shell-') || k.includes('workbox-precache'));
+      return keys.some((k) => k.startsWith('shell-'));
     });
     expect(hasShellCache).toBe(true);
     expect(errors).toEqual([]);

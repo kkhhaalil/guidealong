@@ -45,7 +45,7 @@ function toursMiddleware(toursRoot: string): Connect.NextHandleFunction {
   };
 }
 
-/** Serve /workspace/tours at /tours/ in dev and preview. */
+/** Serve /workspace/tours at /tours/ in dev and preview; copy index.json into dist for SW precache. */
 export function toursPlugin(): Plugin {
   const toursRoot = path.resolve(__dirname, '../tours');
 
@@ -56,6 +56,15 @@ export function toursPlugin(): Plugin {
     },
     configurePreviewServer(server) {
       server.middlewares.use(toursMiddleware(toursRoot));
+    },
+    closeBundle() {
+      const outDir = path.resolve(__dirname, 'dist');
+      const destDir = path.join(outDir, 'tours');
+      fs.mkdirSync(destDir, { recursive: true });
+      fs.copyFileSync(
+        path.join(toursRoot, 'index.json'),
+        path.join(destDir, 'index.json'),
+      );
     },
   };
 }

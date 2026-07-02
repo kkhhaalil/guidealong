@@ -17,6 +17,7 @@ export interface BadgeProps {
   variant?: BadgeVariant;
   size?: BadgeSize;
   className?: string;
+  testID?: string;
   children?: React.ReactNode;
 }
 
@@ -25,10 +26,12 @@ export function Badge({
   variant = 'solid',
   size = 'md',
   className,
+  testID,
   children,
 }: BadgeProps) {
   return (
     <span
+      data-testid={testID}
       className={cn(
         'inline-flex items-center rounded-chip font-medium',
         size === 'sm' && 'px-2 py-0.5 text-body-sm',
