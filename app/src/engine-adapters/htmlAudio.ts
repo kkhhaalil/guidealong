@@ -1,4 +1,5 @@
 import type { AudioPort, Unsub } from '../engine/types.ts';
+import { setIdleAudioSession, setNarrationAudioSession } from './audioSession.ts';
 import { pushGaEvent } from '../test/gaSurface.ts';
 
 /** HTMLAudioElement-backed AudioPort for tour narration. */
@@ -9,7 +10,27 @@ export function createHtmlAudio(): AudioPort & { element: HTMLAudioElement } {
   const endedCbs = new Set<() => void>();
   const timeCbs = new Set<(time: number, duration: number) => void>();
 
+  // After narration ends, release the exclusive audio session so the user's
+  // music resumes (iOS). Delayed slightly: when another stop is queued the
+  // engine starts it right away, and flapping the session type would blip
+  // the music in and out between queue items.
+  let releaseTimer: ReturnType<typeof setTimeout> | null = null;
+  const scheduleSessionRelease = () => {
+    if (releaseTimer) clearTimeout(releaseTimer);
+    releaseTimer = setTimeout(() => {
+      if (audio.paused) setIdleAudioSession();
+    }, 1000);
+  };
+  const claimSession = () => {
+    if (releaseTimer) {
+      clearTimeout(releaseTimer);
+      releaseTimer = null;
+    }
+    setNarrationAudioSession();
+  };
+
   audio.addEventListener('ended', () => {
+    scheduleSessionRelease();
     for (const cb of endedCbs) cb();
   });
 
@@ -24,6 +45,7 @@ export function createHtmlAudio(): AudioPort & { element: HTMLAudioElement } {
 
     play(url: string) {
       if (audio.src !== url) audio.src = url;
+      claimSession();
       pushGaEvent({ type: 'audio-play', url });
       audio.play().catch(() => {
         // autoplay policy — user must tap play
@@ -32,9 +54,11 @@ export function createHtmlAudio(): AudioPort & { element: HTMLAudioElement } {
 
     pause() {
       audio.pause();
+      scheduleSessionRelease();
     },
 
     resume() {
+      claimSession();
       audio.play().catch(() => {});
     },
 
@@ -69,6 +93,9 @@ export function createHtmlAudio(): AudioPort & { element: HTMLAudioElement } {
 
 /** Unlock audio on a user gesture (muted play/pause). Call from start overlay click. */
 export function unlockAudio(audio: HTMLAudioElement): void {
+  // Declare a mixing session BEFORE the unlock play(), otherwise the unlock
+  // itself grabs an exclusive session on iOS and stops the user's music.
+  setIdleAudioSession();
   const wasMuted = audio.muted;
   audio.muted = true;
   const p = audio.play();

@@ -6,6 +6,11 @@ import { getManifest, getRoute, getStops, tourFileUrl } from '../downloads/tourS
 import { browserClock } from '../engine-adapters/browserClock.ts';
 import { browserStorage } from '../engine-adapters/browserStorage.ts';
 import { createHtmlAudio, unlockAudio } from '../engine-adapters/htmlAudio.ts';
+import { isAudioSessionSupported } from '../engine-adapters/audioSession.ts';
+import {
+  startBackgroundKeepalive,
+  stopBackgroundKeepalive,
+} from '../engine-adapters/backgroundKeepalive.ts';
 import { bindAudioElementVolume } from '../state/volumePreference.ts';
 import { createInstrumentedChime } from '../engine-adapters/instrumentedChime.ts';
 import { GpsSource, SimSource } from '../engine/position.ts';
@@ -97,6 +102,7 @@ export function MapScreen({ tourId }: MapScreenProps) {
     return () => {
       cancelled = true;
       clearTourTheme();
+      stopBackgroundKeepalive();
       destroy();
       audioRef.current = null;
     };
@@ -128,11 +134,19 @@ export function MapScreen({ tourId }: MapScreenProps) {
     };
   }, [manifest, route, stops, tourId, initEngine, loadTour]);
 
+  // Only where the Audio Session API lets us declare a mixing ('ambient')
+  // session (iOS 17+). Elsewhere a silent loop could itself pause the
+  // user's music, which is worse than losing background keepalive.
+  const startKeepalive = useCallback(() => {
+    if (isAudioSessionSupported()) startBackgroundKeepalive();
+  }, []);
+
   const startSim = useCallback(
     (resume: boolean) => {
       const r = routeRef.current;
       if (!r || !audioRef.current) return;
       unlockAudio(audioRef.current.element);
+      startKeepalive();
       setStarted(true);
       setFollow(true);
 
@@ -144,12 +158,13 @@ export function MapScreen({ tourId }: MapScreenProps) {
       }
       setPositionSource(sim);
     },
-    [setPositionSource]
+    [setPositionSource, startKeepalive]
   );
 
   const startGps = useCallback(() => {
     if (!audioRef.current) return;
     unlockAudio(audioRef.current.element);
+    startKeepalive();
     setStarted(true);
     setFollow(true);
     setPositionSource(
@@ -163,7 +178,7 @@ export function MapScreen({ tourId }: MapScreenProps) {
         clearWatch: (id) => navigator.geolocation.clearWatch(id),
       })
     );
-  }, [setPositionSource]);
+  }, [setPositionSource, startKeepalive]);
 
   const handleStartSim = () => startSim(false);
   const handleResume = () => startSim(true);
