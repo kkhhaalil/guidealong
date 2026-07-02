@@ -1,0 +1,18 @@
+[
+  {
+    "id": "demo",
+    "title": "演示公园",
+    "titleEn": "Demo Park",
+    "bytes": 143066,
+    "version": "b31b146effdd",
+    "posterArt": "poster.svg"
+  },
+  {
+    "id": "yellowstone",
+    "title": "黄石国家公园",
+    "titleEn": "Yellowstone National Park",
+    "bytes": 27760986,
+    "version": "01a9c34269db",
+    "posterArt": "poster.svg"
+  }
+]

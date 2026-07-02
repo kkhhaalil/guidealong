@@ -1,0 +1,846 @@
+[
+  {
+    "path": "audio/demo-finish.mp3",
+    "bytes": 4857
+  },
+  {
+    "path": "audio/demo-ridge-more.mp3",
+    "bytes": 4909
+  },
+  {
+    "path": "audio/demo-ridge.mp3",
+    "bytes": 4857
+  },
+  {
+    "path": "audio/demo-spring.mp3",
+    "bytes": 4909
+  },
+  {
+    "path": "audio/demo-welcome.mp3",
+    "bytes": 4831
+  },
+  {
+    "path": "poster.svg",
+    "bytes": 998
+  },
+  {
+    "path": "route.json",
+    "bytes": 856
+  },
+  {
+    "path": "stops.json",
+    "bytes": 1342
+  },
+  {
+    "path": "tiles/13/1595/3241.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1595/3242.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1595/3243.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1595/3244.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1596/3240.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1596/3241.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1596/3242.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1596/3243.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1596/3244.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1596/3245.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1597/3240.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1597/3241.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1597/3242.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1597/3243.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1597/3244.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1597/3245.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1598/3240.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1598/3241.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1598/3242.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1598/3243.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1598/3244.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1598/3245.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1599/3240.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1599/3241.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1599/3242.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1599/3243.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1599/3244.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1599/3245.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1600/3241.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1600/3242.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1600/3243.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/13/1600/3244.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3192/6483.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3192/6484.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3192/6485.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3192/6486.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3192/6487.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3192/6488.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3193/6482.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3193/6483.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3193/6484.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3193/6485.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3193/6486.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3193/6487.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3193/6488.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3193/6489.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3194/6482.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3194/6483.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3194/6484.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3194/6485.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3194/6486.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3194/6487.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3194/6488.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3194/6489.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3195/6482.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3195/6483.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3195/6484.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3195/6485.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3195/6486.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3195/6487.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3195/6488.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3195/6489.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3196/6482.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3196/6483.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3196/6484.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3196/6485.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3196/6486.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3196/6487.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3196/6488.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3196/6489.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3197/6482.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3197/6483.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3197/6484.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3197/6485.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3197/6486.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3197/6487.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3197/6488.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3197/6489.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3198/6483.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3198/6484.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3198/6485.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3198/6486.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3198/6487.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3198/6488.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3198/6489.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3199/6483.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3199/6484.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3199/6485.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3199/6486.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3199/6487.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/14/3199/6488.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6385/12969.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6385/12970.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6385/12971.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6385/12972.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6385/12973.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6385/12974.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6386/12968.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6386/12969.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6386/12970.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6386/12971.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6386/12972.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6386/12973.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6386/12974.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6386/12975.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6386/12976.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6387/12967.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6387/12968.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6387/12969.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6387/12970.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6387/12971.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6387/12972.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6387/12973.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6387/12974.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6387/12975.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6387/12976.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6387/12977.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6388/12966.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6388/12967.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6388/12968.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6388/12969.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6388/12970.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6388/12973.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6388/12974.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6388/12975.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6388/12976.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6388/12977.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6389/12966.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6389/12967.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6389/12968.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6389/12969.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6389/12974.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6389/12975.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6389/12976.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6389/12977.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6389/12978.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6390/12966.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6390/12967.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6390/12968.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6390/12975.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6390/12976.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6390/12977.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6390/12978.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6391/12966.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6391/12967.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6391/12968.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6391/12975.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6391/12976.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6391/12977.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6391/12978.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6392/12966.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6392/12967.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6392/12968.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6392/12975.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6392/12976.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6392/12977.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6392/12978.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6393/12966.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6393/12967.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6393/12968.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6393/12969.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6393/12975.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6393/12976.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6393/12977.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6393/12978.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6394/12966.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6394/12967.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6394/12968.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6394/12969.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6394/12970.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6394/12974.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6394/12975.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6394/12976.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6394/12977.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6395/12967.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6395/12968.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6395/12969.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6395/12970.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6395/12971.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6395/12972.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6395/12973.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6395/12974.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6395/12975.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6395/12976.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6395/12977.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6396/12967.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6396/12968.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6396/12969.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6396/12970.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6396/12971.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6396/12972.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6396/12973.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6396/12974.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6396/12975.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6396/12976.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6397/12968.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6397/12969.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6397/12970.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6397/12971.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6397/12972.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6397/12973.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6397/12974.png",
+    "bytes": 569
+  },
+  {
+    "path": "tiles/15/6397/12975.png",
+    "bytes": 569
+  }
+]

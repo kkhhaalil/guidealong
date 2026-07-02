@@ -1,0 +1,3054 @@
+[
+  {
+    "path": "audio/artist-point-more.mp3",
+    "bytes": 115056
+  },
+  {
+    "path": "audio/artist-point.mp3",
+    "bytes": 248400
+  },
+  {
+    "path": "audio/artists-paintpots.mp3",
+    "bytes": 198576
+  },
+  {
+    "path": "audio/beryl-spring.mp3",
+    "bytes": 178560
+  },
+  {
+    "path": "audio/biscuit-basin.mp3",
+    "bytes": 233712
+  },
+  {
+    "path": "audio/black-sand-basin.mp3",
+    "bytes": 201312
+  },
+  {
+    "path": "audio/blacktail-plateau.mp3",
+    "bytes": 200880
+  },
+  {
+    "path": "audio/buffalo-ranch.mp3",
+    "bytes": 262368
+  },
+  {
+    "path": "audio/calcite-springs.mp3",
+    "bytes": 203760
+  },
+  {
+    "path": "audio/canyon-village.mp3",
+    "bytes": 220176
+  },
+  {
+    "path": "audio/craig-pass-winter.mp3",
+    "bytes": 249696
+  },
+  {
+    "path": "audio/cutthroat-battle.mp3",
+    "bytes": 275616
+  },
+  {
+    "path": "audio/dunraven-pass.mp3",
+    "bytes": 216144
+  },
+  {
+    "path": "audio/excelsior-geyser.mp3",
+    "bytes": 258912
+  },
+  {
+    "path": "audio/firehole-canyon.mp3",
+    "bytes": 210384
+  },
+  {
+    "path": "audio/fires-of-88-more.mp3",
+    "bytes": 125568
+  },
+  {
+    "path": "audio/fires-of-88.mp3",
+    "bytes": 277776
+  },
+  {
+    "path": "audio/fishing-bridge.mp3",
+    "bytes": 224496
+  },
+  {
+    "path": "audio/fountain-paint-pot.mp3",
+    "bytes": 229392
+  },
+  {
+    "path": "audio/gibbon-falls.mp3",
+    "bytes": 235584
+  },
+  {
+    "path": "audio/golden-gate.mp3",
+    "bytes": 206640
+  },
+  {
+    "path": "audio/grand-prismatic-more.mp3",
+    "bytes": 141264
+  },
+  {
+    "path": "audio/grand-prismatic.mp3",
+    "bytes": 259344
+  },
+  {
+    "path": "audio/great-fountain.mp3",
+    "bytes": 201888
+  },
+  {
+    "path": "audio/hayden-valley-more.mp3",
+    "bytes": 119952
+  },
+  {
+    "path": "audio/hayden-valley.mp3",
+    "bytes": 241776
+  },
+  {
+    "path": "audio/intro-more.mp3",
+    "bytes": 119376
+  },
+  {
+    "path": "audio/intro.mp3",
+    "bytes": 263088
+  },
+  {
+    "path": "audio/isa-lake.mp3",
+    "bytes": 193968
+  },
+  {
+    "path": "audio/kepler-cascades.mp3",
+    "bytes": 193248
+  },
+  {
+    "path": "audio/lake-village.mp3",
+    "bytes": 254160
+  },
+  {
+    "path": "audio/lamar-valley-more.mp3",
+    "bytes": 137232
+  },
+  {
+    "path": "audio/lamar-valley.mp3",
+    "bytes": 248832
+  },
+  {
+    "path": "audio/lehardys-rapids.mp3",
+    "bytes": 194976
+  },
+  {
+    "path": "audio/madison.mp3",
+    "bytes": 224640
+  },
+  {
+    "path": "audio/mammoth-more.mp3",
+    "bytes": 119520
+  },
+  {
+    "path": "audio/mammoth.mp3",
+    "bytes": 240912
+  },
+  {
+    "path": "audio/morning-glory-more.mp3",
+    "bytes": 134928
+  },
+  {
+    "path": "audio/morning-glory.mp3",
+    "bytes": 255024
+  },
+  {
+    "path": "audio/mud-volcano.mp3",
+    "bytes": 224352
+  },
+  {
+    "path": "audio/natural-bridge.mp3",
+    "bytes": 204480
+  },
+  {
+    "path": "audio/norris-more.mp3",
+    "bytes": 121392
+  },
+  {
+    "path": "audio/norris.mp3",
+    "bytes": 240768
+  },
+  {
+    "path": "audio/north-rim-lookout.mp3",
+    "bytes": 200160
+  },
+  {
+    "path": "audio/obsidian-cliff.mp3",
+    "bytes": 201456
+  },
+  {
+    "path": "audio/old-faithful-more.mp3",
+    "bytes": 127584
+  },
+  {
+    "path": "audio/old-faithful.mp3",
+    "bytes": 251280
+  },
+  {
+    "path": "audio/otter-creek-bears.mp3",
+    "bytes": 254016
+  },
+  {
+    "path": "audio/petrified-tree.mp3",
+    "bytes": 223920
+  },
+  {
+    "path": "audio/roaring-mountain.mp3",
+    "bytes": 202896
+  },
+  {
+    "path": "audio/sheepeater-cliff.mp3",
+    "bytes": 192240
+  },
+  {
+    "path": "audio/slough-creek.mp3",
+    "bytes": 190800
+  },
+  {
+    "path": "audio/stagecoach-days.mp3",
+    "bytes": 252288
+  },
+  {
+    "path": "audio/sulphur-caldron.mp3",
+    "bytes": 217152
+  },
+  {
+    "path": "audio/swan-lake-flat.mp3",
+    "bytes": 196848
+  },
+  {
+    "path": "audio/tower-fall.mp3",
+    "bytes": 190656
+  },
+  {
+    "path": "audio/tower-roosevelt.mp3",
+    "bytes": 216432
+  },
+  {
+    "path": "audio/undine-falls.mp3",
+    "bytes": 187200
+  },
+  {
+    "path": "audio/upper-falls.mp3",
+    "bytes": 216000
+  },
+  {
+    "path": "audio/washburn-moths.mp3",
+    "bytes": 286416
+  },
+  {
+    "path": "audio/west-thumb-more.mp3",
+    "bytes": 131328
+  },
+  {
+    "path": "audio/west-thumb.mp3",
+    "bytes": 244800
+  },
+  {
+    "path": "audio/willow-park.mp3",
+    "bytes": 194688
+  },
+  {
+    "path": "audio/yellowstone-name-more.mp3",
+    "bytes": 119088
+  },
+  {
+    "path": "audio/yellowstone-name.mp3",
+    "bytes": 264672
+  },
+  {
+    "path": "photos/artist-point.svg",
+    "bytes": 1419
+  },
+  {
+    "path": "photos/artists-paintpots.svg",
+    "bytes": 1382
+  },
+  {
+    "path": "photos/beryl-spring.svg",
+    "bytes": 1368
+  },
+  {
+    "path": "photos/biscuit-basin.svg",
+    "bytes": 1372
+  },
+  {
+    "path": "photos/black-sand-basin.svg",
+    "bytes": 1375
+  },
+  {
+    "path": "photos/blacktail-plateau.svg",
+    "bytes": 1382
+  },
+  {
+    "path": "photos/buffalo-ranch.svg",
+    "bytes": 1382
+  },
+  {
+    "path": "photos/calcite-springs.svg",
+    "bytes": 1393
+  },
+  {
+    "path": "photos/canyon-village.svg",
+    "bytes": 1370
+  },
+  {
+    "path": "photos/craig-pass-winter.svg",
+    "bytes": 1381
+  },
+  {
+    "path": "photos/cutthroat-battle.svg",
+    "bytes": 1389
+  },
+  {
+    "path": "photos/dunraven-pass.svg",
+    "bytes": 1376
+  },
+  {
+    "path": "photos/excelsior-geyser.svg",
+    "bytes": 1376
+  },
+  {
+    "path": "photos/firehole-canyon.svg",
+    "bytes": 1387
+  },
+  {
+    "path": "photos/fires-of-88.svg",
+    "bytes": 1383
+  },
+  {
+    "path": "photos/fishing-bridge.svg",
+    "bytes": 1371
+  },
+  {
+    "path": "photos/fountain-paint-pot.svg",
+    "bytes": 1380
+  },
+  {
+    "path": "photos/gibbon-falls.svg",
+    "bytes": 1369
+  },
+  {
+    "path": "photos/golden-gate.svg",
+    "bytes": 1378
+  },
+  {
+    "path": "photos/grand-prismatic.svg",
+    "bytes": 1384
+  },
+  {
+    "path": "photos/great-fountain.svg",
+    "bytes": 1383
+  },
+  {
+    "path": "photos/hayden-valley.svg",
+    "bytes": 1370
+  },
+  {
+    "path": "photos/intro.svg",
+    "bytes": 1399
+  },
+  {
+    "path": "photos/isa-lake.svg",
+    "bytes": 1407
+  },
+  {
+    "path": "photos/kepler-cascades.svg",
+    "bytes": 1375
+  },
+  {
+    "path": "photos/lake-village.svg",
+    "bytes": 1373
+  },
+  {
+    "path": "photos/lamar-valley.svg",
+    "bytes": 1372
+  },
+  {
+    "path": "photos/lehardys-rapids.svg",
+    "bytes": 1375
+  },
+  {
+    "path": "photos/madison.svg",
+    "bytes": 1379
+  },
+  {
+    "path": "photos/mammoth.svg",
+    "bytes": 1378
+  },
+  {
+    "path": "photos/morning-glory.svg",
+    "bytes": 1384
+  },
+  {
+    "path": "photos/mud-volcano.svg",
+    "bytes": 1367
+  },
+  {
+    "path": "photos/natural-bridge.svg",
+    "bytes": 1371
+  },
+  {
+    "path": "photos/norris.svg",
+    "bytes": 1387
+  },
+  {
+    "path": "photos/north-rim-lookout.svg",
+    "bytes": 1386
+  },
+  {
+    "path": "photos/obsidian-cliff.svg",
+    "bytes": 1374
+  },
+  {
+    "path": "photos/old-faithful.svg",
+    "bytes": 1374
+  },
+  {
+    "path": "photos/otter-creek-bears.svg",
+    "bytes": 1382
+  },
+  {
+    "path": "photos/petrified-tree.svg",
+    "bytes": 1371
+  },
+  {
+    "path": "photos/roaring-mountain.svg",
+    "bytes": 1372
+  },
+  {
+    "path": "photos/sheepeater-cliff.svg",
+    "bytes": 1373
+  },
+  {
+    "path": "photos/slough-creek.svg",
+    "bytes": 1366
+  },
+  {
+    "path": "photos/stagecoach-days.svg",
+    "bytes": 1381
+  },
+  {
+    "path": "photos/sulphur-caldron.svg",
+    "bytes": 1371
+  },
+  {
+    "path": "photos/swan-lake-flat.svg",
+    "bytes": 1374
+  },
+  {
+    "path": "photos/tower-fall.svg",
+    "bytes": 1361
+  },
+  {
+    "path": "photos/tower-roosevelt.svg",
+    "bytes": 1378
+  },
+  {
+    "path": "photos/undine-falls.svg",
+    "bytes": 1369
+  },
+  {
+    "path": "photos/upper-falls.svg",
+    "bytes": 1384
+  },
+  {
+    "path": "photos/washburn-moths.svg",
+    "bytes": 1400
+  },
+  {
+    "path": "photos/west-thumb.svg",
+    "bytes": 1394
+  },
+  {
+    "path": "photos/willow-park.svg",
+    "bytes": 1368
+  },
+  {
+    "path": "photos/yellowstone-name.svg",
+    "bytes": 1394
+  },
+  {
+    "path": "poster.svg",
+    "bytes": 998
+  },
+  {
+    "path": "route.json",
+    "bytes": 184701
+  },
+  {
+    "path": "stops.json",
+    "bytes": 44973
+  },
+  {
+    "path": "tiles/10/195/367.png",
+    "bytes": 24872
+  },
+  {
+    "path": "tiles/10/195/368.png",
+    "bytes": 26999
+  },
+  {
+    "path": "tiles/10/195/369.png",
+    "bytes": 29751
+  },
+  {
+    "path": "tiles/10/195/370.png",
+    "bytes": 27611
+  },
+  {
+    "path": "tiles/10/195/371.png",
+    "bytes": 27635
+  },
+  {
+    "path": "tiles/10/196/367.png",
+    "bytes": 24971
+  },
+  {
+    "path": "tiles/10/196/368.png",
+    "bytes": 25021
+  },
+  {
+    "path": "tiles/10/196/369.png",
+    "bytes": 22882
+  },
+  {
+    "path": "tiles/10/196/370.png",
+    "bytes": 22959
+  },
+  {
+    "path": "tiles/10/196/371.png",
+    "bytes": 22122
+  },
+  {
+    "path": "tiles/10/197/367.png",
+    "bytes": 23872
+  },
+  {
+    "path": "tiles/10/197/368.png",
+    "bytes": 22253
+  },
+  {
+    "path": "tiles/10/197/369.png",
+    "bytes": 21835
+  },
+  {
+    "path": "tiles/10/197/370.png",
+    "bytes": 21014
+  },
+  {
+    "path": "tiles/10/197/371.png",
+    "bytes": 26473
+  },
+  {
+    "path": "tiles/10/198/367.png",
+    "bytes": 23052
+  },
+  {
+    "path": "tiles/10/198/368.png",
+    "bytes": 23795
+  },
+  {
+    "path": "tiles/10/198/369.png",
+    "bytes": 22363
+  },
+  {
+    "path": "tiles/10/198/370.png",
+    "bytes": 20189
+  },
+  {
+    "path": "tiles/10/198/371.png",
+    "bytes": 23529
+  },
+  {
+    "path": "tiles/10/199/367.png",
+    "bytes": 25896
+  },
+  {
+    "path": "tiles/10/199/368.png",
+    "bytes": 28127
+  },
+  {
+    "path": "tiles/10/199/369.png",
+    "bytes": 24895
+  },
+  {
+    "path": "tiles/10/199/370.png",
+    "bytes": 24554
+  },
+  {
+    "path": "tiles/10/199/371.png",
+    "bytes": 24546
+  },
+  {
+    "path": "tiles/11/391/735.png",
+    "bytes": 30990
+  },
+  {
+    "path": "tiles/11/391/736.png",
+    "bytes": 31117
+  },
+  {
+    "path": "tiles/11/391/737.png",
+    "bytes": 30406
+  },
+  {
+    "path": "tiles/11/391/738.png",
+    "bytes": 30124
+  },
+  {
+    "path": "tiles/11/391/739.png",
+    "bytes": 31813
+  },
+  {
+    "path": "tiles/11/391/740.png",
+    "bytes": 26757
+  },
+  {
+    "path": "tiles/11/391/741.png",
+    "bytes": 26856
+  },
+  {
+    "path": "tiles/11/391/742.png",
+    "bytes": 25682
+  },
+  {
+    "path": "tiles/11/391/743.png",
+    "bytes": 30288
+  },
+  {
+    "path": "tiles/11/392/735.png",
+    "bytes": 31648
+  },
+  {
+    "path": "tiles/11/392/736.png",
+    "bytes": 29983
+  },
+  {
+    "path": "tiles/11/392/737.png",
+    "bytes": 26761
+  },
+  {
+    "path": "tiles/11/392/738.png",
+    "bytes": 26114
+  },
+  {
+    "path": "tiles/11/392/739.png",
+    "bytes": 21327
+  },
+  {
+    "path": "tiles/11/392/740.png",
+    "bytes": 19120
+  },
+  {
+    "path": "tiles/11/392/741.png",
+    "bytes": 23208
+  },
+  {
+    "path": "tiles/11/392/742.png",
+    "bytes": 28656
+  },
+  {
+    "path": "tiles/11/392/743.png",
+    "bytes": 30586
+  },
+  {
+    "path": "tiles/11/393/735.png",
+    "bytes": 31172
+  },
+  {
+    "path": "tiles/11/393/736.png",
+    "bytes": 31842
+  },
+  {
+    "path": "tiles/11/393/737.png",
+    "bytes": 25533
+  },
+  {
+    "path": "tiles/11/393/738.png",
+    "bytes": 22265
+  },
+  {
+    "path": "tiles/11/393/739.png",
+    "bytes": 22242
+  },
+  {
+    "path": "tiles/11/393/740.png",
+    "bytes": 24133
+  },
+  {
+    "path": "tiles/11/393/741.png",
+    "bytes": 24744
+  },
+  {
+    "path": "tiles/11/393/742.png",
+    "bytes": 19431
+  },
+  {
+    "path": "tiles/11/393/743.png",
+    "bytes": 24620
+  },
+  {
+    "path": "tiles/11/394/735.png",
+    "bytes": 29782
+  },
+  {
+    "path": "tiles/11/394/736.png",
+    "bytes": 30599
+  },
+  {
+    "path": "tiles/11/394/737.png",
+    "bytes": 24438
+  },
+  {
+    "path": "tiles/11/394/738.png",
+    "bytes": 24005
+  },
+  {
+    "path": "tiles/11/394/739.png",
+    "bytes": 20439
+  },
+  {
+    "path": "tiles/11/394/740.png",
+    "bytes": 19296
+  },
+  {
+    "path": "tiles/11/394/741.png",
+    "bytes": 25165
+  },
+  {
+    "path": "tiles/11/394/742.png",
+    "bytes": 26924
+  },
+  {
+    "path": "tiles/11/394/743.png",
+    "bytes": 26381
+  },
+  {
+    "path": "tiles/11/395/735.png",
+    "bytes": 28860
+  },
+  {
+    "path": "tiles/11/395/736.png",
+    "bytes": 27838
+  },
+  {
+    "path": "tiles/11/395/737.png",
+    "bytes": 24573
+  },
+  {
+    "path": "tiles/11/395/738.png",
+    "bytes": 25110
+  },
+  {
+    "path": "tiles/11/395/739.png",
+    "bytes": 24261
+  },
+  {
+    "path": "tiles/11/395/740.png",
+    "bytes": 19337
+  },
+  {
+    "path": "tiles/11/395/741.png",
+    "bytes": 21181
+  },
+  {
+    "path": "tiles/11/395/742.png",
+    "bytes": 28228
+  },
+  {
+    "path": "tiles/11/395/743.png",
+    "bytes": 28836
+  },
+  {
+    "path": "tiles/11/396/735.png",
+    "bytes": 29743
+  },
+  {
+    "path": "tiles/11/396/736.png",
+    "bytes": 28160
+  },
+  {
+    "path": "tiles/11/396/737.png",
+    "bytes": 27165
+  },
+  {
+    "path": "tiles/11/396/738.png",
+    "bytes": 23249
+  },
+  {
+    "path": "tiles/11/396/739.png",
+    "bytes": 25346
+  },
+  {
+    "path": "tiles/11/396/740.png",
+    "bytes": 21054
+  },
+  {
+    "path": "tiles/11/396/741.png",
+    "bytes": 13682
+  },
+  {
+    "path": "tiles/11/396/742.png",
+    "bytes": 21597
+  },
+  {
+    "path": "tiles/11/396/743.png",
+    "bytes": 26328
+  },
+  {
+    "path": "tiles/11/397/735.png",
+    "bytes": 30415
+  },
+  {
+    "path": "tiles/11/397/736.png",
+    "bytes": 29677
+  },
+  {
+    "path": "tiles/11/397/737.png",
+    "bytes": 25713
+  },
+  {
+    "path": "tiles/11/397/738.png",
+    "bytes": 24923
+  },
+  {
+    "path": "tiles/11/397/739.png",
+    "bytes": 25111
+  },
+  {
+    "path": "tiles/11/397/740.png",
+    "bytes": 26020
+  },
+  {
+    "path": "tiles/11/397/741.png",
+    "bytes": 25306
+  },
+  {
+    "path": "tiles/11/397/742.png",
+    "bytes": 28952
+  },
+  {
+    "path": "tiles/11/397/743.png",
+    "bytes": 30771
+  },
+  {
+    "path": "tiles/11/398/735.png",
+    "bytes": 34891
+  },
+  {
+    "path": "tiles/11/398/736.png",
+    "bytes": 32413
+  },
+  {
+    "path": "tiles/11/398/737.png",
+    "bytes": 27811
+  },
+  {
+    "path": "tiles/11/398/738.png",
+    "bytes": 29105
+  },
+  {
+    "path": "tiles/11/398/739.png",
+    "bytes": 30378
+  },
+  {
+    "path": "tiles/11/398/740.png",
+    "bytes": 31594
+  },
+  {
+    "path": "tiles/11/398/741.png",
+    "bytes": 33299
+  },
+  {
+    "path": "tiles/11/398/742.png",
+    "bytes": 33400
+  },
+  {
+    "path": "tiles/11/398/743.png",
+    "bytes": 34269
+  },
+  {
+    "path": "tiles/11/399/735.png",
+    "bytes": 40892
+  },
+  {
+    "path": "tiles/11/399/736.png",
+    "bytes": 35763
+  },
+  {
+    "path": "tiles/11/399/737.png",
+    "bytes": 33321
+  },
+  {
+    "path": "tiles/11/399/738.png",
+    "bytes": 33658
+  },
+  {
+    "path": "tiles/11/399/739.png",
+    "bytes": 33197
+  },
+  {
+    "path": "tiles/11/399/740.png",
+    "bytes": 33676
+  },
+  {
+    "path": "tiles/11/399/741.png",
+    "bytes": 37676
+  },
+  {
+    "path": "tiles/11/399/742.png",
+    "bytes": 34760
+  },
+  {
+    "path": "tiles/11/399/743.png",
+    "bytes": 32033
+  },
+  {
+    "path": "tiles/12/782/1471.png",
+    "bytes": 25452
+  },
+  {
+    "path": "tiles/12/782/1472.png",
+    "bytes": 24639
+  },
+  {
+    "path": "tiles/12/782/1473.png",
+    "bytes": 23958
+  },
+  {
+    "path": "tiles/12/782/1474.png",
+    "bytes": 27718
+  },
+  {
+    "path": "tiles/12/782/1475.png",
+    "bytes": 23243
+  },
+  {
+    "path": "tiles/12/782/1476.png",
+    "bytes": 22027
+  },
+  {
+    "path": "tiles/12/782/1477.png",
+    "bytes": 17403
+  },
+  {
+    "path": "tiles/12/782/1478.png",
+    "bytes": 29599
+  },
+  {
+    "path": "tiles/12/782/1479.png",
+    "bytes": 24711
+  },
+  {
+    "path": "tiles/12/782/1480.png",
+    "bytes": 23754
+  },
+  {
+    "path": "tiles/12/782/1481.png",
+    "bytes": 21517
+  },
+  {
+    "path": "tiles/12/782/1482.png",
+    "bytes": 22928
+  },
+  {
+    "path": "tiles/12/782/1483.png",
+    "bytes": 19348
+  },
+  {
+    "path": "tiles/12/782/1484.png",
+    "bytes": 20402
+  },
+  {
+    "path": "tiles/12/782/1485.png",
+    "bytes": 20390
+  },
+  {
+    "path": "tiles/12/782/1486.png",
+    "bytes": 22705
+  },
+  {
+    "path": "tiles/12/782/1487.png",
+    "bytes": 23506
+  },
+  {
+    "path": "tiles/12/783/1471.png",
+    "bytes": 26693
+  },
+  {
+    "path": "tiles/12/783/1472.png",
+    "bytes": 28682
+  },
+  {
+    "path": "tiles/12/783/1473.png",
+    "bytes": 25752
+  },
+  {
+    "path": "tiles/12/783/1474.png",
+    "bytes": 25756
+  },
+  {
+    "path": "tiles/12/783/1475.png",
+    "bytes": 22889
+  },
+  {
+    "path": "tiles/12/783/1476.png",
+    "bytes": 27815
+  },
+  {
+    "path": "tiles/12/783/1477.png",
+    "bytes": 21096
+  },
+  {
+    "path": "tiles/12/783/1478.png",
+    "bytes": 21902
+  },
+  {
+    "path": "tiles/12/783/1479.png",
+    "bytes": 19214
+  },
+  {
+    "path": "tiles/12/783/1480.png",
+    "bytes": 19539
+  },
+  {
+    "path": "tiles/12/783/1481.png",
+    "bytes": 23321
+  },
+  {
+    "path": "tiles/12/783/1482.png",
+    "bytes": 24670
+  },
+  {
+    "path": "tiles/12/783/1483.png",
+    "bytes": 19557
+  },
+  {
+    "path": "tiles/12/783/1484.png",
+    "bytes": 20969
+  },
+  {
+    "path": "tiles/12/783/1485.png",
+    "bytes": 21024
+  },
+  {
+    "path": "tiles/12/783/1486.png",
+    "bytes": 21842
+  },
+  {
+    "path": "tiles/12/783/1487.png",
+    "bytes": 21725
+  },
+  {
+    "path": "tiles/12/784/1471.png",
+    "bytes": 28655
+  },
+  {
+    "path": "tiles/12/784/1472.png",
+    "bytes": 30751
+  },
+  {
+    "path": "tiles/12/784/1473.png",
+    "bytes": 27545
+  },
+  {
+    "path": "tiles/12/784/1474.png",
+    "bytes": 25234
+  },
+  {
+    "path": "tiles/12/784/1475.png",
+    "bytes": 22084
+  },
+  {
+    "path": "tiles/12/784/1476.png",
+    "bytes": 23763
+  },
+  {
+    "path": "tiles/12/784/1477.png",
+    "bytes": 14197
+  },
+  {
+    "path": "tiles/12/784/1478.png",
+    "bytes": 12568
+  },
+  {
+    "path": "tiles/12/784/1479.png",
+    "bytes": 16473
+  },
+  {
+    "path": "tiles/12/784/1480.png",
+    "bytes": 16776
+  },
+  {
+    "path": "tiles/12/784/1481.png",
+    "bytes": 17442
+  },
+  {
+    "path": "tiles/12/784/1482.png",
+    "bytes": 16693
+  },
+  {
+    "path": "tiles/12/784/1483.png",
+    "bytes": 18895
+  },
+  {
+    "path": "tiles/12/784/1484.png",
+    "bytes": 20379
+  },
+  {
+    "path": "tiles/12/784/1485.png",
+    "bytes": 24943
+  },
+  {
+    "path": "tiles/12/784/1486.png",
+    "bytes": 26367
+  },
+  {
+    "path": "tiles/12/784/1487.png",
+    "bytes": 21180
+  },
+  {
+    "path": "tiles/12/785/1471.png",
+    "bytes": 27679
+  },
+  {
+    "path": "tiles/12/785/1472.png",
+    "bytes": 25726
+  },
+  {
+    "path": "tiles/12/785/1473.png",
+    "bytes": 19551
+  },
+  {
+    "path": "tiles/12/785/1474.png",
+    "bytes": 20211
+  },
+  {
+    "path": "tiles/12/785/1475.png",
+    "bytes": 21857
+  },
+  {
+    "path": "tiles/12/785/1476.png",
+    "bytes": 20657
+  },
+  {
+    "path": "tiles/12/785/1477.png",
+    "bytes": 19078
+  },
+  {
+    "path": "tiles/12/785/1478.png",
+    "bytes": 17265
+  },
+  {
+    "path": "tiles/12/785/1479.png",
+    "bytes": 17839
+  },
+  {
+    "path": "tiles/12/785/1480.png",
+    "bytes": 10723
+  },
+  {
+    "path": "tiles/12/785/1481.png",
+    "bytes": 18103
+  },
+  {
+    "path": "tiles/12/785/1482.png",
+    "bytes": 18664
+  },
+  {
+    "path": "tiles/12/785/1483.png",
+    "bytes": 18395
+  },
+  {
+    "path": "tiles/12/785/1484.png",
+    "bytes": 20614
+  },
+  {
+    "path": "tiles/12/785/1485.png",
+    "bytes": 23179
+  },
+  {
+    "path": "tiles/12/785/1486.png",
+    "bytes": 23175
+  },
+  {
+    "path": "tiles/12/785/1487.png",
+    "bytes": 21858
+  },
+  {
+    "path": "tiles/12/786/1471.png",
+    "bytes": 25467
+  },
+  {
+    "path": "tiles/12/786/1472.png",
+    "bytes": 26661
+  },
+  {
+    "path": "tiles/12/786/1473.png",
+    "bytes": 25020
+  },
+  {
+    "path": "tiles/12/786/1474.png",
+    "bytes": 21659
+  },
+  {
+    "path": "tiles/12/786/1475.png",
+    "bytes": 24524
+  },
+  {
+    "path": "tiles/12/786/1476.png",
+    "bytes": 20989
+  },
+  {
+    "path": "tiles/12/786/1477.png",
+    "bytes": 15776
+  },
+  {
+    "path": "tiles/12/786/1478.png",
+    "bytes": 18280
+  },
+  {
+    "path": "tiles/12/786/1479.png",
+    "bytes": 18544
+  },
+  {
+    "path": "tiles/12/786/1480.png",
+    "bytes": 19820
+  },
+  {
+    "path": "tiles/12/786/1481.png",
+    "bytes": 22049
+  },
+  {
+    "path": "tiles/12/786/1482.png",
+    "bytes": 18428
+  },
+  {
+    "path": "tiles/12/786/1483.png",
+    "bytes": 15755
+  },
+  {
+    "path": "tiles/12/786/1484.png",
+    "bytes": 18857
+  },
+  {
+    "path": "tiles/12/786/1485.png",
+    "bytes": 17920
+  },
+  {
+    "path": "tiles/12/786/1486.png",
+    "bytes": 21276
+  },
+  {
+    "path": "tiles/12/786/1487.png",
+    "bytes": 21174
+  },
+  {
+    "path": "tiles/12/787/1471.png",
+    "bytes": 28360
+  },
+  {
+    "path": "tiles/12/787/1472.png",
+    "bytes": 28890
+  },
+  {
+    "path": "tiles/12/787/1473.png",
+    "bytes": 25261
+  },
+  {
+    "path": "tiles/12/787/1474.png",
+    "bytes": 20820
+  },
+  {
+    "path": "tiles/12/787/1475.png",
+    "bytes": 18295
+  },
+  {
+    "path": "tiles/12/787/1476.png",
+    "bytes": 20730
+  },
+  {
+    "path": "tiles/12/787/1477.png",
+    "bytes": 14729
+  },
+  {
+    "path": "tiles/12/787/1478.png",
+    "bytes": 20523
+  },
+  {
+    "path": "tiles/12/787/1479.png",
+    "bytes": 11811
+  },
+  {
+    "path": "tiles/12/787/1480.png",
+    "bytes": 18059
+  },
+  {
+    "path": "tiles/12/787/1481.png",
+    "bytes": 16821
+  },
+  {
+    "path": "tiles/12/787/1482.png",
+    "bytes": 22458
+  },
+  {
+    "path": "tiles/12/787/1483.png",
+    "bytes": 17662
+  },
+  {
+    "path": "tiles/12/787/1484.png",
+    "bytes": 16609
+  },
+  {
+    "path": "tiles/12/787/1485.png",
+    "bytes": 10538
+  },
+  {
+    "path": "tiles/12/787/1486.png",
+    "bytes": 21115
+  },
+  {
+    "path": "tiles/12/787/1487.png",
+    "bytes": 18965
+  },
+  {
+    "path": "tiles/12/788/1471.png",
+    "bytes": 25164
+  },
+  {
+    "path": "tiles/12/788/1472.png",
+    "bytes": 25497
+  },
+  {
+    "path": "tiles/12/788/1473.png",
+    "bytes": 25609
+  },
+  {
+    "path": "tiles/12/788/1474.png",
+    "bytes": 22975
+  },
+  {
+    "path": "tiles/12/788/1475.png",
+    "bytes": 16075
+  },
+  {
+    "path": "tiles/12/788/1476.png",
+    "bytes": 18347
+  },
+  {
+    "path": "tiles/12/788/1477.png",
+    "bytes": 21223
+  },
+  {
+    "path": "tiles/12/788/1478.png",
+    "bytes": 15118
+  },
+  {
+    "path": "tiles/12/788/1479.png",
+    "bytes": 18876
+  },
+  {
+    "path": "tiles/12/788/1480.png",
+    "bytes": 17015
+  },
+  {
+    "path": "tiles/12/788/1481.png",
+    "bytes": 16035
+  },
+  {
+    "path": "tiles/12/788/1482.png",
+    "bytes": 19633
+  },
+  {
+    "path": "tiles/12/788/1483.png",
+    "bytes": 17495
+  },
+  {
+    "path": "tiles/12/788/1484.png",
+    "bytes": 19289
+  },
+  {
+    "path": "tiles/12/788/1485.png",
+    "bytes": 17051
+  },
+  {
+    "path": "tiles/12/788/1486.png",
+    "bytes": 21621
+  },
+  {
+    "path": "tiles/12/788/1487.png",
+    "bytes": 22212
+  },
+  {
+    "path": "tiles/12/789/1471.png",
+    "bytes": 25567
+  },
+  {
+    "path": "tiles/12/789/1472.png",
+    "bytes": 25853
+  },
+  {
+    "path": "tiles/12/789/1473.png",
+    "bytes": 25432
+  },
+  {
+    "path": "tiles/12/789/1474.png",
+    "bytes": 20641
+  },
+  {
+    "path": "tiles/12/789/1475.png",
+    "bytes": 20870
+  },
+  {
+    "path": "tiles/12/789/1476.png",
+    "bytes": 17961
+  },
+  {
+    "path": "tiles/12/789/1477.png",
+    "bytes": 17449
+  },
+  {
+    "path": "tiles/12/789/1478.png",
+    "bytes": 17741
+  },
+  {
+    "path": "tiles/12/789/1479.png",
+    "bytes": 13822
+  },
+  {
+    "path": "tiles/12/789/1480.png",
+    "bytes": 14133
+  },
+  {
+    "path": "tiles/12/789/1481.png",
+    "bytes": 15389
+  },
+  {
+    "path": "tiles/12/789/1482.png",
+    "bytes": 17078
+  },
+  {
+    "path": "tiles/12/789/1483.png",
+    "bytes": 23059
+  },
+  {
+    "path": "tiles/12/789/1484.png",
+    "bytes": 22351
+  },
+  {
+    "path": "tiles/12/789/1485.png",
+    "bytes": 22336
+  },
+  {
+    "path": "tiles/12/789/1486.png",
+    "bytes": 22279
+  },
+  {
+    "path": "tiles/12/789/1487.png",
+    "bytes": 21089
+  },
+  {
+    "path": "tiles/12/790/1471.png",
+    "bytes": 23290
+  },
+  {
+    "path": "tiles/12/790/1472.png",
+    "bytes": 23216
+  },
+  {
+    "path": "tiles/12/790/1473.png",
+    "bytes": 25107
+  },
+  {
+    "path": "tiles/12/790/1474.png",
+    "bytes": 20308
+  },
+  {
+    "path": "tiles/12/790/1475.png",
+    "bytes": 17166
+  },
+  {
+    "path": "tiles/12/790/1476.png",
+    "bytes": 19179
+  },
+  {
+    "path": "tiles/12/790/1477.png",
+    "bytes": 22542
+  },
+  {
+    "path": "tiles/12/790/1478.png",
+    "bytes": 17955
+  },
+  {
+    "path": "tiles/12/790/1479.png",
+    "bytes": 18592
+  },
+  {
+    "path": "tiles/12/790/1480.png",
+    "bytes": 16126
+  },
+  {
+    "path": "tiles/12/790/1481.png",
+    "bytes": 17372
+  },
+  {
+    "path": "tiles/12/790/1482.png",
+    "bytes": 8243
+  },
+  {
+    "path": "tiles/12/790/1483.png",
+    "bytes": 21614
+  },
+  {
+    "path": "tiles/12/790/1484.png",
+    "bytes": 22310
+  },
+  {
+    "path": "tiles/12/790/1485.png",
+    "bytes": 20966
+  },
+  {
+    "path": "tiles/12/790/1486.png",
+    "bytes": 23738
+  },
+  {
+    "path": "tiles/12/790/1487.png",
+    "bytes": 22134
+  },
+  {
+    "path": "tiles/12/791/1471.png",
+    "bytes": 23615
+  },
+  {
+    "path": "tiles/12/791/1472.png",
+    "bytes": 23616
+  },
+  {
+    "path": "tiles/12/791/1473.png",
+    "bytes": 25418
+  },
+  {
+    "path": "tiles/12/791/1474.png",
+    "bytes": 24832
+  },
+  {
+    "path": "tiles/12/791/1475.png",
+    "bytes": 18670
+  },
+  {
+    "path": "tiles/12/791/1476.png",
+    "bytes": 22044
+  },
+  {
+    "path": "tiles/12/791/1477.png",
+    "bytes": 19447
+  },
+  {
+    "path": "tiles/12/791/1478.png",
+    "bytes": 18230
+  },
+  {
+    "path": "tiles/12/791/1479.png",
+    "bytes": 19509
+  },
+  {
+    "path": "tiles/12/791/1480.png",
+    "bytes": 15818
+  },
+  {
+    "path": "tiles/12/791/1481.png",
+    "bytes": 12678
+  },
+  {
+    "path": "tiles/12/791/1482.png",
+    "bytes": 10617
+  },
+  {
+    "path": "tiles/12/791/1483.png",
+    "bytes": 21333
+  },
+  {
+    "path": "tiles/12/791/1484.png",
+    "bytes": 18738
+  },
+  {
+    "path": "tiles/12/791/1485.png",
+    "bytes": 22083
+  },
+  {
+    "path": "tiles/12/791/1486.png",
+    "bytes": 22755
+  },
+  {
+    "path": "tiles/12/791/1487.png",
+    "bytes": 22333
+  },
+  {
+    "path": "tiles/12/792/1471.png",
+    "bytes": 24410
+  },
+  {
+    "path": "tiles/12/792/1472.png",
+    "bytes": 22178
+  },
+  {
+    "path": "tiles/12/792/1473.png",
+    "bytes": 21359
+  },
+  {
+    "path": "tiles/12/792/1474.png",
+    "bytes": 23601
+  },
+  {
+    "path": "tiles/12/792/1475.png",
+    "bytes": 20634
+  },
+  {
+    "path": "tiles/12/792/1476.png",
+    "bytes": 22725
+  },
+  {
+    "path": "tiles/12/792/1477.png",
+    "bytes": 17886
+  },
+  {
+    "path": "tiles/12/792/1478.png",
+    "bytes": 19830
+  },
+  {
+    "path": "tiles/12/792/1479.png",
+    "bytes": 20169
+  },
+  {
+    "path": "tiles/12/792/1480.png",
+    "bytes": 17868
+  },
+  {
+    "path": "tiles/12/792/1481.png",
+    "bytes": 4496
+  },
+  {
+    "path": "tiles/12/792/1482.png",
+    "bytes": 4149
+  },
+  {
+    "path": "tiles/12/792/1483.png",
+    "bytes": 9182
+  },
+  {
+    "path": "tiles/12/792/1484.png",
+    "bytes": 16593
+  },
+  {
+    "path": "tiles/12/792/1485.png",
+    "bytes": 17637
+  },
+  {
+    "path": "tiles/12/792/1486.png",
+    "bytes": 22935
+  },
+  {
+    "path": "tiles/12/792/1487.png",
+    "bytes": 21364
+  },
+  {
+    "path": "tiles/12/793/1471.png",
+    "bytes": 25439
+  },
+  {
+    "path": "tiles/12/793/1472.png",
+    "bytes": 24791
+  },
+  {
+    "path": "tiles/12/793/1473.png",
+    "bytes": 23609
+  },
+  {
+    "path": "tiles/12/793/1474.png",
+    "bytes": 21313
+  },
+  {
+    "path": "tiles/12/793/1475.png",
+    "bytes": 22293
+  },
+  {
+    "path": "tiles/12/793/1476.png",
+    "bytes": 18034
+  },
+  {
+    "path": "tiles/12/793/1477.png",
+    "bytes": 19068
+  },
+  {
+    "path": "tiles/12/793/1478.png",
+    "bytes": 22527
+  },
+  {
+    "path": "tiles/12/793/1479.png",
+    "bytes": 22137
+  },
+  {
+    "path": "tiles/12/793/1480.png",
+    "bytes": 23333
+  },
+  {
+    "path": "tiles/12/793/1481.png",
+    "bytes": 17599
+  },
+  {
+    "path": "tiles/12/793/1482.png",
+    "bytes": 13776
+  },
+  {
+    "path": "tiles/12/793/1483.png",
+    "bytes": 14211
+  },
+  {
+    "path": "tiles/12/793/1484.png",
+    "bytes": 17721
+  },
+  {
+    "path": "tiles/12/793/1485.png",
+    "bytes": 20587
+  },
+  {
+    "path": "tiles/12/793/1486.png",
+    "bytes": 23031
+  },
+  {
+    "path": "tiles/12/793/1487.png",
+    "bytes": 23032
+  },
+  {
+    "path": "tiles/12/794/1471.png",
+    "bytes": 24939
+  },
+  {
+    "path": "tiles/12/794/1472.png",
+    "bytes": 26025
+  },
+  {
+    "path": "tiles/12/794/1473.png",
+    "bytes": 24140
+  },
+  {
+    "path": "tiles/12/794/1474.png",
+    "bytes": 22288
+  },
+  {
+    "path": "tiles/12/794/1475.png",
+    "bytes": 21749
+  },
+  {
+    "path": "tiles/12/794/1476.png",
+    "bytes": 21527
+  },
+  {
+    "path": "tiles/12/794/1477.png",
+    "bytes": 20763
+  },
+  {
+    "path": "tiles/12/794/1478.png",
+    "bytes": 21143
+  },
+  {
+    "path": "tiles/12/794/1479.png",
+    "bytes": 20412
+  },
+  {
+    "path": "tiles/12/794/1480.png",
+    "bytes": 21049
+  },
+  {
+    "path": "tiles/12/794/1481.png",
+    "bytes": 21382
+  },
+  {
+    "path": "tiles/12/794/1482.png",
+    "bytes": 20435
+  },
+  {
+    "path": "tiles/12/794/1483.png",
+    "bytes": 20270
+  },
+  {
+    "path": "tiles/12/794/1484.png",
+    "bytes": 27554
+  },
+  {
+    "path": "tiles/12/794/1485.png",
+    "bytes": 23554
+  },
+  {
+    "path": "tiles/12/794/1486.png",
+    "bytes": 22538
+  },
+  {
+    "path": "tiles/12/794/1487.png",
+    "bytes": 24475
+  },
+  {
+    "path": "tiles/12/795/1471.png",
+    "bytes": 23792
+  },
+  {
+    "path": "tiles/12/795/1472.png",
+    "bytes": 25344
+  },
+  {
+    "path": "tiles/12/795/1473.png",
+    "bytes": 26072
+  },
+  {
+    "path": "tiles/12/795/1474.png",
+    "bytes": 24547
+  },
+  {
+    "path": "tiles/12/795/1475.png",
+    "bytes": 23596
+  },
+  {
+    "path": "tiles/12/795/1476.png",
+    "bytes": 21734
+  },
+  {
+    "path": "tiles/12/795/1477.png",
+    "bytes": 19990
+  },
+  {
+    "path": "tiles/12/795/1478.png",
+    "bytes": 24619
+  },
+  {
+    "path": "tiles/12/795/1479.png",
+    "bytes": 23051
+  },
+  {
+    "path": "tiles/12/795/1480.png",
+    "bytes": 24978
+  },
+  {
+    "path": "tiles/12/795/1481.png",
+    "bytes": 24916
+  },
+  {
+    "path": "tiles/12/795/1482.png",
+    "bytes": 25880
+  },
+  {
+    "path": "tiles/12/795/1483.png",
+    "bytes": 24759
+  },
+  {
+    "path": "tiles/12/795/1484.png",
+    "bytes": 24965
+  },
+  {
+    "path": "tiles/12/795/1485.png",
+    "bytes": 23032
+  },
+  {
+    "path": "tiles/12/795/1486.png",
+    "bytes": 30599
+  },
+  {
+    "path": "tiles/12/795/1487.png",
+    "bytes": 31257
+  },
+  {
+    "path": "tiles/12/796/1471.png",
+    "bytes": 28732
+  },
+  {
+    "path": "tiles/12/796/1472.png",
+    "bytes": 26814
+  },
+  {
+    "path": "tiles/12/796/1473.png",
+    "bytes": 28301
+  },
+  {
+    "path": "tiles/12/796/1474.png",
+    "bytes": 25874
+  },
+  {
+    "path": "tiles/12/796/1475.png",
+    "bytes": 25646
+  },
+  {
+    "path": "tiles/12/796/1476.png",
+    "bytes": 24673
+  },
+  {
+    "path": "tiles/12/796/1477.png",
+    "bytes": 24080
+  },
+  {
+    "path": "tiles/12/796/1478.png",
+    "bytes": 26973
+  },
+  {
+    "path": "tiles/12/796/1479.png",
+    "bytes": 24155
+  },
+  {
+    "path": "tiles/12/796/1480.png",
+    "bytes": 25887
+  },
+  {
+    "path": "tiles/12/796/1481.png",
+    "bytes": 29991
+  },
+  {
+    "path": "tiles/12/796/1482.png",
+    "bytes": 27955
+  },
+  {
+    "path": "tiles/12/796/1483.png",
+    "bytes": 29124
+  },
+  {
+    "path": "tiles/12/796/1484.png",
+    "bytes": 29525
+  },
+  {
+    "path": "tiles/12/796/1485.png",
+    "bytes": 26311
+  },
+  {
+    "path": "tiles/12/796/1486.png",
+    "bytes": 29539
+  },
+  {
+    "path": "tiles/12/796/1487.png",
+    "bytes": 29800
+  },
+  {
+    "path": "tiles/12/797/1471.png",
+    "bytes": 30851
+  },
+  {
+    "path": "tiles/12/797/1472.png",
+    "bytes": 26512
+  },
+  {
+    "path": "tiles/12/797/1473.png",
+    "bytes": 29568
+  },
+  {
+    "path": "tiles/12/797/1474.png",
+    "bytes": 27171
+  },
+  {
+    "path": "tiles/12/797/1475.png",
+    "bytes": 26984
+  },
+  {
+    "path": "tiles/12/797/1476.png",
+    "bytes": 26130
+  },
+  {
+    "path": "tiles/12/797/1477.png",
+    "bytes": 25339
+  },
+  {
+    "path": "tiles/12/797/1478.png",
+    "bytes": 27128
+  },
+  {
+    "path": "tiles/12/797/1479.png",
+    "bytes": 28953
+  },
+  {
+    "path": "tiles/12/797/1480.png",
+    "bytes": 26398
+  },
+  {
+    "path": "tiles/12/797/1481.png",
+    "bytes": 30520
+  },
+  {
+    "path": "tiles/12/797/1482.png",
+    "bytes": 29722
+  },
+  {
+    "path": "tiles/12/797/1483.png",
+    "bytes": 28719
+  },
+  {
+    "path": "tiles/12/797/1484.png",
+    "bytes": 28584
+  },
+  {
+    "path": "tiles/12/797/1485.png",
+    "bytes": 29928
+  },
+  {
+    "path": "tiles/12/797/1486.png",
+    "bytes": 27938
+  },
+  {
+    "path": "tiles/12/797/1487.png",
+    "bytes": 27630
+  },
+  {
+    "path": "tiles/12/798/1471.png",
+    "bytes": 32891
+  },
+  {
+    "path": "tiles/12/798/1472.png",
+    "bytes": 30383
+  },
+  {
+    "path": "tiles/12/798/1473.png",
+    "bytes": 28499
+  },
+  {
+    "path": "tiles/12/798/1474.png",
+    "bytes": 28569
+  },
+  {
+    "path": "tiles/12/798/1475.png",
+    "bytes": 28535
+  },
+  {
+    "path": "tiles/12/798/1476.png",
+    "bytes": 27985
+  },
+  {
+    "path": "tiles/12/798/1477.png",
+    "bytes": 27583
+  },
+  {
+    "path": "tiles/12/798/1478.png",
+    "bytes": 29063
+  },
+  {
+    "path": "tiles/12/798/1479.png",
+    "bytes": 30247
+  },
+  {
+    "path": "tiles/12/798/1480.png",
+    "bytes": 28561
+  },
+  {
+    "path": "tiles/12/798/1481.png",
+    "bytes": 30164
+  },
+  {
+    "path": "tiles/12/798/1482.png",
+    "bytes": 32708
+  },
+  {
+    "path": "tiles/12/798/1483.png",
+    "bytes": 32014
+  },
+  {
+    "path": "tiles/12/798/1484.png",
+    "bytes": 29624
+  },
+  {
+    "path": "tiles/12/798/1485.png",
+    "bytes": 30082
+  },
+  {
+    "path": "tiles/12/798/1486.png",
+    "bytes": 26491
+  },
+  {
+    "path": "tiles/12/798/1487.png",
+    "bytes": 25993
+  },
+  {
+    "path": "tiles/13/1566/2956.png",
+    "bytes": 10655
+  },
+  {
+    "path": "tiles/13/1566/2957.png",
+    "bytes": 20287
+  },
+  {
+    "path": "tiles/13/1566/2958.png",
+    "bytes": 19121
+  },
+  {
+    "path": "tiles/13/1567/2956.png",
+    "bytes": 19552
+  },
+  {
+    "path": "tiles/13/1567/2957.png",
+    "bytes": 20147
+  },
+  {
+    "path": "tiles/13/1567/2958.png",
+    "bytes": 14387
+  },
+  {
+    "path": "tiles/13/1567/2959.png",
+    "bytes": 17098
+  },
+  {
+    "path": "tiles/13/1568/2956.png",
+    "bytes": 12157
+  },
+  {
+    "path": "tiles/13/1568/2957.png",
+    "bytes": 15152
+  },
+  {
+    "path": "tiles/13/1568/2958.png",
+    "bytes": 13824
+  },
+  {
+    "path": "tiles/13/1568/2959.png",
+    "bytes": 18900
+  },
+  {
+    "path": "tiles/13/1569/2956.png",
+    "bytes": 4129
+  },
+  {
+    "path": "tiles/13/1569/2957.png",
+    "bytes": 8255
+  },
+  {
+    "path": "tiles/13/1569/2958.png",
+    "bytes": 19384
+  },
+  {
+    "path": "tiles/13/1569/2959.png",
+    "bytes": 17158
+  },
+  {
+    "path": "tiles/13/1570/2956.png",
+    "bytes": 17155
+  },
+  {
+    "path": "tiles/13/1570/2957.png",
+    "bytes": 15393
+  },
+  {
+    "path": "tiles/13/1570/2958.png",
+    "bytes": 18968
+  },
+  {
+    "path": "tiles/13/1570/2959.png",
+    "bytes": 15487
+  },
+  {
+    "path": "tiles/13/1571/2956.png",
+    "bytes": 17082
+  },
+  {
+    "path": "tiles/13/1571/2957.png",
+    "bytes": 18612
+  },
+  {
+    "path": "tiles/13/1571/2958.png",
+    "bytes": 25243
+  },
+  {
+    "path": "tiles/13/1571/2959.png",
+    "bytes": 12465
+  },
+  {
+    "path": "tiles/13/1572/2956.png",
+    "bytes": 17311
+  },
+  {
+    "path": "tiles/13/1572/2957.png",
+    "bytes": 17274
+  },
+  {
+    "path": "tiles/13/1572/2958.png",
+    "bytes": 23920
+  },
+  {
+    "path": "tiles/13/1572/2959.png",
+    "bytes": 14029
+  },
+  {
+    "path": "tiles/13/1572/2960.png",
+    "bytes": 16793
+  },
+  {
+    "path": "tiles/13/1572/2961.png",
+    "bytes": 18120
+  },
+  {
+    "path": "tiles/13/1572/2962.png",
+    "bytes": 16721
+  },
+  {
+    "path": "tiles/13/1572/2963.png",
+    "bytes": 17563
+  },
+  {
+    "path": "tiles/13/1572/2964.png",
+    "bytes": 15782
+  },
+  {
+    "path": "tiles/13/1572/2965.png",
+    "bytes": 16588
+  },
+  {
+    "path": "tiles/13/1573/2956.png",
+    "bytes": 16489
+  },
+  {
+    "path": "tiles/13/1573/2957.png",
+    "bytes": 17715
+  },
+  {
+    "path": "tiles/13/1573/2958.png",
+    "bytes": 22920
+  },
+  {
+    "path": "tiles/13/1573/2959.png",
+    "bytes": 17864
+  },
+  {
+    "path": "tiles/13/1573/2960.png",
+    "bytes": 19379
+  },
+  {
+    "path": "tiles/13/1573/2961.png",
+    "bytes": 22280
+  },
+  {
+    "path": "tiles/13/1573/2962.png",
+    "bytes": 21911
+  },
+  {
+    "path": "tiles/13/1573/2963.png",
+    "bytes": 24208
+  },
+  {
+    "path": "tiles/13/1573/2964.png",
+    "bytes": 25543
+  },
+  {
+    "path": "tiles/13/1573/2965.png",
+    "bytes": 15509
+  },
+  {
+    "path": "tiles/13/1573/2966.png",
+    "bytes": 18726
+  },
+  {
+    "path": "tiles/13/1574/2952.png",
+    "bytes": 17972
+  },
+  {
+    "path": "tiles/13/1574/2953.png",
+    "bytes": 19707
+  },
+  {
+    "path": "tiles/13/1574/2954.png",
+    "bytes": 16463
+  },
+  {
+    "path": "tiles/13/1574/2955.png",
+    "bytes": 14151
+  },
+  {
+    "path": "tiles/13/1574/2956.png",
+    "bytes": 14086
+  },
+  {
+    "path": "tiles/13/1574/2957.png",
+    "bytes": 19539
+  },
+  {
+    "path": "tiles/13/1574/2958.png",
+    "bytes": 15415
+  },
+  {
+    "path": "tiles/13/1574/2959.png",
+    "bytes": 12178
+  },
+  {
+    "path": "tiles/13/1574/2960.png",
+    "bytes": 19603
+  },
+  {
+    "path": "tiles/13/1574/2961.png",
+    "bytes": 21626
+  },
+  {
+    "path": "tiles/13/1574/2962.png",
+    "bytes": 18395
+  },
+  {
+    "path": "tiles/13/1574/2963.png",
+    "bytes": 17534
+  },
+  {
+    "path": "tiles/13/1574/2964.png",
+    "bytes": 22253
+  },
+  {
+    "path": "tiles/13/1574/2965.png",
+    "bytes": 20724
+  },
+  {
+    "path": "tiles/13/1574/2966.png",
+    "bytes": 17866
+  },
+  {
+    "path": "tiles/13/1575/2946.png",
+    "bytes": 25745
+  },
+  {
+    "path": "tiles/13/1575/2947.png",
+    "bytes": 22798
+  },
+  {
+    "path": "tiles/13/1575/2948.png",
+    "bytes": 22053
+  },
+  {
+    "path": "tiles/13/1575/2949.png",
+    "bytes": 18987
+  },
+  {
+    "path": "tiles/13/1575/2950.png",
+    "bytes": 20973
+  },
+  {
+    "path": "tiles/13/1575/2951.png",
+    "bytes": 17482
+  },
+  {
+    "path": "tiles/13/1575/2952.png",
+    "bytes": 20892
+  },
+  {
+    "path": "tiles/13/1575/2953.png",
+    "bytes": 21296
+  },
+  {
+    "path": "tiles/13/1575/2954.png",
+    "bytes": 17436
+  },
+  {
+    "path": "tiles/13/1575/2955.png",
+    "bytes": 11727
+  },
+  {
+    "path": "tiles/13/1575/2956.png",
+    "bytes": 23699
+  },
+  {
+    "path": "tiles/13/1575/2957.png",
+    "bytes": 21045
+  },
+  {
+    "path": "tiles/13/1575/2958.png",
+    "bytes": 16595
+  },
+  {
+    "path": "tiles/13/1575/2959.png",
+    "bytes": 12930
+  },
+  {
+    "path": "tiles/13/1575/2960.png",
+    "bytes": 15531
+  },
+  {
+    "path": "tiles/13/1575/2961.png",
+    "bytes": 17834
+  },
+  {
+    "path": "tiles/13/1575/2962.png",
+    "bytes": 19032
+  },
+  {
+    "path": "tiles/13/1575/2963.png",
+    "bytes": 16285
+  },
+  {
+    "path": "tiles/13/1575/2964.png",
+    "bytes": 19146
+  },
+  {
+    "path": "tiles/13/1575/2965.png",
+    "bytes": 19932
+  },
+  {
+    "path": "tiles/13/1575/2966.png",
+    "bytes": 17919
+  },
+  {
+    "path": "tiles/13/1576/2946.png",
+    "bytes": 22133
+  },
+  {
+    "path": "tiles/13/1576/2947.png",
+    "bytes": 25906
+  },
+  {
+    "path": "tiles/13/1576/2948.png",
+    "bytes": 23241
+  },
+  {
+    "path": "tiles/13/1576/2949.png",
+    "bytes": 20636
+  },
+  {
+    "path": "tiles/13/1576/2950.png",
+    "bytes": 18469
+  },
+  {
+    "path": "tiles/13/1576/2951.png",
+    "bytes": 17025
+  },
+  {
+    "path": "tiles/13/1576/2952.png",
+    "bytes": 19702
+  },
+  {
+    "path": "tiles/13/1576/2953.png",
+    "bytes": 21490
+  },
+  {
+    "path": "tiles/13/1576/2954.png",
+    "bytes": 17535
+  },
+  {
+    "path": "tiles/13/1576/2955.png",
+    "bytes": 22850
+  },
+  {
+    "path": "tiles/13/1576/2956.png",
+    "bytes": 20639
+  },
+  {
+    "path": "tiles/13/1576/2957.png",
+    "bytes": 15871
+  },
+  {
+    "path": "tiles/13/1576/2958.png",
+    "bytes": 13072
+  },
+  {
+    "path": "tiles/13/1576/2959.png",
+    "bytes": 18735
+  },
+  {
+    "path": "tiles/13/1576/2963.png",
+    "bytes": 15553
+  },
+  {
+    "path": "tiles/13/1576/2964.png",
+    "bytes": 20604
+  },
+  {
+    "path": "tiles/13/1576/2965.png",
+    "bytes": 18995
+  },
+  {
+    "path": "tiles/13/1576/2966.png",
+    "bytes": 14239
+  },
+  {
+    "path": "tiles/13/1577/2946.png",
+    "bytes": 24798
+  },
+  {
+    "path": "tiles/13/1577/2947.png",
+    "bytes": 24831
+  },
+  {
+    "path": "tiles/13/1577/2948.png",
+    "bytes": 24105
+  },
+  {
+    "path": "tiles/13/1577/2949.png",
+    "bytes": 17900
+  },
+  {
+    "path": "tiles/13/1577/2950.png",
+    "bytes": 18344
+  },
+  {
+    "path": "tiles/13/1577/2951.png",
+    "bytes": 15378
+  },
+  {
+    "path": "tiles/13/1577/2952.png",
+    "bytes": 18204
+  },
+  {
+    "path": "tiles/13/1577/2953.png",
+    "bytes": 19076
+  },
+  {
+    "path": "tiles/13/1577/2954.png",
+    "bytes": 20567
+  },
+  {
+    "path": "tiles/13/1577/2955.png",
+    "bytes": 20300
+  },
+  {
+    "path": "tiles/13/1577/2956.png",
+    "bytes": 18573
+  },
+  {
+    "path": "tiles/13/1577/2957.png",
+    "bytes": 14042
+  },
+  {
+    "path": "tiles/13/1577/2963.png",
+    "bytes": 17816
+  },
+  {
+    "path": "tiles/13/1577/2964.png",
+    "bytes": 20793
+  },
+  {
+    "path": "tiles/13/1577/2965.png",
+    "bytes": 16523
+  },
+  {
+    "path": "tiles/13/1577/2966.png",
+    "bytes": 12942
+  },
+  {
+    "path": "tiles/13/1578/2946.png",
+    "bytes": 26042
+  },
+  {
+    "path": "tiles/13/1578/2947.png",
+    "bytes": 20373
+  },
+  {
+    "path": "tiles/13/1578/2948.png",
+    "bytes": 21947
+  },
+  {
+    "path": "tiles/13/1578/2949.png",
+    "bytes": 18371
+  },
+  {
+    "path": "tiles/13/1578/2954.png",
+    "bytes": 16884
+  },
+  {
+    "path": "tiles/13/1578/2955.png",
+    "bytes": 15874
+  },
+  {
+    "path": "tiles/13/1578/2956.png",
+    "bytes": 17847
+  },
+  {
+    "path": "tiles/13/1578/2963.png",
+    "bytes": 17546
+  },
+  {
+    "path": "tiles/13/1578/2964.png",
+    "bytes": 14075
+  },
+  {
+    "path": "tiles/13/1578/2965.png",
+    "bytes": 16194
+  },
+  {
+    "path": "tiles/13/1578/2966.png",
+    "bytes": 19153
+  },
+  {
+    "path": "tiles/13/1579/2947.png",
+    "bytes": 20903
+  },
+  {
+    "path": "tiles/13/1579/2948.png",
+    "bytes": 19391
+  },
+  {
+    "path": "tiles/13/1579/2949.png",
+    "bytes": 18275
+  },
+  {
+    "path": "tiles/13/1579/2962.png",
+    "bytes": 16626
+  },
+  {
+    "path": "tiles/13/1579/2963.png",
+    "bytes": 16429
+  },
+  {
+    "path": "tiles/13/1579/2964.png",
+    "bytes": 19563
+  },
+  {
+    "path": "tiles/13/1579/2965.png",
+    "bytes": 19153
+  },
+  {
+    "path": "tiles/13/1579/2966.png",
+    "bytes": 20966
+  },
+  {
+    "path": "tiles/13/1580/2947.png",
+    "bytes": 23173
+  },
+  {
+    "path": "tiles/13/1580/2948.png",
+    "bytes": 19515
+  },
+  {
+    "path": "tiles/13/1580/2949.png",
+    "bytes": 18695
+  },
+  {
+    "path": "tiles/13/1580/2953.png",
+    "bytes": 18862
+  },
+  {
+    "path": "tiles/13/1580/2954.png",
+    "bytes": 19600
+  },
+  {
+    "path": "tiles/13/1580/2955.png",
+    "bytes": 15821
+  },
+  {
+    "path": "tiles/13/1580/2956.png",
+    "bytes": 19095
+  },
+  {
+    "path": "tiles/13/1580/2957.png",
+    "bytes": 15267
+  },
+  {
+    "path": "tiles/13/1580/2958.png",
+    "bytes": 16732
+  },
+  {
+    "path": "tiles/13/1580/2962.png",
+    "bytes": 18782
+  },
+  {
+    "path": "tiles/13/1580/2963.png",
+    "bytes": 17229
+  },
+  {
+    "path": "tiles/13/1580/2964.png",
+    "bytes": 7949
+  },
+  {
+    "path": "tiles/13/1580/2965.png",
+    "bytes": 3102
+  },
+  {
+    "path": "tiles/13/1580/2966.png",
+    "bytes": 16027
+  },
+  {
+    "path": "tiles/13/1581/2947.png",
+    "bytes": 24968
+  },
+  {
+    "path": "tiles/13/1581/2948.png",
+    "bytes": 22487
+  },
+  {
+    "path": "tiles/13/1581/2949.png",
+    "bytes": 19322
+  },
+  {
+    "path": "tiles/13/1581/2950.png",
+    "bytes": 20323
+  },
+  {
+    "path": "tiles/13/1581/2951.png",
+    "bytes": 18668
+  },
+  {
+    "path": "tiles/13/1581/2952.png",
+    "bytes": 18465
+  },
+  {
+    "path": "tiles/13/1581/2953.png",
+    "bytes": 21557
+  },
+  {
+    "path": "tiles/13/1581/2954.png",
+    "bytes": 22623
+  },
+  {
+    "path": "tiles/13/1581/2955.png",
+    "bytes": 24253
+  },
+  {
+    "path": "tiles/13/1581/2956.png",
+    "bytes": 21258
+  },
+  {
+    "path": "tiles/13/1581/2957.png",
+    "bytes": 17405
+  },
+  {
+    "path": "tiles/13/1581/2958.png",
+    "bytes": 17088
+  },
+  {
+    "path": "tiles/13/1581/2959.png",
+    "bytes": 18332
+  },
+  {
+    "path": "tiles/13/1581/2960.png",
+    "bytes": 15720
+  },
+  {
+    "path": "tiles/13/1581/2961.png",
+    "bytes": 16224
+  },
+  {
+    "path": "tiles/13/1581/2962.png",
+    "bytes": 14737
+  },
+  {
+    "path": "tiles/13/1581/2963.png",
+    "bytes": 16344
+  },
+  {
+    "path": "tiles/13/1581/2964.png",
+    "bytes": 8265
+  },
+  {
+    "path": "tiles/13/1581/2965.png",
+    "bytes": 10087
+  },
+  {
+    "path": "tiles/13/1582/2947.png",
+    "bytes": 24039
+  },
+  {
+    "path": "tiles/13/1582/2948.png",
+    "bytes": 25966
+  },
+  {
+    "path": "tiles/13/1582/2949.png",
+    "bytes": 25702
+  },
+  {
+    "path": "tiles/13/1582/2950.png",
+    "bytes": 20467
+  },
+  {
+    "path": "tiles/13/1582/2951.png",
+    "bytes": 19948
+  },
+  {
+    "path": "tiles/13/1582/2952.png",
+    "bytes": 22786
+  },
+  {
+    "path": "tiles/13/1582/2953.png",
+    "bytes": 25884
+  },
+  {
+    "path": "tiles/13/1582/2954.png",
+    "bytes": 19994
+  },
+  {
+    "path": "tiles/13/1582/2955.png",
+    "bytes": 21371
+  },
+  {
+    "path": "tiles/13/1582/2956.png",
+    "bytes": 19152
+  },
+  {
+    "path": "tiles/13/1582/2957.png",
+    "bytes": 22966
+  },
+  {
+    "path": "tiles/13/1582/2958.png",
+    "bytes": 20864
+  },
+  {
+    "path": "tiles/13/1582/2959.png",
+    "bytes": 20019
+  },
+  {
+    "path": "tiles/13/1582/2960.png",
+    "bytes": 19404
+  },
+  {
+    "path": "tiles/13/1582/2961.png",
+    "bytes": 18895
+  },
+  {
+    "path": "tiles/13/1582/2962.png",
+    "bytes": 19932
+  },
+  {
+    "path": "tiles/13/1582/2963.png",
+    "bytes": 14243
+  },
+  {
+    "path": "tiles/13/1582/2964.png",
+    "bytes": 7931
+  },
+  {
+    "path": "tiles/13/1582/2965.png",
+    "bytes": 14924
+  },
+  {
+    "path": "tiles/13/1583/2947.png",
+    "bytes": 22922
+  },
+  {
+    "path": "tiles/13/1583/2948.png",
+    "bytes": 22105
+  },
+  {
+    "path": "tiles/13/1583/2949.png",
+    "bytes": 24107
+  },
+  {
+    "path": "tiles/13/1583/2950.png",
+    "bytes": 18334
+  },
+  {
+    "path": "tiles/13/1583/2951.png",
+    "bytes": 20389
+  },
+  {
+    "path": "tiles/13/1583/2952.png",
+    "bytes": 21380
+  },
+  {
+    "path": "tiles/13/1583/2953.png",
+    "bytes": 23637
+  },
+  {
+    "path": "tiles/13/1583/2954.png",
+    "bytes": 22910
+  },
+  {
+    "path": "tiles/13/1583/2955.png",
+    "bytes": 19173
+  },
+  {
+    "path": "tiles/13/1583/2956.png",
+    "bytes": 15995
+  },
+  {
+    "path": "tiles/13/1583/2957.png",
+    "bytes": 17808
+  },
+  {
+    "path": "tiles/13/1583/2958.png",
+    "bytes": 19697
+  },
+  {
+    "path": "tiles/13/1583/2959.png",
+    "bytes": 18984
+  },
+  {
+    "path": "tiles/13/1583/2960.png",
+    "bytes": 18017
+  },
+  {
+    "path": "tiles/13/1583/2961.png",
+    "bytes": 12600
+  },
+  {
+    "path": "tiles/13/1583/2962.png",
+    "bytes": 9616
+  },
+  {
+    "path": "tiles/13/1583/2963.png",
+    "bytes": 7757
+  },
+  {
+    "path": "tiles/13/1583/2964.png",
+    "bytes": 3040
+  },
+  {
+    "path": "tiles/13/1583/2965.png",
+    "bytes": 11883
+  },
+  {
+    "path": "tiles/13/1584/2948.png",
+    "bytes": 22845
+  },
+  {
+    "path": "tiles/13/1584/2949.png",
+    "bytes": 22498
+  },
+  {
+    "path": "tiles/13/1584/2950.png",
+    "bytes": 23772
+  },
+  {
+    "path": "tiles/13/1584/2951.png",
+    "bytes": 20544
+  },
+  {
+    "path": "tiles/13/1584/2952.png",
+    "bytes": 21792
+  },
+  {
+    "path": "tiles/13/1584/2957.png",
+    "bytes": 21305
+  },
+  {
+    "path": "tiles/13/1584/2958.png",
+    "bytes": 18649
+  },
+  {
+    "path": "tiles/13/1584/2959.png",
+    "bytes": 22611
+  },
+  {
+    "path": "tiles/13/1584/2960.png",
+    "bytes": 24220
+  },
+  {
+    "path": "tiles/13/1584/2961.png",
+    "bytes": 5990
+  },
+  {
+    "path": "tiles/13/1584/2962.png",
+    "bytes": 4631
+  },
+  {
+    "path": "tiles/13/1584/2963.png",
+    "bytes": 2421
+  },
+  {
+    "path": "tiles/13/1584/2964.png",
+    "bytes": 2542
+  },
+  {
+    "path": "tiles/13/1585/2948.png",
+    "bytes": 25012
+  },
+  {
+    "path": "tiles/13/1585/2949.png",
+    "bytes": 24017
+  },
+  {
+    "path": "tiles/13/1585/2950.png",
+    "bytes": 21960
+  },
+  {
+    "path": "tiles/13/1585/2951.png",
+    "bytes": 16965
+  },
+  {
+    "path": "tiles/13/1585/2952.png",
+    "bytes": 22431
+  },
+  {
+    "path": "tiles/13/1585/2958.png",
+    "bytes": 20683
+  },
+  {
+    "path": "tiles/13/1585/2959.png",
+    "bytes": 23020
+  },
+  {
+    "path": "tiles/13/1585/2960.png",
+    "bytes": 18055
+  },
+  {
+    "path": "tiles/13/1585/2961.png",
+    "bytes": 7733
+  },
+  {
+    "path": "tiles/13/1586/2948.png",
+    "bytes": 23865
+  },
+  {
+    "path": "tiles/13/1586/2949.png",
+    "bytes": 22546
+  },
+  {
+    "path": "tiles/13/1586/2950.png",
+    "bytes": 20783
+  },
+  {
+    "path": "tiles/13/1586/2951.png",
+    "bytes": 21321
+  },
+  {
+    "path": "tiles/13/1587/2948.png",
+    "bytes": 22184
+  },
+  {
+    "path": "tiles/13/1587/2949.png",
+    "bytes": 21447
+  },
+  {
+    "path": "tiles/13/1587/2950.png",
+    "bytes": 24895
+  },
+  {
+    "path": "tiles/13/1587/2951.png",
+    "bytes": 22914
+  },
+  {
+    "path": "tiles/13/1588/2948.png",
+    "bytes": 22963
+  },
+  {
+    "path": "tiles/13/1588/2949.png",
+    "bytes": 25066
+  },
+  {
+    "path": "tiles/13/1588/2950.png",
+    "bytes": 23884
+  },
+  {
+    "path": "tiles/13/1588/2951.png",
+    "bytes": 20013
+  },
+  {
+    "path": "tiles/9/97/183.png",
+    "bytes": 28771
+  },
+  {
+    "path": "tiles/9/97/184.png",
+    "bytes": 33914
+  },
+  {
+    "path": "tiles/9/97/185.png",
+    "bytes": 30291
+  },
+  {
+    "path": "tiles/9/98/183.png",
+    "bytes": 30530
+  },
+  {
+    "path": "tiles/9/98/184.png",
+    "bytes": 30329
+  },
+  {
+    "path": "tiles/9/98/185.png",
+    "bytes": 31348
+  },
+  {
+    "path": "tiles/9/99/183.png",
+    "bytes": 32143
+  },
+  {
+    "path": "tiles/9/99/184.png",
+    "bytes": 30951
+  },
+  {
+    "path": "tiles/9/99/185.png",
+    "bytes": 30921
+  }
+]
