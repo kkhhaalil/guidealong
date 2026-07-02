@@ -2,7 +2,7 @@
 (function () {
   "use strict";
 
-  var CAT_ICON = { geyser: "⛲", spring: "♨️", falls: "🌊", wildlife: "🦬", landmark: "🏞️", info: "ℹ️" };
+  var CAT_ICON = { geyser: "⛲", spring: "♨️", falls: "🌊", wildlife: "🦬", landmark: "🏞️", info: "ℹ️", story: "📖" };
   var SIM_SPEEDS = [1, 2, 4, 8, 16, 32];  // 倍速档位（基准 60 km/h）
   var BASE_KMH = 60;
   var STORE_KEY = "ynp-tour-visited";
@@ -17,6 +17,7 @@
   var pos = null;               // {lat, lng}
   var visited = loadVisited();
   var playingStop = null;
+  var playingTriggered = false;  // 当前播放是否为到站自动触发
   var queue = [];
   var geoWatch = null;
 
@@ -91,6 +92,7 @@
     if (follow) map.panTo([lat, lng], { animate: true, duration: 0.4 });
     checkTriggers();
     updateNextHint();
+    updateListDistances();
   }
 
   function checkTriggers() {
@@ -140,6 +142,7 @@
 
   function playStop(s, triggered) {
     playingStop = s;
+    playingTriggered = triggered;
     refreshMarker(s);
     $("player-idle").hidden = true;
     $("player-active").hidden = false;
@@ -160,9 +163,12 @@
 
   function finishStop() {
     if (playingStop) {
-      visited.add(playingStop.id);
-      saveVisited();
       var s = playingStop;
+      // 手动预听远处的站点不算“已听”，开到附近时仍会自动触发讲解
+      if (playingTriggered || (pos && haversine(pos, s) <= s.radius)) {
+        visited.add(s.id);
+        saveVisited();
+      }
       playingStop = null;
       refreshMarker(s);
       renderList();
@@ -284,7 +290,7 @@
       li.innerHTML =
         '<div class="stop-num">' + (i + 1) + "</div>" +
         '<div class="stop-info"><div class="stop-name">' + CAT_ICON[s.category] + " " + s.name + "</div>" +
-        '<div class="stop-en">' + s.nameEn + (d ? " · 距离 " + d : "") + "</div></div>" +
+        '<div class="stop-en">' + s.nameEn + '<span class="stop-dist" data-sid="' + s.id + '">' + (d ? " · 距离 " + d : "") + "</span></div></div>" +
         '<div class="stop-state">' + (visited.has(s.id) ? "✓ 已听" : "▶ 播放") + "</div>";
       li.addEventListener("click", function () {
         $("stops-panel").hidden = true;
@@ -295,6 +301,16 @@
       ul.appendChild(li);
     });
     $("progress-count").textContent = done + " / " + TOUR_STOPS.length + " 已收听";
+  }
+  var stopById = {};
+  TOUR_STOPS.forEach(function (s) { stopById[s.id] = s; });
+  function updateListDistances() {
+    if (!pos || $("stops-panel").hidden) return;
+    var spans = $("stops-list").querySelectorAll(".stop-dist");
+    for (var k = 0; k < spans.length; k++) {
+      var s = stopById[spans[k].getAttribute("data-sid")];
+      if (s) spans[k].textContent = " · 距离 " + fmtDist(haversine(pos, s));
+    }
   }
   function focusStop(s, popup) {
     follow = false;
