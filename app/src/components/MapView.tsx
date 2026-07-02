@@ -127,14 +127,18 @@ export function MapView({
   }, [position, heading]);
 
   return (
-    <div className="relative h-full w-full">
+    // isolate + z-0: contain Leaflet's internal z-indexes (panes 200-700,
+    // control corners 1000) in their own stacking context so they can never
+    // paint above the floating chrome (sim controls, now-playing, sheets),
+    // which lives at z-chrome/z-sheet in the page-level context.
+    <div className="relative isolate z-0 h-full w-full">
       <div ref={containerRef} className="leaflet-host h-full w-full" data-testid="map-container" />
       <button
         type="button"
         data-testid="follow-toggle"
         aria-label={t('ariaFollowMap')}
         aria-pressed={follow}
-        className={`absolute right-3 top-3 z-chrome flex min-h-12 min-w-12 items-center justify-center rounded-card bg-surface text-xl shadow-card transition-opacity duration-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface ${
+        className={`absolute right-3 top-[7.5rem] z-chrome flex min-h-12 min-w-12 items-center justify-center rounded-card bg-surface text-xl shadow-card transition-opacity duration-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface ${
           follow ? 'ring-2 ring-primary' : ''
         }`}
         onClick={() => onFollowChange(true)}
