@@ -6,6 +6,7 @@ import { getManifest, getRoute, getStops, tourFileUrl } from '../downloads/tourS
 import { browserClock } from '../engine-adapters/browserClock.ts';
 import { browserStorage } from '../engine-adapters/browserStorage.ts';
 import { createHtmlAudio, unlockAudio } from '../engine-adapters/htmlAudio.ts';
+import { bindAudioElementVolume } from '../state/volumePreference.ts';
 import { createInstrumentedChime } from '../engine-adapters/instrumentedChime.ts';
 import { GpsSource, SimSource } from '../engine/position.ts';
 import { SIM_SPEEDS } from '../engine/constants.ts';
@@ -106,6 +107,7 @@ export function MapScreen({ tourId }: MapScreenProps) {
 
     const audio = createHtmlAudio();
     audioRef.current = audio;
+    const unbindVolume = bindAudioElementVolume(audio.element);
 
     initEngine({
       audio,
@@ -117,6 +119,13 @@ export function MapScreen({ tourId }: MapScreenProps) {
       enableWakeLock: true,
     });
     loadTour(manifest, stops, route);
+    // Test-surface hook: initEngine (re)creates window.__ga, so attach after.
+    if (window.__ga) window.__ga.getAudioVolume = () => audio.element.volume;
+
+    return () => {
+      unbindVolume();
+      if (window.__ga) delete window.__ga.getAudioVolume;
+    };
   }, [manifest, route, stops, tourId, initEngine, loadTour]);
 
   const startSim = useCallback(

@@ -9,6 +9,8 @@ export interface GaSurface {
   events: GaEvent[];
   getState: () => EngineState | null;
   chimeCount: number;
+  /** Set by MapScreen while a tour is loaded; reads the live element volume. */
+  getAudioVolume?: () => number;
 }
 
 declare global {
