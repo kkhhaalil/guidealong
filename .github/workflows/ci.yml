@@ -43,16 +43,12 @@ jobs:
       - name: Contrast check
         run: npm run check:contrast
 
-      - name: Install Playwright Chrome
-        id: pw-chrome
-        run: |
-          npx playwright install --with-deps chrome
-          CHROME="$(find "$HOME/.cache/ms-playwright" -name chrome -path '*/chrome-linux/*' -type f 2>/dev/null | head -1)"
-          echo "path=${CHROME}" >> "$GITHUB_OUTPUT"
+      # ubuntu-latest runners ship Google Chrome stable; the Playwright config
+      # defaults to /usr/bin/google-chrome-stable when no env override is set.
+      - name: Verify system Chrome
+        run: google-chrome-stable --version
 
       - name: E2E (functional, a11y, visual, PWA)
-        env:
-          PLAYWRIGHT_CHROME_PATH: ${{ steps.pw-chrome.outputs.path }}
         run: npm run e2e
 
       - name: Lighthouse performance

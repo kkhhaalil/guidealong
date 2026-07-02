@@ -50,3 +50,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+        with:
+          # Pages deployments occasionally sit in deployment_queued longer than
+          # the 10-minute default; give the queue more room before aborting.
+          timeout: 1800000
