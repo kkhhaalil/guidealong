@@ -3,9 +3,12 @@
   "use strict";
 
   var CAT_ICON = { geyser: "⛲", spring: "♨️", falls: "🌊", wildlife: "🦬", landmark: "🏞️", info: "ℹ️", story: "📖" };
+  var CAT_LABEL = { geyser: "间歇泉", spring: "热泉", falls: "瀑布", wildlife: "野生动物", landmark: "地标", info: "信息", story: "趣闻故事" };
   var SIM_SPEEDS = [1, 2, 4, 8, 16, 32];  // 倍速档位（基准 60 km/h）
   var BASE_KMH = 60;
   var STORE_KEY = "ynp-tour-visited";
+  var POS_KEY = "ynp-tour-pos";           // 自动续播：保存的行程位置
+  var FWD_CONE = 100;                     // 方向感知：前方触发锥角（度）
 
   /* ---------- 状态 ---------- */
   var mode = null;              // "sim" | "gps"
@@ -18,8 +21,13 @@
   var visited = loadVisited();
   var playingStop = null;
   var playingTriggered = false;  // 当前播放是否为到站自动触发
+  var playingMore = false;       // 是否正在播放「延伸讲解」
   var queue = [];
   var geoWatch = null;
+  var heading = null;            // 行进方向（度，0 = 正北）
+  var prevPos = null;            // 上一帧位置，用于推算方向
+  var wakeLock = null;           // 屏幕常亮锁
+  var saveTick = 0;
 
   /* ---------- DOM ---------- */
   var $ = function (id) { return document.getElementById(id); };
@@ -36,6 +44,18 @@
   function fmtDist(m) {
     return m >= 1000 ? (m / 1000).toFixed(1) + " 公里" : Math.round(m) + " 米";
   }
+  function bearing(a, b) {
+    var rad = Math.PI / 180, deg = 180 / Math.PI;
+    var y = Math.sin((b.lng - a.lng) * rad) * Math.cos(b.lat * rad);
+    var x = Math.cos(a.lat * rad) * Math.sin(b.lat * rad) -
+            Math.sin(a.lat * rad) * Math.cos(b.lat * rad) * Math.cos((b.lng - a.lng) * rad);
+    return (Math.atan2(y, x) * deg + 360) % 360;
+  }
+  function angleDiff(a, b) {
+    var d = Math.abs(a - b) % 360;
+    return d > 180 ? 360 - d : d;
+  }
+  function photoUrl(s) { return "assets/photos/" + s.id + ".svg"; }
   function loadVisited() {
     try { return new Set(JSON.parse(localStorage.getItem(STORE_KEY) || "[]")); }
     catch (e) { return new Set(); }
@@ -87,12 +107,15 @@
 
   /* ---------- 位置更新与触发 ---------- */
   function updatePosition(lat, lng) {
-    pos = { lat: lat, lng: lng };
+    var np = { lat: lat, lng: lng };
+    if (prevPos && haversine(prevPos, np) > 3) heading = bearing(prevPos, np);
+    pos = np;
     carMarker.setLatLng([lat, lng]);
     if (follow) map.panTo([lat, lng], { animate: true, duration: 0.4 });
     checkTriggers();
     updateNextHint();
     updateListDistances();
+    prevPos = np;
   }
 
   function checkTriggers() {
@@ -101,10 +124,14 @@
       if (visited.has(s.id)) return;
       if (playingStop && playingStop.id === s.id) return;
       if (queue.indexOf(s) !== -1) return;
-      if (haversine(pos, s) <= s.radius) {
-        if (playingStop) queue.push(s);
-        else playStop(s, true);
-      }
+      var d = haversine(pos, s);
+      if (d > s.radius) return;
+      // 方向感知：只播报前方（或已很近）的站点，跳过正在驶离的站点
+      var ahead = heading === null || d <= s.radius * 0.5 ||
+                  angleDiff(heading, bearing(pos, s)) <= FWD_CONE;
+      if (!ahead) return;
+      if (playingStop) queue.push(s);
+      else playStop(s, true);
     });
   }
 
@@ -143,13 +170,19 @@
   function playStop(s, triggered) {
     playingStop = s;
     playingTriggered = triggered;
+    playingMore = false;
     refreshMarker(s);
     $("player-idle").hidden = true;
     $("player-active").hidden = false;
     $("np-icon").textContent = CAT_ICON[s.category] || "📍";
+    var photo = $("np-photo");
+    photo.style.backgroundImage = "url('" + photoUrl(s) + "')";
+    photo.classList.add("has-photo");
     $("np-name").textContent = s.name;
     $("np-sub").textContent = triggered ? "已到达 · 自动播放" : "手动播放";
     $("btn-play").textContent = "⏸";
+    setupDetail(s);
+    setMediaSession(s);
     if (triggered) showBanner("📍 已到达「" + s.name + "」");
     var start = function () {
       audio.src = "assets/audio/" + s.id + ".mp3";
@@ -161,7 +194,42 @@
     if (triggered) chime(start); else start();
   }
 
+  // 分层讲解 + 季节/野生动物详情面板
+  function setupDetail(s) {
+    $("np-chips").innerHTML =
+      (s.season ? '<span class="chip season">📅 ' + s.season + "</span>" : "") +
+      (s.wildlife ? '<span class="chip wildlife">🐾 ' + s.wildlife + "</span>" : "");
+    $("np-transcript").textContent = s.text;
+    var hasMore = !!s.more;
+    $("np-more-block").hidden = !hasMore;
+    if (hasMore) {
+      $("np-more-text").textContent = s.more;
+      var mb = $("btn-more-audio");
+      mb.textContent = "▶ 播放延伸讲解";
+      mb.classList.remove("playing");
+    }
+    $("btn-detail").hidden = !(s.season || s.wildlife || s.more);
+    $("btn-detail").classList.remove("active");
+    $("np-extra").hidden = true;
+  }
+
+  function setMediaSession(s) {
+    if (!("mediaSession" in navigator)) return;
+    try {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: s.name,
+        artist: (CAT_LABEL[s.category] || "") + " · " + (s.nameEn || ""),
+        album: "黄石国家公园 · 中文语音导览",
+        artwork: [
+          { src: "assets/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+          { src: "assets/icons/icon-512.png", sizes: "512x512", type: "image/png" }
+        ]
+      });
+    } catch (e) {}
+  }
+
   function finishStop() {
+    playingMore = false;
     if (playingStop) {
       var s = playingStop;
       // 手动预听远处的站点不算“已听”，开到附近时仍会自动触发讲解
@@ -184,9 +252,37 @@
   audio.addEventListener("ended", finishStop);
   audio.addEventListener("timeupdate", function () {
     if (audio.duration) $("np-bar").style.width = (audio.currentTime / audio.duration * 100) + "%";
+    if ("mediaSession" in navigator && navigator.mediaSession.setPositionState &&
+        audio.duration && isFinite(audio.duration)) {
+      try {
+        navigator.mediaSession.setPositionState({
+          duration: audio.duration, position: audio.currentTime, playbackRate: audio.playbackRate
+        });
+      } catch (e) {}
+    }
   });
-  audio.addEventListener("play", function () { $("btn-play").textContent = "⏸"; $("np-sub").textContent = "正在播放"; });
-  audio.addEventListener("pause", function () { if (!audio.ended) { $("btn-play").textContent = "▶"; $("np-sub").textContent = "已暂停"; } });
+  audio.addEventListener("play", function () {
+    $("btn-play").textContent = "⏸";
+    if (!playingMore) $("np-sub").textContent = "正在播放";
+    if ("mediaSession" in navigator) navigator.mediaSession.playbackState = "playing";
+  });
+  audio.addEventListener("pause", function () {
+    if (!audio.ended) { $("btn-play").textContent = "▶"; if (!playingMore) $("np-sub").textContent = "已暂停"; }
+    if ("mediaSession" in navigator) navigator.mediaSession.playbackState = "paused";
+  });
+
+  function initMediaSession() {
+    if (!("mediaSession" in navigator)) return;
+    var ms = navigator.mediaSession;
+    var set = function (a, fn) { try { ms.setActionHandler(a, fn); } catch (e) {} };
+    set("play", function () { audio.play(); });
+    set("pause", function () { audio.pause(); });
+    set("previoustrack", function () { audio.currentTime = 0; audio.play(); });
+    set("nexttrack", function () { audio.pause(); finishStop(); });
+    set("seekbackward", function (d) { audio.currentTime = Math.max(0, audio.currentTime - ((d && d.seekOffset) || 10)); });
+    set("seekforward", function (d) { audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + ((d && d.seekOffset) || 10)); });
+    set("seekto", function (d) { if (d && d.seekTime != null) audio.currentTime = d.seekTime; });
+  }
 
   $("btn-play").addEventListener("click", function () {
     if (audio.paused) audio.play(); else audio.pause();
@@ -194,6 +290,21 @@
   $("btn-skip").addEventListener("click", function () {
     audio.pause();
     finishStop();
+  });
+  $("btn-detail").addEventListener("click", function () {
+    var ex = $("np-extra");
+    ex.hidden = !ex.hidden;
+    this.classList.toggle("active", !ex.hidden);
+  });
+  $("btn-more-audio").addEventListener("click", function () {
+    if (!playingStop) return;
+    if (playingMore) { if (audio.paused) audio.play(); else audio.pause(); return; }
+    playingMore = true;
+    this.classList.add("playing");
+    this.textContent = "⏸ 延伸讲解播放中";
+    $("np-sub").textContent = "延伸讲解";
+    audio.src = "assets/audio/" + playingStop.id + "-more.mp3";
+    audio.play().catch(function () {});
   });
 
   var bannerTimer = null;
@@ -229,18 +340,40 @@
     }
     if (i >= segLen.length) { i = 0; frac = 0; showBanner("🏁 环线一圈完成，继续巡游"); }
     simIdx = i + frac;
+    if (++saveTick % 10 === 0) savePos();
     var a = TOUR_ROUTE[i], b = TOUR_ROUTE[Math.min(i + 1, TOUR_ROUTE.length - 1)];
     updatePosition(a[0] + (b[0] - a[0]) * frac, a[1] + (b[1] - a[1]) * frac);
   }
 
-  function startSim() {
+  /* ---------- 自动续播 ---------- */
+  function savePos() {
+    try { localStorage.setItem(POS_KEY, JSON.stringify({ idx: simIdx, sp: simSpeedIdx })); } catch (e) {}
+  }
+  function loadPos() {
+    try { return JSON.parse(localStorage.getItem(POS_KEY) || "null"); } catch (e) { return null; }
+  }
+  function clearPos() { try { localStorage.removeItem(POS_KEY); } catch (e) {} }
+
+  function startSim(resume) {
     mode = "sim";
+    if (resume) {
+      var sv = loadPos();
+      if (sv) {
+        simIdx = sv.idx || 0;
+        if (sv.sp != null) simSpeedIdx = Math.min(sv.sp, SIM_SPEEDS.length - 1);
+      }
+    } else {
+      simIdx = 0;
+    }
+    $("btn-speed").textContent = "×" + SIM_SPEEDS[simSpeedIdx];
     $("mode-badge").textContent = "模拟驾驶 · " + BASE_KMH * SIM_SPEEDS[simSpeedIdx] + " km/h";
     $("btn-speed").hidden = false;
     $("btn-pause-sim").hidden = false;
     simTimer = setInterval(simTick, TICK_MS);
-    updatePosition(TOUR_ROUTE[0][0], TOUR_ROUTE[0][1]);
+    var a = TOUR_ROUTE[Math.floor(simIdx)] || TOUR_ROUTE[0];
+    updatePosition(a[0], a[1]);
     map.setZoom(12);
+    if (resume) showBanner("⏯ 已从上次位置继续");
   }
 
   function startGps() {
@@ -265,11 +398,13 @@
     simSpeedIdx = (simSpeedIdx + 1) % SIM_SPEEDS.length;
     this.textContent = "×" + SIM_SPEEDS[simSpeedIdx];
     $("mode-badge").textContent = "模拟驾驶 · " + BASE_KMH * SIM_SPEEDS[simSpeedIdx] + " km/h";
+    savePos();
   });
   $("btn-pause-sim").addEventListener("click", function () {
     simPaused = !simPaused;
     this.textContent = simPaused ? "▶" : "⏸";
     $("mode-badge").textContent = simPaused ? "模拟已暂停" : "模拟驾驶 · " + BASE_KMH * SIM_SPEEDS[simSpeedIdx] + " km/h";
+    if (simPaused) savePos();
   });
   $("btn-locate").addEventListener("click", function () {
     follow = true;
@@ -323,12 +458,25 @@
   $("btn-reset").addEventListener("click", function () {
     visited = new Set();
     saveVisited();
+    clearPos();
+    $("btn-resume").hidden = true;
     TOUR_STOPS.forEach(refreshMarker);
     renderList();
     updateNextHint();
   });
 
   /* ---------- 启动 ---------- */
+  function requestWakeLock() {
+    if (!("wakeLock" in navigator)) return;
+    navigator.wakeLock.request("screen").then(function (wl) {
+      wakeLock = wl;
+      wl.addEventListener("release", function () { wakeLock = null; });
+    }).catch(function () {});
+  }
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "visible" && !wakeLock) requestWakeLock();
+  });
+
   function enterApp(startFn) {
     $("start-overlay").style.display = "none";
     $("app").hidden = false;
@@ -340,8 +488,17 @@
     if (p && p.catch) p.catch(function () {});
     audio.pause();
     audio.muted = false;
+    initMediaSession();
+    requestWakeLock();      // 保持屏幕常亮（驾车时不熄屏）
     startFn();
   }
-  $("btn-start-sim").addEventListener("click", function () { enterApp(startSim); });
+  $("btn-start-sim").addEventListener("click", function () { enterApp(function () { startSim(false); }); });
   $("btn-start-gps").addEventListener("click", function () { enterApp(startGps); });
+  $("btn-resume").addEventListener("click", function () { enterApp(function () { startSim(true); }); });
+
+  // 若有保存的行程进度，显示「继续上次行程」
+  (function () {
+    var sv = loadPos();
+    if (sv && sv.idx > 2) $("btn-resume").hidden = false;
+  })();
 })();

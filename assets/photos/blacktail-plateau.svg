@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="-apple-system,'PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d2c14"/>
+      <stop offset="0.55" stop-color="#7a5a2e"/>
+      <stop offset="1" stop-color="#c9a15a"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="70" r="34" fill="#fff" opacity="0.16"/>
+  <path d="M0,300 L0,240 L0,239 L35,252 L70,229 L105,250 L140,235 L175,232 L210,225 L245,230 L280,231 L315,244 L350,253 L385,242 L420,227 L420,300 Z" fill="#000" opacity="0.10"/>
+  <path d="M0,300 L0,205 L0,218 L35,203 L70,212 L105,193 L140,218 L175,191 L210,216 L245,197 L280,226 L315,215 L350,204 L385,221 L420,222 L420,300 Z" fill="#000" opacity="0.16"/>
+  <text x="28" y="120" font-size="86" opacity="0.92">🦬</text>
+  <rect width="400" height="300" fill="url(#shade)"/>
+  <text x="28" y="250" fill="#fff" font-size="30" font-weight="700">黑尾鹿高原</text>
+  <text x="28" y="278" fill="#fff" font-size="15" opacity="0.85">Blacktail Deer Plateau</text>
+</svg>

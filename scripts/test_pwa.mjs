@@ -13,7 +13,7 @@ const total = await page.evaluate(async () => {
     if (keys.length) {
       const c = await caches.open(keys[0]);
       const n = (await c.keys()).length;
-      if (n >= 705) return n;
+      if (n >= 770) return n;
     }
     await new Promise(r => setTimeout(r, 500));
   }

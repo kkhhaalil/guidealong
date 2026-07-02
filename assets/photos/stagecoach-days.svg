@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="-apple-system,'PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a2c5a"/>
+      <stop offset="0.55" stop-color="#7d4a8c"/>
+      <stop offset="1" stop-color="#c79bd6"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="70" r="34" fill="#fff" opacity="0.16"/>
+  <path d="M0,300 L0,240 L0,227 L35,224 L70,249 L105,254 L140,255 L175,236 L210,245 L245,234 L280,251 L315,248 L350,241 L385,246 L420,247 L420,300 Z" fill="#000" opacity="0.10"/>
+  <path d="M0,300 L0,205 L0,205 L35,186 L70,183 L105,184 L140,221 L175,202 L210,195 L245,208 L280,221 L315,202 L350,191 L385,208 L420,209 L420,300 Z" fill="#000" opacity="0.16"/>
+  <text x="28" y="120" font-size="86" opacity="0.92">📖</text>
+  <rect width="400" height="300" fill="url(#shade)"/>
+  <text x="28" y="250" fill="#fff" font-size="30" font-weight="700">马车旅行年代</text>
+  <text x="28" y="278" fill="#fff" font-size="15" opacity="0.85">The Stagecoach Era</text>
+</svg>

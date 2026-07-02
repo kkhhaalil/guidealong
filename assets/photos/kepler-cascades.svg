@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="-apple-system,'PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b4f6c"/>
+      <stop offset="0.55" stop-color="#1b8a9e"/>
+      <stop offset="1" stop-color="#7fd1d8"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="70" r="34" fill="#fff" opacity="0.16"/>
+  <path d="M0,300 L0,240 L0,249 L35,254 L70,255 L105,236 L140,245 L175,234 L210,251 L245,248 L280,241 L315,246 L350,247 L385,228 L420,237 L420,300 Z" fill="#000" opacity="0.10"/>
+  <path d="M0,300 L0,205 L0,192 L35,209 L70,214 L105,187 L140,224 L175,185 L210,198 L245,203 L280,224 L315,209 L350,210 L385,215 L420,204 L420,300 Z" fill="#000" opacity="0.16"/>
+  <text x="28" y="120" font-size="86" opacity="0.92">🌊</text>
+  <rect width="400" height="300" fill="url(#shade)"/>
+  <text x="28" y="250" fill="#fff" font-size="30" font-weight="700">开普勒瀑布</text>
+  <text x="28" y="278" fill="#fff" font-size="15" opacity="0.85">Kepler Cascades</text>
+</svg>

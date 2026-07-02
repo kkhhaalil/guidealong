@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="-apple-system,'PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14342b"/>
+      <stop offset="0.55" stop-color="#2c6e57"/>
+      <stop offset="1" stop-color="#6fae86"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="70" r="34" fill="#fff" opacity="0.16"/>
+  <path d="M0,300 L0,240 L0,236 L35,245 L70,234 L105,251 L140,248 L175,241 L210,246 L245,247 L280,228 L315,237 L350,226 L385,243 L420,240 L420,300 Z" fill="#000" opacity="0.10"/>
+  <path d="M0,300 L0,205 L0,194 L35,203 L70,224 L105,205 L140,198 L175,215 L210,184 L245,221 L280,190 L315,223 L350,220 L385,217 L420,194 L420,300 Z" fill="#000" opacity="0.16"/>
+  <text x="28" y="120" font-size="86" opacity="0.92">🏞️</text>
+  <rect width="400" height="300" fill="url(#shade)"/>
+  <text x="28" y="250" fill="#fff" font-size="30" font-weight="700">天然桥</text>
+  <text x="28" y="278" fill="#fff" font-size="15" opacity="0.85">Natural Bridge</text>
+</svg>

@@ -30,6 +30,7 @@
       <div><b>304</b><span>公里环线</span></div>
       <div><b>100%</b><span>离线运行</span></div>
     </div>
+    <button id="btn-resume" class="btn resume" hidden>⏯&nbsp; 继续上次行程</button>
     <button id="btn-start-sim" class="btn primary">▶&nbsp; 模拟驾驶体验</button>
     <button id="btn-start-gps" class="btn secondary">📍&nbsp; 使用真实 GPS（在园内时）</button>
   </div>
@@ -66,15 +67,24 @@
     </div>
     <div id="player-active" hidden>
       <div class="np-head">
-        <div class="np-icon" id="np-icon">♨️</div>
+        <div class="np-photo" id="np-photo"><span id="np-icon">♨️</span></div>
         <div class="np-meta">
           <div class="np-name" id="np-name"></div>
           <div class="np-sub" id="np-sub">正在播放</div>
         </div>
+        <button id="btn-detail" class="np-btn" title="详情与延伸讲解" hidden>ℹ️</button>
         <button id="btn-play" class="np-btn">⏸</button>
         <button id="btn-skip" class="np-btn">⏭</button>
       </div>
       <div class="np-progress"><div id="np-bar"></div></div>
+      <div id="np-extra" hidden>
+        <div id="np-chips"></div>
+        <p id="np-transcript" class="np-text"></p>
+        <div id="np-more-block" hidden>
+          <button id="btn-more-audio" class="more-audio-btn">▶ 播放延伸讲解</button>
+          <p id="np-more-text" class="np-text more"></p>
+        </div>
+      </div>
     </div>
   </div>
 

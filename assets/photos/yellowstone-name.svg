@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="-apple-system,'PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a2c5a"/>
+      <stop offset="0.55" stop-color="#7d4a8c"/>
+      <stop offset="1" stop-color="#c79bd6"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="70" r="34" fill="#fff" opacity="0.16"/>
+  <path d="M0,300 L0,240 L0,243 L35,240 L70,233 L105,238 L140,239 L175,252 L210,229 L245,250 L280,235 L315,232 L350,225 L385,230 L420,231 L420,300 Z" fill="#000" opacity="0.10"/>
+  <path d="M0,300 L0,205 L0,204 L35,193 L70,198 L105,215 L140,196 L175,209 L210,198 L245,211 L280,200 L315,225 L350,206 L385,203 L420,184 L420,300 Z" fill="#000" opacity="0.16"/>
+  <text x="28" y="120" font-size="86" opacity="0.92">📖</text>
+  <rect width="400" height="300" fill="url(#shade)"/>
+  <text x="28" y="250" fill="#fff" font-size="30" font-weight="700">黄石名字的由来</text>
+  <text x="28" y="278" fill="#fff" font-size="15" opacity="0.85">How Yellowstone Got Its Name</text>
+</svg>

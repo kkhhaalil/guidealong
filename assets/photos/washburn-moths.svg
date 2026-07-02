@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="-apple-system,'PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a2c5a"/>
+      <stop offset="0.55" stop-color="#7d4a8c"/>
+      <stop offset="1" stop-color="#c79bd6"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="70" r="34" fill="#fff" opacity="0.16"/>
+  <path d="M0,300 L0,240 L0,240 L35,233 L70,238 L105,239 L140,252 L175,229 L210,250 L245,235 L280,232 L315,225 L350,230 L385,231 L420,244 L420,300 Z" fill="#000" opacity="0.10"/>
+  <path d="M0,300 L0,205 L0,222 L35,215 L70,196 L105,205 L140,210 L175,203 L210,192 L245,225 L280,222 L315,191 L350,208 L385,217 L420,202 L420,300 Z" fill="#000" opacity="0.16"/>
+  <text x="28" y="120" font-size="86" opacity="0.92">📖</text>
+  <rect width="400" height="300" fill="url(#shade)"/>
+  <text x="28" y="250" fill="#fff" font-size="30" font-weight="700">灰熊与飞蛾</text>
+  <text x="28" y="278" fill="#fff" font-size="15" opacity="0.85">Grizzlies &amp; the High-Peak Moth Feast</text>
+</svg>

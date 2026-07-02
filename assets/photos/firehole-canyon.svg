@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" font-family="-apple-system,'PingFang SC','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b4f6c"/>
+      <stop offset="0.55" stop-color="#1b8a9e"/>
+      <stop offset="1" stop-color="#7fd1d8"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <circle cx="330" cy="70" r="34" fill="#fff" opacity="0.16"/>
+  <path d="M0,300 L0,240 L0,235 L35,232 L70,225 L105,230 L140,231 L175,244 L210,253 L245,242 L280,227 L315,224 L350,249 L385,254 L420,255 L420,300 Z" fill="#000" opacity="0.10"/>
+  <path d="M0,300 L0,205 L0,192 L35,205 L70,194 L105,199 L140,216 L175,221 L210,206 L245,223 L280,208 L315,217 L350,222 L385,207 L420,188 L420,300 Z" fill="#000" opacity="0.16"/>
+  <text x="28" y="120" font-size="86" opacity="0.92">🌊</text>
+  <rect width="400" height="300" fill="url(#shade)"/>
+  <text x="28" y="250" fill="#fff" font-size="30" font-weight="700">火洞峡谷景观路</text>
+  <text x="28" y="278" fill="#fff" font-size="15" opacity="0.85">Firehole Canyon Drive</text>
+</svg>
