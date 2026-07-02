@@ -58,6 +58,53 @@ describe('createWebChime', () => {
       (globalThis as { AudioContext?: unknown }).AudioContext = prev;
     }
   });
+
+  it('scales peak gain by injected volume and skips tones at zero', () => {
+    const ramps: number[] = [];
+    const start = vi.fn();
+    const oscillator = {
+      frequency: { value: 0 },
+      type: 'sine',
+      connect: vi.fn(),
+      start,
+      stop: vi.fn(),
+    };
+    const gain = {
+      gain: {
+        setValueAtTime: vi.fn(),
+        exponentialRampToValueAtTime: (v: number) => ramps.push(v),
+      },
+      connect: vi.fn(),
+    };
+    class FakeAudioContext {
+      currentTime = 0;
+      destination = {};
+      createOscillator() {
+        return oscillator;
+      }
+      createGain() {
+        return gain;
+      }
+    }
+    const prev = (globalThis as { AudioContext?: unknown }).AudioContext;
+    (globalThis as { AudioContext?: unknown }).AudioContext = FakeAudioContext;
+    try {
+      const clock = { setTimeout: (cb: () => void) => { cb(); return 1; } };
+
+      const half = createWebChime(clock, { getVolume: () => 0.5 });
+      half.play(vi.fn());
+      expect(Math.max(...ramps)).toBeCloseTo(0.125);
+
+      start.mockClear();
+      const muted = createWebChime(clock, { getVolume: () => 0 });
+      const done = vi.fn();
+      muted.play(done);
+      expect(start).not.toHaveBeenCalled();
+      expect(done).toHaveBeenCalled();
+    } finally {
+      (globalThis as { AudioContext?: unknown }).AudioContext = prev;
+    }
+  });
 });
 
 describe('createMockChime', () => {

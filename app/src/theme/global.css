@@ -206,6 +206,48 @@
     outline-offset: 2px;
   }
 
+  /* Volume slider — 48px touch target (§5.3), token-colored track/thumb. */
+  .ga-volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 48px;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .ga-volume-slider::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 999px;
+    background: rgb(var(--color-border));
+  }
+
+  .ga-volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    margin-top: -11px;
+    border-radius: 50%;
+    border: none;
+    background: rgb(var(--color-primary));
+    box-shadow: var(--shadow-card);
+  }
+
+  .ga-volume-slider::-moz-range-track {
+    height: 6px;
+    border-radius: 999px;
+    background: rgb(var(--color-border));
+  }
+
+  .ga-volume-slider::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: rgb(var(--color-primary));
+    box-shadow: var(--shadow-card);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,

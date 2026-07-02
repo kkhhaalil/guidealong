@@ -19,17 +19,27 @@ function getAudioContextCtor(): AudioContextCtor | null {
   return w.AudioContext ?? w.webkitAudioContext ?? null;
 }
 
-/** Browser WebAudio two-tone chime matching js/app.js. */
-export function createWebChime(clock: {
-  setTimeout(cb: () => void, ms: number): number;
-}): ChimePort {
+const CHIME_PEAK_GAIN = 0.25;
+
+/**
+ * Browser WebAudio two-tone chime matching js/app.js. `getVolume` (0–1,
+ * injected so the engine stays framework-free) scales the peak gain; at 0
+ * the tones are skipped entirely but `done` still fires on schedule.
+ */
+export function createWebChime(
+  clock: {
+    setTimeout(cb: () => void, ms: number): number;
+  },
+  opts?: { getVolume?: () => number },
+): ChimePort {
   let audioCtx: AudioContext | null = null;
 
   return {
     play(done: () => void): void {
       try {
+        const volume = Math.min(1, Math.max(0, opts?.getVolume?.() ?? 1));
         const Ctor = getAudioContextCtor();
-        if (!Ctor) {
+        if (!Ctor || volume === 0) {
           clock.setTimeout(done, CHIME_DONE_MS);
           return;
         }
@@ -42,7 +52,7 @@ export function createWebChime(clock: {
           o.type = 'sine';
           const start = t + i * CHIME_TONE_OFFSET_S;
           g.gain.setValueAtTime(0.0001, start);
-          g.gain.exponentialRampToValueAtTime(0.25, start + CHIME_RAMP_S);
+          g.gain.exponentialRampToValueAtTime(CHIME_PEAK_GAIN * volume, start + CHIME_RAMP_S);
           g.gain.exponentialRampToValueAtTime(0.0001, start + CHIME_DECAY_S);
           o.connect(g);
           g.connect(audioCtx!.destination);
