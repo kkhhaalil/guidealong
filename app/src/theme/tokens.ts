@@ -1,7 +1,7 @@
 /** Primitive design tokens — layer 1 (§5.1). */
 
 export const fontFamily = {
-  display: '"Bebas Neue", "PingFang SC", "Noto Sans SC", sans-serif',
+  display: '"Alfa Slab One", "PingFang SC", "Noto Sans SC", sans-serif',
   body: '"Source Sans 3", "PingFang SC", "Noto Sans SC", sans-serif',
 } as const;
 

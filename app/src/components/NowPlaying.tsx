@@ -41,7 +41,7 @@ export function NowPlaying({
 
   return (
     <div
-      className="absolute bottom-0 left-0 right-0 z-chrome rounded-t-poster bg-surface shadow-poster"
+      className="absolute bottom-0 left-0 right-0 z-chrome rounded-t-poster bg-surface shadow-poster transition-transform duration-slow"
       data-testid="now-playing"
     >
       <div className="flex gap-3 p-4">
@@ -51,7 +51,7 @@ export function NowPlaying({
           data-testid="np-photo"
         />
         <div className="min-w-0 flex-1">
-          <Text className="text-title-lg text-ink truncate" data-testid="np-name">
+          <Text className="font-display text-title-lg text-ink truncate" data-testid="np-name">
             {stop?.name ?? t('nowPlayingIdle')}
           </Text>
           <Text className="text-body-sm text-ink-muted" data-testid="np-sub">

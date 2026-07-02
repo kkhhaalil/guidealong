@@ -1,6 +1,11 @@
-import { STORAGE_KEYS } from '../engine/persist.ts';
 import { SEMANTIC_COLOR_TOKENS, type SemanticColorToken, type ThemePalette, type TourManifest } from '../types/tour.ts';
-import { browserStorage } from '../engine-adapters/browserStorage.ts';
+import {
+  applyDataThemeAttribute,
+  initThemePreference,
+  resolveThemeMode,
+  subscribeToThemeChanges,
+  type ResolvedThemeMode,
+} from './themePreference.ts';
 
 const TOKEN_TO_VAR: Record<SemanticColorToken, string> = {
   surface: '--color-surface',
@@ -15,7 +20,7 @@ const TOKEN_TO_VAR: Record<SemanticColorToken, string> = {
   danger: '--color-danger',
 };
 
-const SHELL_DEFAULTS: Record<string, string> = {
+const SHELL_LIGHT: Record<string, string> = {
   '--color-surface': '245 240 230',
   '--color-ink': '26 32 28',
   '--color-ink-muted': '90 98 92',
@@ -34,30 +39,27 @@ const SHELL_DEFAULTS: Record<string, string> = {
     'linear-gradient(165deg, rgb(var(--color-poster-sky)) 0%, rgb(var(--color-primary)) 45%, rgb(var(--color-poster-land)) 100%)',
 };
 
-type ThemeMode = 'light' | 'dark';
+const SHELL_DARK: Record<string, string> = {
+  '--color-surface': '18 22 20',
+  '--color-ink': '240 236 228',
+  '--color-ink-muted': '168 172 166',
+  '--color-primary': '88 192 170',
+  '--color-primary-foreground': '12 20 18',
+  '--color-accent': '232 176 72',
+  '--color-poster-sky': '56 88 104',
+  '--color-poster-land': '40 72 52',
+  '--color-secondary': '48 52 50',
+  '--color-secondary-foreground': '220 216 208',
+  '--color-border': '56 64 60',
+  '--color-success': '102 181 132',
+  '--color-warn': '232 176 72',
+  '--color-danger': '232 96 96',
+  '--gradient-hero':
+    'linear-gradient(165deg, rgb(var(--color-poster-sky)) 0%, rgb(var(--color-primary)) 45%, rgb(var(--color-poster-land)) 100%)',
+};
 
-interface GaSettings {
-  theme?: 'light' | 'dark' | 'system';
-}
-
-function loadSettings(): GaSettings {
-  try {
-    const raw = browserStorage.getItem(STORAGE_KEYS.settings);
-    if (!raw) return {};
-    return JSON.parse(raw) as GaSettings;
-  } catch {
-    return {};
-  }
-}
-
-function resolveThemeMode(): ThemeMode {
-  const settings = loadSettings();
-  if (settings.theme === 'light' || settings.theme === 'dark') return settings.theme;
-  if (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    return 'dark';
-  }
-  return 'light';
-}
+let currentManifest: TourManifest | null = null;
+let bootstrapped = false;
 
 function hexToRgbTriplet(hex: string): string {
   const h = hex.replace('#', '');
@@ -68,25 +70,30 @@ function hexToRgbTriplet(hex: string): string {
   return `${r} ${g} ${b}`;
 }
 
+function relativeLuminance(r: number, g: number, b: number): number {
+  const [rs, gs, bs] = [r, g, b].map((c) => {
+    const s = c / 255;
+    return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * rs! + 0.7152 * gs! + 0.0722 * bs!;
+}
+
+function foregroundForBg(value: string): string {
+  const triplet = value.startsWith('#') ? hexToRgbTriplet(value) : value;
+  const parts = triplet.split(' ').map(Number);
+  const bgLum = relativeLuminance(parts[0]!, parts[1]!, parts[2]!);
+  const darkLum = relativeLuminance(12, 20, 18);
+  const lightLum = relativeLuminance(255, 252, 245);
+  const contrastWithDark = (Math.max(darkLum, bgLum) + 0.05) / (Math.min(darkLum, bgLum) + 0.05);
+  const contrastWithLight = (Math.max(lightLum, bgLum) + 0.05) / (Math.min(lightLum, bgLum) + 0.05);
+  return contrastWithDark >= contrastWithLight ? '12 20 18' : '255 252 245';
+}
+
 function cssValueForToken(token: SemanticColorToken, value: string): string {
   if (token === 'gradientHero') return value;
   if (value.startsWith('linear-gradient') || value.startsWith('rgb')) return value;
   if (value.startsWith('#')) return hexToRgbTriplet(value);
   return value;
-}
-
-function applyPalette(palette: ThemePalette): void {
-  const root = document.documentElement;
-  for (const token of SEMANTIC_COLOR_TOKENS) {
-    const cssVar = TOKEN_TO_VAR[token];
-    root.style.setProperty(cssVar, cssValueForToken(token, palette[token]));
-  }
-  // Derived tokens for gluestack compatibility
-  root.style.setProperty('--color-primary-foreground', '255 252 245');
-  root.style.setProperty('--color-ink-muted', palette.ink.startsWith('#') ? adjustMuted(palette.ink) : '90 98 92');
-  root.style.setProperty('--color-secondary', palette.surface.startsWith('#') ? hexToRgbTriplet(palette.surface) : palette.surface);
-  root.style.setProperty('--color-secondary-foreground', palette.ink.startsWith('#') ? hexToRgbTriplet(palette.ink) : palette.ink);
-  root.style.setProperty('--color-border', palette.ink.startsWith('#') ? adjustBorder(palette.ink) : '200 192 176');
 }
 
 function adjustMuted(inkHex: string): string {
@@ -99,22 +106,74 @@ function adjustBorder(inkHex: string): string {
   return t.map((v) => Math.round(v * 0.25 + 200 * 0.75)).join(' ');
 }
 
-export function applyTourTheme(manifest: TourManifest): void {
+function applyVars(vars: Record<string, string>): void {
   const root = document.documentElement;
+  for (const [key, value] of Object.entries(vars)) {
+    root.style.setProperty(key, value);
+  }
+}
+
+function applyPalette(palette: ThemePalette): void {
+  const root = document.documentElement;
+  for (const token of SEMANTIC_COLOR_TOKENS) {
+    const cssVar = TOKEN_TO_VAR[token];
+    root.style.setProperty(cssVar, cssValueForToken(token, palette[token]));
+  }
+  root.style.setProperty('--color-primary-foreground', foregroundForBg(palette.primary));
+  root.style.setProperty(
+    '--color-ink-muted',
+    palette.ink.startsWith('#') ? adjustMuted(palette.ink) : '90 98 92',
+  );
+  root.style.setProperty(
+    '--color-secondary',
+    palette.surface.startsWith('#') ? hexToRgbTriplet(palette.surface) : palette.surface,
+  );
+  root.style.setProperty(
+    '--color-secondary-foreground',
+    palette.ink.startsWith('#') ? hexToRgbTriplet(palette.ink) : palette.ink,
+  );
+  root.style.setProperty(
+    '--color-border',
+    palette.ink.startsWith('#') ? adjustBorder(palette.ink) : '200 192 176',
+  );
+}
+
+function shellDefaultsForMode(mode: ResolvedThemeMode): Record<string, string> {
+  return mode === 'dark' ? SHELL_DARK : SHELL_LIGHT;
+}
+
+function reapplyTheme(): void {
+  applyDataThemeAttribute();
   const mode = resolveThemeMode();
-  root.dataset.tour = manifest.id;
-  root.dataset.theme = mode;
-  applyPalette(manifest.theme[mode]);
+  const root = document.documentElement;
+  root.dataset.themeMode = mode;
+
+  if (currentManifest) {
+    root.dataset.tour = currentManifest.id;
+    applyPalette(currentManifest.theme[mode]);
+  } else {
+    delete root.dataset.tour;
+    applyVars(shellDefaultsForMode(mode));
+  }
+}
+
+function ensureBootstrapped(): void {
+  if (bootstrapped) return;
+  bootstrapped = true;
+  initThemePreference();
+  subscribeToThemeChanges(reapplyTheme);
+}
+
+export function applyTourTheme(manifest: TourManifest): void {
+  ensureBootstrapped();
+  currentManifest = manifest;
+  reapplyTheme();
 }
 
 export function clearTourTheme(): void {
-  const root = document.documentElement;
-  delete root.dataset.tour;
-  const mode = resolveThemeMode();
-  root.dataset.theme = mode;
-  for (const [key, value] of Object.entries(SHELL_DEFAULTS)) {
-    root.style.setProperty(key, value);
-  }
+  ensureBootstrapped();
+  currentManifest = null;
+  reapplyTheme();
 }
 
 export function readPrimaryColor(): string {

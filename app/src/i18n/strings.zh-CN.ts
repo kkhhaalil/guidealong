@@ -63,6 +63,12 @@ export const strings = {
   playMore: '播放延伸讲解',
   playingMore: '延伸讲解播放中',
   ariaClose: '关闭',
+  ariaThemeAuto: '主题：跟随系统，点击切换',
+  ariaThemeLight: '主题：浅色，点击切换',
+  ariaThemeDark: '主题：深色，点击切换',
+  ariaProgress: '播放进度',
+  ariaFollowMap: '回到当前位置',
+  ariaBack: '返回',
 
   stopListHeading: '全部站点',
   stopProgress: '{done} / {total} 已收听',

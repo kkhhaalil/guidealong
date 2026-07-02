@@ -31,9 +31,11 @@ test.describe('download UX', () => {
       expect(percents[i]).toBeGreaterThanOrEqual(percents[i - 1]);
     }
 
-    await page.unroute(/\/tours\/demo\//);
+    // Cancel while the throttle is still active so the download can't finish
+    // before the click lands (the cancel button detaches on completion).
     await page.getByTestId('btn-cancel-download').click();
     await page.getByTestId('btn-resume-download').waitFor({ state: 'visible', timeout: 30_000 });
+    await page.unroute(/\/tours\/demo\//);
 
     await page.getByTestId('btn-resume-download').click();
     await page.getByTestId('badge-downloaded').waitFor({ state: 'visible', timeout: 120_000 });

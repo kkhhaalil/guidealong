@@ -39,24 +39,36 @@ export function PosterCard({ tour, downloadState, onPress }: PosterCardProps) {
   const posterUrl = tourFileUrl(tour.id, tour.posterArt);
   const showProgress =
     downloadState?.status === 'downloading' || downloadState?.status === 'paused';
+  const ariaLabel = `${tour.title}，${tour.titleEn}，${chipLabel(downloadState)}`;
+  const tourCached =
+    downloadState?.status === 'ready' ||
+    downloadState?.status === 'update-available' ||
+    downloadState?.status === 'downloading' ||
+    downloadState?.status === 'paused';
+  const usePosterArt = typeof navigator === 'undefined' || navigator.onLine || tourCached;
 
   return (
     <button
       type="button"
       data-testid={`tour-card-${tour.id}`}
-      className="relative flex min-h-[200px] w-full flex-col justify-end overflow-hidden rounded-poster text-left shadow-poster"
+      aria-label={ariaLabel}
+      className="group relative flex min-h-[220px] w-full flex-col justify-end overflow-hidden rounded-poster text-left shadow-poster transition-transform duration-normal active:scale-[0.98] hover:shadow-[0_12px_32px_rgb(0_0_0/0.22)]"
       onClick={onPress}
     >
       <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('${posterUrl}')` }}
+        className="absolute inset-0 bg-gradient-hero bg-cover bg-center"
+        style={usePosterArt ? { backgroundImage: `url('${posterUrl}')` } : undefined}
         aria-hidden
       />
-      <div className="relative bg-gradient-to-t from-ink/80 to-transparent p-5 pt-16">
-        <Text className="font-display text-display-md text-white mb-1">{tour.title}</Text>
-        <Text className="text-body-md text-white/80 mb-3">{tour.titleEn}</Text>
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent"
+        aria-hidden
+      />
+      <div className="relative p-5 pt-20">
+        <Text className="font-display text-display-md text-white mb-1 drop-shadow-sm">{tour.title}</Text>
+        <Text className="font-display text-body-lg text-white/90 mb-3">{tour.titleEn}</Text>
         <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <Badge
               action={
                 downloadState?.status === 'ready'
@@ -72,14 +84,14 @@ export function PosterCard({ tour, downloadState, onPress }: PosterCardProps) {
             </Badge>
             {(downloadState?.status === 'not-downloaded' ||
               downloadState?.status === undefined) && (
-              <Text className="text-body-sm text-white/70">
+              <Text className="text-body-sm text-white/80">
                 {tFormat('tourSizeMb', { mb: formatMb(tour.bytes) })}
               </Text>
             )}
           </div>
           {showProgress && (
             <div data-testid={`download-progress-${tour.id}`}>
-              <Progress value={downloadState?.percent ?? 0} className="h-1.5" />
+              <Progress value={downloadState?.percent ?? 0} className="h-2" />
             </div>
           )}
         </div>

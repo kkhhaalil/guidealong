@@ -57,13 +57,13 @@ export function SimControls({
           >
             <ButtonText>{simPaused ? '▶' : '⏸'}</ButtonText>
           </Button>
-          <Button size="sm" variant="outline" testID="btn-switch-gps" onPress={onSwitchGps}>
+          <Button size="sm" variant="outline" testID="btn-switch-gps" aria-label={t('switchGps')} onPress={onSwitchGps}>
             <ButtonText>{t('switchGps')}</ButtonText>
           </Button>
         </div>
       )}
       {mode === 'gps' && (
-        <Button size="sm" variant="outline" testID="btn-switch-sim" onPress={onSwitchSim}>
+        <Button size="sm" variant="outline" testID="btn-switch-sim" aria-label={t('switchSim')} onPress={onSwitchSim}>
           <ButtonText>{t('switchSim')}</ButtonText>
         </Button>
       )}

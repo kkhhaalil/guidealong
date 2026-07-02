@@ -46,7 +46,8 @@ export function StopListSheet({
               <button
                 type="button"
                 data-testid={`stop-item-${stop.id}`}
-                className="flex min-h-12 w-full items-center gap-3 rounded-card px-3 py-2 text-left hover:bg-secondary/40"
+                aria-label={`${stop.name}，${isVisited ? t('stopVisited') : t('stopPlay')}`}
+                className="flex min-h-12 w-full items-center gap-3 rounded-card px-3 py-2 text-left transition-colors duration-fast hover:bg-secondary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 onClick={() => {
                   onSelectStop(stop.id);
                   onClose();

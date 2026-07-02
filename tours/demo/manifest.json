@@ -4,8 +4,8 @@
   "title": "演示公园",
   "titleEn": "Demo Park",
   "language": "zh-CN",
-  "version": "c2958f497dce",
-  "bytes": 143074,
+  "version": "ddec62f9b0c9",
+  "bytes": 144070,
   "fileCount": 211,
   "map": {
     "center": [
@@ -33,8 +33,8 @@
       "primary": "#8b3a62",
       "accent": "#c44d2a",
       "posterSky": "#c98a9e",
-      "posterLand": "#7a3d52",
-      "gradientHero": "linear-gradient(165deg, #c98a9e 0%, #8b3a62 45%, #7a3d52 100%)",
+      "posterLand": "#a87088",
+      "gradientHero": "linear-gradient(165deg, #c98a9e 0%, #8b3a62 45%, #a87088 100%)",
       "success": "#4a8b5c",
       "warn": "#d4762a",
       "danger": "#b83248"
@@ -42,11 +42,11 @@
     "dark": {
       "surface": "#1a1218",
       "ink": "#f0e4e8",
-      "primary": "#d47aa8",
+      "primary": "#c878a8",
       "accent": "#e87850",
       "posterSky": "#4a2838",
       "posterLand": "#3a2030",
-      "gradientHero": "linear-gradient(165deg, #4a2838 0%, #d47aa8 45%, #3a2030 100%)",
+      "gradientHero": "linear-gradient(165deg, #4a2838 0%, #c878a8 45%, #3a2030 100%)",
       "success": "#6ab080",
       "warn": "#e8a050",
       "danger": "#e86070"

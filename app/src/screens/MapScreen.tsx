@@ -17,6 +17,7 @@ import { SimControls } from '../components/SimControls';
 import { NowPlaying } from '../components/NowPlaying';
 import { StopListSheet } from '../components/StopListSheet';
 import { MorePanel } from '../components/MorePanel';
+import { ThemeToggle } from '../components/ThemeToggle';
 import { Button, ButtonText } from '../components/ui/button';
 import { Spinner } from '../components/ui/spinner';
 
@@ -221,6 +222,7 @@ export function MapScreen({ tourId }: MapScreenProps) {
 
   return (
     <div className="relative h-[100dvh] w-full overflow-hidden bg-surface" data-testid="map-screen">
+      <ThemeToggle className="absolute right-3 top-[4.5rem] z-chrome" />
       <div className={started ? 'h-full w-full' : 'pointer-events-none h-full w-full'}>
         <MapView
         tourId={tourId}

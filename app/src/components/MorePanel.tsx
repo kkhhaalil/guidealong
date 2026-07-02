@@ -20,12 +20,13 @@ export function MorePanel({ stop, playingMore, onPlayMore, onClose }: MorePanelP
       data-testid="more-panel"
       role="dialog"
       aria-modal="true"
+      aria-label={t('learnMore')}
     >
       <div className="mb-3 flex items-start justify-between gap-3">
         <Text className="text-title-md text-ink">{t('learnMore')}</Text>
         <button
           type="button"
-          className="min-h-12 min-w-12 text-body-lg"
+          className="inline-flex min-h-12 min-w-12 items-center justify-center rounded-card text-body-lg transition-opacity duration-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
           aria-label={t('ariaClose')}
           data-testid="btn-close-more"
           onClick={onClose}

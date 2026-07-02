@@ -4,8 +4,8 @@
   "title": "黄石国家公园",
   "titleEn": "Yellowstone National Park",
   "language": "zh-CN",
-  "version": "01a9c34269db",
-  "bytes": 27760986,
+  "version": "85e082ae092d",
+  "bytes": 27762231,
   "fileCount": 763,
   "map": {
     "center": [
@@ -42,11 +42,11 @@
     "dark": {
       "surface": "#121614",
       "ink": "#f0ece4",
-      "primary": "#48baa4",
+      "primary": "#58c0aa",
       "accent": "#e8b048",
       "posterSky": "#385868",
       "posterLand": "#284834",
-      "gradientHero": "linear-gradient(165deg, #385868 0%, #48baa4 45%, #284834 100%)",
+      "gradientHero": "linear-gradient(165deg, #385868 0%, #58c0aa 45%, #284834 100%)",
       "success": "#66b584",
       "warn": "#e8b048",
       "danger": "#e86060"

@@ -3,16 +3,16 @@
     "id": "demo",
     "title": "演示公园",
     "titleEn": "Demo Park",
-    "bytes": 143074,
-    "version": "c2958f497dce",
+    "bytes": 144070,
+    "version": "ddec62f9b0c9",
     "posterArt": "poster.svg"
   },
   {
     "id": "yellowstone",
     "title": "黄石国家公园",
     "titleEn": "Yellowstone National Park",
-    "bytes": 27760986,
-    "version": "01a9c34269db",
+    "bytes": 27762231,
+    "version": "85e082ae092d",
     "posterArt": "poster.svg"
   }
 ]

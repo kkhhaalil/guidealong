@@ -33,8 +33,9 @@ export function Actionsheet({ isOpen, onClose, children, className }: Actionshee
       <div
         role="dialog"
         aria-modal="true"
+        aria-label={t('stopListHeading')}
         className={cn(
-          'relative z-sheet w-full max-w-lg rounded-t-poster bg-surface p-4 shadow-poster',
+          'relative z-sheet w-full max-w-lg rounded-t-poster bg-surface p-4 shadow-poster ga-sheet-enter',
           className
         )}
       >

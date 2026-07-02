@@ -14,11 +14,11 @@ const actionClasses: Record<ButtonAction, string> = {
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
-  xs: 'min-h-8 px-3 text-xs rounded-chip',
-  sm: 'min-h-9 px-3 text-sm rounded-card',
-  md: 'min-h-10 px-4 text-body-md rounded-card',
+  xs: 'min-h-12 min-w-12 px-3 text-xs rounded-chip',
+  sm: 'min-h-12 min-w-12 px-3 text-sm rounded-card',
+  md: 'min-h-12 px-4 text-body-md rounded-card',
   lg: 'min-h-12 px-6 text-body-lg rounded-poster',
-  xl: 'min-h-14 px-8 text-title-md rounded-poster',
+  xl: 'min-h-14 min-w-14 px-8 text-title-md rounded-poster',
 };
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -50,7 +50,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       type="button"
       data-testid={testID}
       className={cn(
-        'inline-flex items-center justify-center gap-2 font-sans font-medium transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:opacity-40',
+        'inline-flex items-center justify-center gap-2 font-sans font-medium transition-opacity duration-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface disabled:opacity-40',
         variant === 'outline' && 'border border-border bg-transparent text-ink hover:bg-secondary/40',
         variant === 'link' && 'bg-transparent underline-offset-4 hover:underline text-primary',
         variant === 'solid' && actionClasses[action],

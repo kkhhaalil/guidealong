@@ -4,6 +4,7 @@ import { navigate } from '../state/appStore';
 import { useDownloadStore } from '../state/downloadStore';
 import { clearTourTheme } from '../theme/applyTourTheme.ts';
 import { PosterCard } from '../components/PosterCard';
+import { ThemeToggle } from '../components/ThemeToggle';
 import { Box } from '../components/ui/box';
 import { Text } from '../components/ui/text';
 import { Spinner } from '../components/ui/spinner';
@@ -22,8 +23,9 @@ export function TourShelf() {
 
   return (
     <Box className="flex min-h-screen flex-col bg-surface" data-testid="tour-shelf">
-      <div className="p-6 pb-4">
-        <Text className="font-display text-display-lg text-ink mb-2">{t('appTitle')}</Text>
+      <div className="relative p-6 pb-4">
+        <ThemeToggle className="absolute right-6 top-6" />
+        <Text className="font-display text-display-lg text-ink mb-2 pr-14">{t('appTitle')}</Text>
         <Text className="text-body-md text-ink-muted">{t('appSubtitle')}</Text>
       </div>
 
