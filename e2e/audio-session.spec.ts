@@ -10,10 +10,11 @@ declare global {
 /**
  * iOS music coexistence (Audio Session API): the app must declare a mixing
  * ('ambient') session before any playback (so opening the tour never stops
- * the user's music), claim 'transient-solo' only while narration/chime
- * actually plays, and release back to 'ambient' afterwards so the music
- * resumes. Chrome has no navigator.audioSession, so we install a recording
- * fake before the app boots and assert the transitions.
+ * the user's music), claim 'playback' only while narration/chime actually
+ * plays (the sole category iOS keeps audible in the background), and release
+ * back to 'ambient' afterwards so music can play between stops. Chrome has
+ * no navigator.audioSession, so we install a recording fake before the app
+ * boots and assert the transitions.
  */
 test.describe('audio session', () => {
   test.beforeEach(async ({ page }) => {
@@ -51,7 +52,7 @@ test.describe('audio session', () => {
 
     await expect
       .poll(() => page.evaluate(() => navigator.audioSession!.type))
-      .toBe('transient-solo');
+      .toBe('playback');
 
     // After the clip ends the session returns to ambient (music resumes).
     await waitForGaEvent(page, 'ended', { timeout: 15_000 });

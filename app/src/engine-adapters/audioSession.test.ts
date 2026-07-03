@@ -35,21 +35,16 @@ describe('audioSession adapter', () => {
     setNarrationAudioSession();
   });
 
-  it('sets ambient for idle and transient-solo for narration', () => {
+  it('sets ambient for idle and playback for narration', () => {
     const session = installFakeSession();
     expect(isAudioSessionSupported()).toBe(true);
     setIdleAudioSession();
     expect(session.type).toBe('ambient');
+    // Narration must START under 'playback': it is the only category iOS
+    // keeps audible in the background, and WebKit fixes background
+    // eligibility at playback start — a later type change cannot rescue a
+    // clip that began under a solo-ambient-family type.
     setNarrationAudioSession();
-    expect(session.type).toBe('transient-solo');
-  });
-
-  it('uses playback for narration while the page is hidden', () => {
-    const session = installFakeSession();
-    setPageHidden(true);
-    setNarrationAudioSession();
-    // transient-solo is silenced when the screen locks; only 'playback'
-    // stays audible in the background on iOS.
     expect(session.type).toBe('playback');
   });
 });
@@ -94,20 +89,21 @@ describe('narration session lifecycle', () => {
       now: () => 0,
     });
     chime.play(() => {});
-    expect(session.type).toBe('transient-solo');
+    expect(session.type).toBe('playback');
   });
 
   it('releases back to ambient shortly after narration ends', () => {
     const session = installFakeSession();
     const port = createHtmlAudio();
     setNarrationAudioSession();
-    expect(session.type).toBe('transient-solo');
+    expect(session.type).toBe('playback');
 
     port.element.dispatchEvent(new Event('ended'));
     // release is delayed so queued stops do not flap the session
-    expect(session.type).toBe('transient-solo');
+    expect(session.type).toBe('playback');
     vi.advanceTimersByTime(1100);
     expect(session.type).toBe('ambient');
+    port.destroy();
   });
 
   it('a queued play cancels the pending release', () => {
@@ -120,55 +116,8 @@ describe('narration session lifecycle', () => {
     port.element.dispatchEvent(new Event('ended'));
     port.play('next.mp3');
     vi.advanceTimersByTime(2000);
-    expect(session.type).toBe('transient-solo');
-    playStub.mockRestore();
-    port.destroy();
-  });
-
-  it('locking the screen mid-narration upgrades the session to playback', () => {
-    const session = installFakeSession();
-    const port = createHtmlAudio();
-    const playStub = vi.spyOn(port.element, 'play').mockReturnValue(Promise.resolve());
-    const pausedStub = vi.spyOn(port.element, 'paused', 'get').mockReturnValue(false);
-
-    port.play('clip.mp3');
-    expect(session.type).toBe('transient-solo');
-
-    setPageHidden(true);
-    document.dispatchEvent(new Event('visibilitychange'));
     expect(session.type).toBe('playback');
-
-    // back to foreground mid-clip → music-friendly exclusive mode again
-    setPageHidden(false);
-    document.dispatchEvent(new Event('visibilitychange'));
-    expect(session.type).toBe('transient-solo');
-
-    pausedStub.mockRestore();
     playStub.mockRestore();
     port.destroy();
-  });
-
-  it('visibility changes while idle do not claim the session', () => {
-    const session = installFakeSession();
-    const port = createHtmlAudio();
-    session.type = 'ambient';
-
-    setPageHidden(true);
-    document.dispatchEvent(new Event('visibilitychange'));
-    expect(session.type).toBe('ambient');
-    port.destroy();
-  });
-
-  it('destroy removes the visibility listener', () => {
-    const session = installFakeSession();
-    const port = createHtmlAudio();
-    const pausedStub = vi.spyOn(port.element, 'paused', 'get').mockReturnValue(false);
-    port.destroy();
-
-    session.type = 'ambient';
-    setPageHidden(true);
-    document.dispatchEvent(new Event('visibilitychange'));
-    expect(session.type).toBe('ambient');
-    pausedStub.mockRestore();
   });
 });
