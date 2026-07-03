@@ -8,13 +8,21 @@
  *
  * - idle (no narration): `ambient` — page audio machinery mixes with and
  *   never interrupts other apps' audio;
- * - narration/chime, page visible: `transient-solo` — other audio pauses,
- *   narration plays exclusively, and the OS resumes the music when narration
- *   ends (the same pattern native turn-by-turn directions use);
- * - narration, page hidden (screen locked / other app foreground):
- *   `playback` — the only category iOS keeps AUDIBLE in the background.
- *   `transient-solo`/`ambient` map to categories that are silenced on lock,
- *   which manifests as "progress bar moves but no sound".
+ * - narration/chime: `playback` — the only category iOS keeps AUDIBLE when
+ *   the screen locks or the app goes to background.
+ *
+ * Why not `transient-solo` (the native turn-by-turn pattern, which would
+ * auto-resume the user's music afterwards)? Two field-verified reasons:
+ * 1. it maps to a solo-ambient-family category that iOS fades to silence on
+ *    backgrounding ("progress bar moves but no sound");
+ * 2. WebKit evaluates background-playback eligibility from the session type
+ *    at PLAYBACK START (see WebKit #17812) — changing the type mid-clip on
+ *    visibilitychange does NOT re-categorize an already-active session, so
+ *    a visibility-aware upgrade cannot rescue a clip that began as
+ *    transient-solo. Narration must therefore START under `playback`.
+ *
+ * Trade-off: after narration, iOS may not auto-resume the user's music (that
+ * courtesy belongs to transient-solo). Audible-in-background wins.
  *
  * No-ops (feature-detected) on browsers without `navigator.audioSession`.
  */
@@ -56,15 +64,7 @@ export function setIdleAudioSession(): void {
   setType('ambient');
 }
 
-function pageHidden(): boolean {
-  return typeof document !== 'undefined' && document.hidden;
-}
-
-/**
- * Narration/chime: play exclusively. Visible → `transient-solo` (other audio
- * auto-resumes afterwards); hidden → `playback` (audible with screen locked,
- * at the cost of the OS not auto-resuming the music).
- */
+/** Narration/chime: exclusive `playback` — survives screen lock/background. */
 export function setNarrationAudioSession(): void {
-  setType(pageHidden() ? 'playback' : 'transient-solo');
+  setType('playback');
 }

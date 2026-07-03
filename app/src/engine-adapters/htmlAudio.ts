@@ -43,20 +43,10 @@ export function createHtmlAudio(): AudioPort & {
     for (const cb of timeCbs) cb(t, Number.isFinite(d) ? d : 0);
   });
 
-  // Locking the screen mid-narration: the session was claimed for the
-  // foreground (transient-solo, silenced on lock) — re-claim so it upgrades
-  // to 'playback' and stays audible. Returning to foreground downgrades
-  // back, restoring music auto-resume behavior for the current clip.
-  const onVisibilityChange = () => {
-    if (!audio.paused) setNarrationAudioSession();
-  };
-  document.addEventListener('visibilitychange', onVisibilityChange);
-
   return {
     element: audio,
 
     destroy() {
-      document.removeEventListener('visibilitychange', onVisibilityChange);
       if (releaseTimer) clearTimeout(releaseTimer);
       audio.pause();
     },
